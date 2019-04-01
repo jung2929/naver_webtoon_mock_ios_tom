@@ -1,0 +1,24 @@
+PODS:
+  - AMScrollingNavbar (5.2.0)
+  - ScrollingFollowView (1.1.1)
+  - SegementSlide (2.1.1)
+
+DEPENDENCIES:
+  - AMScrollingNavbar
+  - ScrollingFollowView
+  - SegementSlide (= 2.1.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AMScrollingNavbar
+    - ScrollingFollowView
+    - SegementSlide
+
+SPEC CHECKSUMS:
+  AMScrollingNavbar: 9df3652d6757f1a24646d8e90cb458591d8b1a6a
+  ScrollingFollowView: 135102baad0e35fb34b2a2eaeabcb60c4d0955c8
+  SegementSlide: 95ebbdd2f616c0d9ab1a6046e67292bb3fb08f7c
+
+PODFILE CHECKSUM: 9057655b8d5258cea436024f5d35996fa3b2e714
+
+COCOAPODS: 1.6.1
