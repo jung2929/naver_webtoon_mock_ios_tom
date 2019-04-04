@@ -29,11 +29,14 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
             return UICollectionViewCell()
         }
         cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-        cell.label?.text = "\(indexPath.row + 1)"
+        //cell.label.frame =
+        //cell.label?.text = "\(indexPath.row + 1)"
         cell.label?.text = "1231"
+        cell.textLabel = "asdf"
         cell.label?.textColor = UIColor(red: 0.45, green: 0.35, blue: 0.35, alpha: 1)
             print("label text : ", cell.label?.text)
         print(indexPath.row)
+        print(cell.textLabel)
         return cell
     }
  

@@ -8,6 +8,7 @@ target 'MyNaverWebtoon3' do
   pod 'AMScrollingNavbar'
   pod "ScrollingFollowView"
   pod 'SegementSlide', '2.1.1'
+  pod 'AlamofireObjectMapper', '~> 5.0'
   # Pods for MyNaverWebtoon3
 
   target 'MyNaverWebtoon3Tests' do

@@ -7,160 +7,323 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15B1CE1AC8DFEC6C5D21DA76B5D2EB6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		1EA84235C42C740C2589B0C37EC6B71A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		218E2C180EDCC34E9BD6BBBBB481FCDD /* ScrollingFollowView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84779FE5499760CDB5C35618F33B0FD7 /* ScrollingFollowView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		254E49000651B3D6132D597220B90FA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		2D4E3FA9DDDB5018C40C7B97E4F3767F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		372785CDC533310F218CF3FCF33D9DB8 /* AMScrollingNavbar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F38ED8F221367E56C403A04CE60865F4 /* AMScrollingNavbar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3733314D596051C8440007D536701BFE /* Pods-MyNaverWebtoon3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A22F9B6806AD3EA6B02C268CD590A2E6 /* Pods-MyNaverWebtoon3-dummy.m */; };
-		3A947542C891F2019B61ACAEA89CB477 /* AMScrollingNavbar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8DCAEDB3158E2F61FBF5FC1C484EF /* AMScrollingNavbar-dummy.m */; };
-		4B8F14121338626C78088109AA8795B6 /* SegementSlide-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79452A48B8B7F629084689FD54985A54 /* SegementSlide-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5573E2F2A5F8917E3B5DFC7E89F9FFD6 /* UIView+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6573CB72A9D9F71B714C13F595908 /* UIView+Constraint.swift */; };
-		5A67ACDD8992432660A2E312EDEFC13E /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07C466388CC2DB8DF1A2B1A1AA76E59 /* BadgeView.swift */; };
-		638E43AC005EFA3A0C6571C39A2F1988 /* SegementSlideScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4B2BA90541519D2C73CEF959C72A2F /* SegementSlideScrollView.swift */; };
-		7EC8E930EBE1E2EC4B2B4C2C7E3D13CF /* ScrollingFollowView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4129CEDDF00433ED4BD3B7126B4F4C /* ScrollingFollowView-dummy.m */; };
-		82049D9954957D87D9EAF54E013559B3 /* TransparentSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DF74FD68CE594FB501AA79289346C /* TransparentSlideViewController.swift */; };
+		059603888075C317971A67A7C0FB2BDF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21CF5B85328C2D94619BF78DFE50327 /* Alamofire.framework */; };
+		059D92B7BBFBEC53E9A3B6E11C5C3B3A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC847C2E4789BA763C7BA5FF3E7FAC /* Response.swift */; };
+		0A39AF55285A3A4F7CBABB6D822FA4A3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8027CF22090C0A6F352D3163F333C54 /* Alamofire.swift */; };
+		0BCB6A36F6091BFFEC1AA7AB23A77444 /* UIView+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD8C368939DA5ABD661106B261888E /* UIView+Constraint.swift */; };
+		12DDF5D318C9D3751C849911AEC01252 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA8E1257FBFA1634EFE2A7C2CF9582 /* DateFormatterTransform.swift */; };
+		15B1CE1AC8DFEC6C5D21DA76B5D2EB6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		15E80A85DD6C67995A038861797A10CE /* SegementSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079E40FC40B8246AF93278F1CA134ED /* SegementSlideViewController.swift */; };
+		1D29D2ACADF961F69D32B06FA6A09E28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D143E3658E0D8F8A9B69A37BF413A7 /* Notifications.swift */; };
+		1EA84235C42C740C2589B0C37EC6B71A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		1FE848F3B55196B7E9AF9A0A60A8858D /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA9743D128FA9862663C8B559C2C54 /* CodableTransform.swift */; };
+		22C9395CCCCEDD07FD8D8941BAB7A5AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		31C0F22E95A2CB3CD72F74911B94FBD2 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A9DCFE3CCA04CB337CABF46C65AC4C /* BadgeView.swift */; };
+		33E1D1AABC1408623B60017EB8DA0A88 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7ECE368259BCA76F0DD07FA966F896 /* ObjectMapper.framework */; };
+		355C18EEC82624A06A6CC93965258E33 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AC69AB5E93E7865C46528289DFF4B5 /* Request.swift */; };
+		372785CDC533310F218CF3FCF33D9DB8 /* AMScrollingNavbar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E33220D013F6F65F503B775232EAC3A /* AMScrollingNavbar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E557B68266D46E019E2665C4253AD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		3A947542C891F2019B61ACAEA89CB477 /* AMScrollingNavbar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA08CE12EB0BE4AC50FA6FB5ADE5E5 /* AMScrollingNavbar-dummy.m */; };
+		3BD1DAFE1F3E6C9E4EB0F2099B6D6FA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		3E0749AF6C51BCF0E4A41CF1D6A76FED /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF0E8A7F77B534103332D8A08ACA4F /* DispatchQueue+Alamofire.swift */; };
+		4185FE9A95B12CC0D37F69E0218B4430 /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79493C337217DAEA6BE09663CAFEB0 /* TransformOperators.swift */; };
+		434CABD0AF808B00BFFE7F65414F9D5E /* SegementSlideSwitcherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05ED3ECA85782EF76F43DCB90F347A /* SegementSlideSwitcherConfig.swift */; };
+		469FE2321653B2AE4C68C6A25D4FCAFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		46D2B00CB67EFC58897132DDD7035FCF /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF8F99C4BC7833C8174CDEEC96320D /* DataTransform.swift */; };
+		5C290631BEF274E1AC237154D06033A2 /* String+Bounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE64351E4670348DD21EA6E1C921B7F /* String+Bounding.swift */; };
+		60B6C2A003864AAD3A426448152F67BE /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E15D0CD70BC197D0D8ADFF049B3BAD /* Timeline.swift */; };
+		633742D10D3764DD36EC0C3D7B3AD62C /* ScrollingFollowView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B406FDA81C49C5242DFF2FE09772F9A3 /* ScrollingFollowView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6747171D3A39E70D1C7A83325AAA0589 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B81A93F9BD830CA99210BCFB08C6ACB /* ISO8601DateTransform.swift */; };
+		6EFD003458AE7F689DEA720A2030C261 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE683ACD58DB1B4E9FC54AE6BF3FCB2D /* ResponseSerialization.swift */; };
+		700D3D95AF9520CB227846DFD943A2DA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F224B67AE4AC7700A79B03AB1D2133D5 /* ParameterEncoding.swift */; };
+		7379A39BC638AEA0AA074DCA25AA47FC /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0A900B5A926AC967441652BB60204B /* AlamofireObjectMapper.swift */; };
+		73AB05789A4982944AF68DBD013E3EB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA12D7059010991F28EF9DA4F9601D9 /* NetworkReachabilityManager.swift */; };
+		760AA26FB53D5C927B5C125845C50BB1 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900FA4D265CAF78A54E18380DE603A5 /* EnumOperators.swift */; };
+		772911DA6E33D1CBBC30131B7C8BDBB3 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5B04F5CE28684CC7C2BD46E8C8A9C1 /* Alamofire-dummy.m */; };
+		77E8F0EB9FFBE2E3EB0C77095C644606 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5392E119351EE0717A4D11E3EBA2E3 /* TaskDelegate.swift */; };
+		7E3538A6992A38276764936A9733493D /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889C813FBD40DA13027AD57C8A33B501 /* AFError.swift */; };
+		7F424C046646FE578B5BAA8AE3D30B37 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9944FB42B99EF2849CFAAA95A380F3C /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		861FF6B03C102A0B417D518CEA728747 /* SegementSlide-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 329CCF34658B9EF918588315D42208C4 /* SegementSlide-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87646781F3CA197B0FADF65A73F36CDD /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDFDD6CAF7ECD83E609BD24F09B54 /* TransformOf.swift */; };
 		88FF271AAACA7F259B798CA1A47027E9 /* Pods-MyNaverWebtoon3UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51ABE59DFCF982ACF6C06FABC9B6DBDC /* Pods-MyNaverWebtoon3UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F282F319D237E71262606F776E002FD /* ScrollingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F22A5B0157398B65C9E574A2FEBFA5 /* ScrollingNavigationController.swift */; };
-		92612108ECF020AB658AEA7A5BBC84B0 /* String+Bounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7328BF010FC3E0FE68693B0C070833 /* String+Bounding.swift */; };
-		979490C402D31784A4E3F9DE5EA19D44 /* SegementSlide-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D750925A6D9679CE909468BB978233 /* SegementSlide-dummy.m */; };
+		8983D08B436178AB4569EB3C2BCC9D00 /* Pods-MyNaverWebtoon3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A22F9B6806AD3EA6B02C268CD590A2E6 /* Pods-MyNaverWebtoon3-dummy.m */; };
+		8CCDCE25A6246A1829FFC0745F48459F /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC00C6ECA2AB758C45031E6662AA88A /* EnumTransform.swift */; };
+		8D2A6A90A6DDAF75EA52D471258545CC /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DE0474EC0179E2BE34F66684D727F /* ServerTrustPolicy.swift */; };
+		8F282F319D237E71262606F776E002FD /* ScrollingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC584051F90D0E8452E5D4898C2443 /* ScrollingNavigationController.swift */; };
+		912AA912DC5113A3F4C4DBDCBF2FC639 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71803D8D128D686B2854346A7784CA2 /* ToJSON.swift */; };
+		94DD2B64AA2E8A0B2C644178164F6EB9 /* SegementSlideViewController+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF261C40B403415BEBBE1F60D2721B80 /* SegementSlideViewController+ex.swift */; };
+		991BD190737B8F4F6BA3EE4E1F79A050 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8AEAC477E2739BD515508DAA5401F /* CustomDateFormatTransform.swift */; };
+		9FDB93E1D2AB4FCC476B39B6C178CE6D /* AlamofireObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C090C30DDAACF14998E8D7029CE5D0 /* AlamofireObjectMapper-dummy.m */; };
 		9FFD7BD1CBFD8E7CC714C2BDEDE11224 /* Pods-MyNaverWebtoon3Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADAA6DAF9815236D6CF7A9CBBC9E61E4 /* Pods-MyNaverWebtoon3Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A28D7CA5D4029A4EB7E7C0326927C850 /* ScrollingNavbar+Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06079C9BA43264FCE064C2E001B83F51 /* ScrollingNavbar+Sizes.swift */; };
-		AA99A3DFECD544C9D30DCB1FA0AD3847 /* ScrollingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32258EF8F11BFFD0887AACE8F690B7E /* ScrollingNavigationViewController.swift */; };
-		AF986B0FB3ED68FD7570708A97A3F976 /* ScrollingFollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A610F575C0AB71F6862CC58CCD4B370 /* ScrollingFollowView.swift */; };
-		B162324D1E57144B6C22CA7B3C22B032 /* SegementSlideContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754E6804A035EFA7595CB6157AC7DFE /* SegementSlideContentView.swift */; };
-		B4A5C896DD4A5E57401B97F521916903 /* SegementSlideViewController+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA13DDB92672C6C32D5E5FDE620A64D3 /* SegementSlideViewController+ex.swift */; };
-		B883DD02CDC093C9454C241DB9FFFE26 /* Pods-MyNaverWebtoon3-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B094E3B6B0E38AC0A767E205E4FEB373 /* Pods-MyNaverWebtoon3-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398A2DE9E6EDF62387AA548A180CA80 /* SessionDelegate.swift */; };
+		A1F0EC361B7E6719A92C899459A44D5A /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753BB844EE10353F53F9EF0FCB374B6 /* Mapper.swift */; };
+		A28D7CA5D4029A4EB7E7C0326927C850 /* ScrollingNavbar+Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ACD747EE04B03ADC431BDC2985FC2D /* ScrollingNavbar+Sizes.swift */; };
+		AA56769D8733D3F3E7976742D5ABA998 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDA12C09CAD69893581508E52DC856 /* Validation.swift */; };
+		AA99A3DFECD544C9D30DCB1FA0AD3847 /* ScrollingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61907B2501A3E30F2A2E1480EA5EFB78 /* ScrollingNavigationViewController.swift */; };
+		AC8143A6AFC14DC3F0338EF36445BF38 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C463F2B7792EDE0573ECF9F11465B57 /* NSDecimalNumberTransform.swift */; };
+		AEA829AB1A8AF2AD077A808AED6B178A /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512F2507AE30A651E45234529E95316E /* MultipartFormData.swift */; };
+		B0440733D653C499058567323B2C5AF8 /* ScrollingFollowView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E5AD6AF88B5B5296C4005AD7F84F9 /* ScrollingFollowView-dummy.m */; };
+		B26DBECE911AB60775C6BE6FC6F7B5FE /* AlamofireObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC8A36AC2855ADD9C5C986B3D46E805 /* AlamofireObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B31E975DE3B310BE5461250A083B2129 /* Pods-MyNaverWebtoon3-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B094E3B6B0E38AC0A767E205E4FEB373 /* Pods-MyNaverWebtoon3-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3CD844F6AB8701256B0931EAC4780DD /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B993DE95FFEFBDEA98950E691BB46 /* ImmutableMappable.swift */; };
+		B6F6E4CC26451E91B59FAE0F6841DC1F /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F576EC40C9CA2C68569B72B3D4D6FF2B /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B733C858DAC293B438561C23EBA6DF22 /* SegementSlideViewController+scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B271E17FE2107D1C5497DC088BCAEB67 /* SegementSlideViewController+scroll.swift */; };
 		BC9EAAB8449360603291F00C70FC714D /* Pods-MyNaverWebtoon3UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E022F51505119AF4C1F5E884F14B96FB /* Pods-MyNaverWebtoon3UITests-dummy.m */; };
-		BD7390A95B487583D2056DFF2FA572CE /* SegementSlideHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C60EBC7E8AF9C9E9DA7DE5D7284188 /* SegementSlideHeaderView.swift */; };
-		CC2D59DECCFC414FA71651977037761F /* SegementSlideViewController+scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DCF72CD85604DB9A0E236C685786C /* SegementSlideViewController+scroll.swift */; };
-		DECCDB75AC88853C4AF4F3479EB42104 /* SegementSlideViewController+setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3F1FB1897CD9BE68B15685022497B /* SegementSlideViewController+setup.swift */; };
-		E546D81E346BFA970D8B481B51E392B1 /* SegementSlideSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BF5BD3CC23FB6273AEF043AF583D /* SegementSlideSwitcherView.swift */; };
+		BEF73CE444CA0AC7DC935A4164DF96D9 /* SegementSlideSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05213786A8E9CC0F43AEB23CBAE0DDF /* SegementSlideSwitcherView.swift */; };
+		BEFE6E05E9CC6FCAAFFCEE20E7EA6EE4 /* SegementSlideViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0245EC407AC4D8ED0FD29FF00FC38 /* SegementSlideViewController+delegate.swift */; };
+		C082C780FE3453D53849D479541DCC1C /* SegementSlideViewController+setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36110C8BE2C3C824F6B5CBAC51EE46CF /* SegementSlideViewController+setup.swift */; };
+		CC354BAD404E8AC1817B85DC9117D95F /* SegementSlideScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499542CC16F2A3F3848370F4489B4840 /* SegementSlideScrollView.swift */; };
+		CEC9BB6496ACA4458CBDAC895780E692 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F800B843D0B17263C03DB94F8EC7A7 /* TransformType.swift */; };
+		CF765F27D6E6A6B745CB2713C967779C /* SegementSlideHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5975DE5FB64AAF57CA38633F9F6EB /* SegementSlideHeaderView.swift */; };
+		D1EBE884C11FF785A91711AF378CAA16 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C8089DFE4C86E20D7EEEA5ABEB45D /* MapError.swift */; };
+		D331786C87892C26B432086A93BB6634 /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA823ADCF26F061093739ABF49B784 /* DateTransform.swift */; };
+		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435DDB5257C7BD5666217D236ECE0E4 /* SessionManager.swift */; };
+		DC82EBAB16AF0BC6FA9B217853FAB5E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		DE55962F75288607CD2183F80A4D223B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		DF8309B711A4635FD438BF1F8C2D494B /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482CF0E5A3325E173DF8F9DA1D3E13E /* FromJSON.swift */; };
+		E303598CA94725108F75FBC0253E7C0E /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B864FA5E8031FD8EC96DD2C39358D2C1 /* ObjectMapper-dummy.m */; };
 		E6B5AB03E684CE9B93EEDBCBFEB2B448 /* Pods-MyNaverWebtoon3Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 871E54D87CBAC770AFDCC7539E3EBF88 /* Pods-MyNaverWebtoon3Tests-dummy.m */; };
-		EABEED1B47E95B287F69D4732CBFCF8E /* SegementSlideViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711156C735CFB7EE1496012A118607E /* SegementSlideViewController+delegate.swift */; };
-		F15351C9AA785CC92A5C4E0B57780E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		F2A2883DD30E0FC0FA9EF3EF055EEF21 /* SegementSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74368284993D177D1CEB33B9D82E186 /* SegementSlideViewController.swift */; };
-		F742BB505987990D9D9354D168442746 /* SegementSlideSwitcherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FA4BE876CF886A5EC1C6BBC3E79DF /* SegementSlideSwitcherConfig.swift */; };
-		FBDBB7FAB8C5D4D5139EC61A8712FFDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		E6DE03E3E1E37473B26BDB3B302A0D2D /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00176BBDF395CFCC22BE4604BC4450BA /* DictionaryTransform.swift */; };
+		E8AC6613B103B56298FF812F11F1B6B6 /* TransparentSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D8DD63A6C23D2DF1654CCF51317BE /* TransparentSlideViewController.swift */; };
+		E9EEAA672984812FFBF3CBA15826BB6F /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99061FA7E78AA54911AD1AB0A00F9A70 /* HexColorTransform.swift */; };
+		EB0DD8CEA1A69867A30267439C970440 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117FD7C87F22327EA926476FB3EE2616 /* Result.swift */; };
+		EBFACE2E09C3566B22E309C5162B97BA /* ScrollingFollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803D5ADF5B9645911ED9610660458E4 /* ScrollingFollowView.swift */; };
+		EC3217AEA6906A7EC227471D29EE5093 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302341B20F8B2688CC69309A43B3101 /* Mappable.swift */; };
+		F0097565891882724729F966E1FE6853 /* SegementSlideContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8498A0D7954E60324D48138B66A0FEA /* SegementSlideContentView.swift */; };
+		F4055B61D4A28904B9674234C8B7A800 /* SegementSlide-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD55FB080CB1282A2DC9D41BEE5A893 /* SegementSlide-dummy.m */; };
+		F562EBBB71DFA269B42FD4D8E0BACC35 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A8C0EF02AD3CA89F549D4CDF0B255D /* Map.swift */; };
+		FB2FF2FBF0AE83FF31DE1B6B6D08DF59 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B194CC4348CCDB85274427D09D5037 /* Operators.swift */; };
+		FBDBB7FAB8C5D4D5139EC61A8712FFDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */; };
+		FD7578F183AA83B2949887C4C1EADF76 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E655B2B101DCBE7B65D32BDEE4C82E02 /* IntegerOperators.swift */; };
+		FDD25EFD99DD6732AE1BE5F3F0036505 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D00CDCCA9C72EBB11093D122F81FC /* URLTransform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		01E5C45917B578EC3FA7A985D0ABF7D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C036644DE843B12C12F633639114E9D;
-			remoteInfo = ScrollingFollowView;
-		};
 		0862A9804F5B29322C7E035E88371A18 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D4E04C3E1798FE78CC6966FA1C1920FF;
+			remoteGlobalIDString = C43963D41C55B552D6B46A28E91E6332;
 			remoteInfo = "Pods-MyNaverWebtoon3";
 		};
-		2A47F98F249944727BAA626A1786B641 /* PBXContainerItemProxy */ = {
+		0EFFBCC7759582B48FE29B2A7689FD2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 91D67B3A6573E4DAF1942115FCACA995;
 			remoteInfo = AMScrollingNavbar;
 		};
-		30E9196AA2B3C7BBE48A3122AA3226AF /* PBXContainerItemProxy */ = {
+		5A9FF4DB7450D5F5A9B135E67A4ED97B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B11B683425BF0242A4BA9473D54DF3DD;
+			remoteGlobalIDString = A77FBC25BDB2AD19365395F58607806A;
+			remoteInfo = ScrollingFollowView;
+		};
+		7C201395E9B8264141DEEE18C1379482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CDD646068377E9B091B68A14559D58B;
 			remoteInfo = SegementSlide;
+		};
+		96CF016460DD868DF1A4D8AF397941B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 743E4A349913BA26BF7AEE81D0D0DC34;
+			remoteInfo = AlamofireObjectMapper;
+		};
+		9F95E621710F4B7EBD56B83C134F6AD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3383968E74B5371B20BB519B170DC7FD;
+			remoteInfo = Alamofire;
+		};
+		A73BCD5580C1E99FF7B2E9305480CADD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0882708950626A3ECBCB6A065347330B;
+			remoteInfo = ObjectMapper;
+		};
+		C059B88FB59639D62FAC402DC8A2F70B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3383968E74B5371B20BB519B170DC7FD;
+			remoteInfo = Alamofire;
+		};
+		E63485A32F51F54076553D54B3F94444 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0882708950626A3ECBCB6A065347330B;
+			remoteInfo = ObjectMapper;
 		};
 		EA8247324688BC1568ADB13033104282 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D4E04C3E1798FE78CC6966FA1C1920FF;
+			remoteGlobalIDString = C43963D41C55B552D6B46A28E91E6332;
 			remoteInfo = "Pods-MyNaverWebtoon3";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00176BBDF395CFCC22BE4604BC4450BA /* DictionaryTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryTransform.swift; path = Sources/DictionaryTransform.swift; sourceTree = "<group>"; };
+		01443A98DE303838DF233ED234B3F929 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		017FEB2FD49609AF2747FB146B9B64DD /* Pods-MyNaverWebtoon3UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyNaverWebtoon3UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		05F6573CB72A9D9F71B714C13F595908 /* UIView+Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Constraint.swift"; path = "Source/Utility/UIView+Constraint.swift"; sourceTree = "<group>"; };
-		06079C9BA43264FCE064C2E001B83F51 /* ScrollingNavbar+Sizes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ScrollingNavbar+Sizes.swift"; path = "Source/ScrollingNavbar+Sizes.swift"; sourceTree = "<group>"; };
+		045B993DE95FFEFBDEA98950E691BB46 /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
 		06C6A974D5B3B7B7209A2346ACE50842 /* Pods-MyNaverWebtoon3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyNaverWebtoon3UITests.release.xcconfig"; sourceTree = "<group>"; };
-		08A6FEA45933798C0D7172A107D41F80 /* SegementSlide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SegementSlide.framework; path = SegementSlide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CF84762910C4D3999D76708E7F66837 /* AMScrollingNavbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMScrollingNavbar.xcconfig; sourceTree = "<group>"; };
-		0F5FA4BE876CF886A5EC1C6BBC3E79DF /* SegementSlideSwitcherConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideSwitcherConfig.swift; path = Source/Segement/SegementSlideSwitcherConfig.swift; sourceTree = "<group>"; };
-		1897AAD8E500CA3038B1FBB8A1C02622 /* AMScrollingNavbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingNavbar-prefix.pch"; sourceTree = "<group>"; };
+		1087323FA7028B56711D7966DC455768 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		117FD7C87F22327EA926476FB3EE2616 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		18C1D89DD2A75764457D4AC5135DB997 /* Pods-MyNaverWebtoon3-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyNaverWebtoon3-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1BF380780708B0400D620371A5828347 /* ScrollingFollowView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScrollingFollowView.xcconfig; sourceTree = "<group>"; };
-		1DB555E5A43958ADB9318334E5541F7B /* SegementSlide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SegementSlide-Info.plist"; sourceTree = "<group>"; };
+		1BDCF89F8D4E513E37EEFB552EF04363 /* AlamofireObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlamofireObjectMapper-Info.plist"; sourceTree = "<group>"; };
+		20CA8E1257FBFA1634EFE2A7C2CF9582 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Sources/DateFormatterTransform.swift; sourceTree = "<group>"; };
 		21B7335367EED7551399511E33E0702B /* Pods-MyNaverWebtoon3Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyNaverWebtoon3Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		235457E92A3E9C16172D0CD66F31C010 /* ScrollingFollowView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScrollingFollowView.framework; path = ScrollingFollowView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C9442724C37990A90328355634C452 /* Pods-MyNaverWebtoon3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyNaverWebtoon3Tests.release.xcconfig"; sourceTree = "<group>"; };
+		26C5975DE5FB64AAF57CA38633F9F6EB /* SegementSlideHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideHeaderView.swift; path = Source/Header/SegementSlideHeaderView.swift; sourceTree = "<group>"; };
+		27FC584051F90D0E8452E5D4898C2443 /* ScrollingNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingNavigationController.swift; path = Source/ScrollingNavigationController.swift; sourceTree = "<group>"; };
+		29BAADDC79CDFF62CC33E59E0B0C057B /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
+		29D7D2DBD612167390EEBC28CA91A309 /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
 		29EBC8AB5651D38DD60583A942DA1F87 /* Pods-MyNaverWebtoon3UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyNaverWebtoon3UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		341DCF72CD85604DB9A0E236C685786C /* SegementSlideViewController+scroll.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+scroll.swift"; path = "Source/General/SegementSlideViewController+scroll.swift"; sourceTree = "<group>"; };
+		2CA49F9D716BB84F659D7F49D09266F2 /* AMScrollingNavbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AMScrollingNavbar.framework; path = AMScrollingNavbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3079E40FC40B8246AF93278F1CA134ED /* SegementSlideViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideViewController.swift; path = Source/General/SegementSlideViewController.swift; sourceTree = "<group>"; };
+		329CCF34658B9EF918588315D42208C4 /* SegementSlide-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SegementSlide-umbrella.h"; sourceTree = "<group>"; };
 		34EB9B5651C82930A8B0ACC52F42DD07 /* Pods-MyNaverWebtoon3-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyNaverWebtoon3-Info.plist"; sourceTree = "<group>"; };
+		36110C8BE2C3C824F6B5CBAC51EE46CF /* SegementSlideViewController+setup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+setup.swift"; path = "Source/General/SegementSlideViewController+setup.swift"; sourceTree = "<group>"; };
+		36AA08CE12EB0BE4AC50FA6FB5ADE5E5 /* AMScrollingNavbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMScrollingNavbar-dummy.m"; sourceTree = "<group>"; };
+		370C8089DFE4C86E20D7EEEA5ABEB45D /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
 		3774E388E67FC8F1D5AAE856878FE747 /* Pods-MyNaverWebtoon3UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyNaverWebtoon3UITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3A610F575C0AB71F6862CC58CCD4B370 /* ScrollingFollowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingFollowView.swift; path = ScrollingFollowView/ScrollingFollowView.swift; sourceTree = "<group>"; };
-		3DB2B9EAF0F9A5C16C098C2C0E1F2F8B /* Pods_MyNaverWebtoon3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyNaverWebtoon3Tests.framework; path = "Pods-MyNaverWebtoon3Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		49E4E7BD0730BCA52FFB6529BD6D5791 /* SegementSlide-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SegementSlide-prefix.pch"; sourceTree = "<group>"; };
+		39C090C30DDAACF14998E8D7029CE5D0 /* AlamofireObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireObjectMapper-dummy.m"; sourceTree = "<group>"; };
+		39F800B843D0B17263C03DB94F8EC7A7 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
+		4428BFED0D77BC9A14CC9E2C0A2C4D28 /* SegementSlide-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SegementSlide-prefix.pch"; sourceTree = "<group>"; };
+		47DF8F99C4BC7833C8174CDEEC96320D /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
+		499542CC16F2A3F3848370F4489B4840 /* SegementSlideScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideScrollView.swift; path = Source/General/SegementSlideScrollView.swift; sourceTree = "<group>"; };
+		4B81A93F9BD830CA99210BCFB08C6ACB /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		512F2507AE30A651E45234529E95316E /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		51ABE59DFCF982ACF6C06FABC9B6DBDC /* Pods-MyNaverWebtoon3UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyNaverWebtoon3UITests-umbrella.h"; sourceTree = "<group>"; };
-		556F3215EC7B6F4DD55B6445C327BA07 /* ScrollingFollowView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ScrollingFollowView-Info.plist"; sourceTree = "<group>"; };
 		589DC8A2F0167BD34153D083C3D1D89D /* Pods-MyNaverWebtoon3-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyNaverWebtoon3-frameworks.sh"; sourceTree = "<group>"; };
-		5A6DF74FD68CE594FB501AA79289346C /* TransparentSlideViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransparentSlideViewController.swift; path = Source/General/TransparentSlideViewController.swift; sourceTree = "<group>"; };
-		5C4B8C77E62DD83A6049BD36C7C4BFC4 /* ScrollingFollowView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScrollingFollowView.framework; path = ScrollingFollowView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E4B2BA90541519D2C73CEF959C72A2F /* SegementSlideScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideScrollView.swift; path = Source/General/SegementSlideScrollView.swift; sourceTree = "<group>"; };
-		72FD5D3376324237BDDDFCFC1024B586 /* AMScrollingNavbar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AMScrollingNavbar-Info.plist"; sourceTree = "<group>"; };
+		5A824ADD4CE6795B9432B470D227CC99 /* ScrollingFollowView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScrollingFollowView.xcconfig; sourceTree = "<group>"; };
+		5AD55FB080CB1282A2DC9D41BEE5A893 /* SegementSlide-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SegementSlide-dummy.m"; sourceTree = "<group>"; };
+		5C463F2B7792EDE0573ECF9F11465B57 /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDecimalNumberTransform.swift; path = Sources/NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
+		5E33220D013F6F65F503B775232EAC3A /* AMScrollingNavbar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingNavbar-umbrella.h"; sourceTree = "<group>"; };
+		5E79493C337217DAEA6BE09663CAFEB0 /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
+		5FF5F1531B158E2C16B9D15695C3577D /* AMScrollingNavbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMScrollingNavbar.xcconfig; sourceTree = "<group>"; };
+		60A8C0EF02AD3CA89F549D4CDF0B255D /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
+		61907B2501A3E30F2A2E1480EA5EFB78 /* ScrollingNavigationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingNavigationViewController.swift; path = Source/ScrollingNavigationViewController.swift; sourceTree = "<group>"; };
+		61FF13FF5EFB99525C2CD64F15C69A24 /* AMScrollingNavbar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AMScrollingNavbar.modulemap; sourceTree = "<group>"; };
+		62359BB5DA688F4C69A2C72161FC3D19 /* AlamofireObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlamofireObjectMapper.modulemap; sourceTree = "<group>"; };
+		657D3FA958CBBB1C07153E376291524D /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		6753BB844EE10353F53F9EF0FCB374B6 /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
+		73A8AEAC477E2739BD515508DAA5401F /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
+		73D1EF90279836C7CCDA57851CCAADB1 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		753434AB908A44F204D6656015146F16 /* Pods-MyNaverWebtoon3Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MyNaverWebtoon3Tests.modulemap"; sourceTree = "<group>"; };
-		7711156C735CFB7EE1496012A118607E /* SegementSlideViewController+delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+delegate.swift"; path = "Source/General/SegementSlideViewController+delegate.swift"; sourceTree = "<group>"; };
-		79452A48B8B7F629084689FD54985A54 /* SegementSlide-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SegementSlide-umbrella.h"; sourceTree = "<group>"; };
+		7618AAAD0E1F7F5670F6ABC3501F14E9 /* Pods_MyNaverWebtoon3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyNaverWebtoon3.framework; path = "Pods-MyNaverWebtoon3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		784DE0474EC0179E2BE34F66684D727F /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		7B4D1DFB3B623963458D6FF685ABAFFF /* AMScrollingNavbar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AMScrollingNavbar-Info.plist"; sourceTree = "<group>"; };
+		7C5392E119351EE0717A4D11E3EBA2E3 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		7EB6042687957D8682CD6D0005FB4A0F /* ScrollingFollowView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ScrollingFollowView.modulemap; sourceTree = "<group>"; };
 		81D87783F925A9533DEA8E630907A74D /* Pods-MyNaverWebtoon3Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyNaverWebtoon3Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		84779FE5499760CDB5C35618F33B0FD7 /* ScrollingFollowView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingFollowView-umbrella.h"; sourceTree = "<group>"; };
-		84F22A5B0157398B65C9E574A2FEBFA5 /* ScrollingNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingNavigationController.swift; path = Source/ScrollingNavigationController.swift; sourceTree = "<group>"; };
+		8482CF0E5A3325E173DF8F9DA1D3E13E /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
+		86D143E3658E0D8F8A9B69A37BF413A7 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		86FC847C2E4789BA763C7BA5FF3E7FAC /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		871409E83356BBE95BA2E65D645B4F13 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireObjectMapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E54D87CBAC770AFDCC7539E3EBF88 /* Pods-MyNaverWebtoon3Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyNaverWebtoon3Tests-dummy.m"; sourceTree = "<group>"; };
-		96D750925A6D9679CE909468BB978233 /* SegementSlide-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SegementSlide-dummy.m"; sourceTree = "<group>"; };
-		9A7328BF010FC3E0FE68693B0C070833 /* String+Bounding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Bounding.swift"; path = "Source/Utility/String+Bounding.swift"; sourceTree = "<group>"; };
-		9C9060B91F8E04BBCA3D392FCA8F4905 /* Pods_MyNaverWebtoon3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyNaverWebtoon3.framework; path = "Pods-MyNaverWebtoon3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87FA9743D128FA9862663C8B559C2C54 /* CodableTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableTransform.swift; path = Sources/CodableTransform.swift; sourceTree = "<group>"; };
+		889C813FBD40DA13027AD57C8A33B501 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		8A05ED3ECA85782EF76F43DCB90F347A /* SegementSlideSwitcherConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideSwitcherConfig.swift; path = Source/Segement/SegementSlideSwitcherConfig.swift; sourceTree = "<group>"; };
+		93BF0E8A7F77B534103332D8A08ACA4F /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		976BFF922104A906B218C6F988A0250F /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		99061FA7E78AA54911AD1AB0A00F9A70 /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FD1504747FBFF2DFA30CDA175F1EC4C /* Pods-MyNaverWebtoon3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MyNaverWebtoon3.modulemap"; sourceTree = "<group>"; };
 		A22F9B6806AD3EA6B02C268CD590A2E6 /* Pods-MyNaverWebtoon3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyNaverWebtoon3-dummy.m"; sourceTree = "<group>"; };
+		A398A2DE9E6EDF62387AA548A180CA80 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		A3B194CC4348CCDB85274427D09D5037 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
+		A4ACD747EE04B03ADC431BDC2985FC2D /* ScrollingNavbar+Sizes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ScrollingNavbar+Sizes.swift"; path = "Source/ScrollingNavbar+Sizes.swift"; sourceTree = "<group>"; };
 		A6C34E4CC40E3B6140F66F5BDFDA3E54 /* Pods-MyNaverWebtoon3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyNaverWebtoon3Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6F38BA876ADB8438727A1EFCBF44899 /* Pods-MyNaverWebtoon3UITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyNaverWebtoon3UITests-Info.plist"; sourceTree = "<group>"; };
+		A71803D8D128D686B2854346A7784CA2 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
+		A900FA4D265CAF78A54E18380DE603A5 /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
 		ADAA6DAF9815236D6CF7A9CBBC9E61E4 /* Pods-MyNaverWebtoon3Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyNaverWebtoon3Tests-umbrella.h"; sourceTree = "<group>"; };
-		B07C466388CC2DB8DF1A2B1A1AA76E59 /* BadgeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BadgeView.swift; path = Source/Badge/BadgeView.swift; sourceTree = "<group>"; };
+		ADDF92F44F948A7E276B5C68D4A6B804 /* ObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ObjectMapper-Info.plist"; sourceTree = "<group>"; };
+		AE683ACD58DB1B4E9FC54AE6BF3FCB2D /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		AEC8A36AC2855ADD9C5C986B3D46E805 /* AlamofireObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		B094E3B6B0E38AC0A767E205E4FEB373 /* Pods-MyNaverWebtoon3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyNaverWebtoon3-umbrella.h"; sourceTree = "<group>"; };
-		B5A36691D8AA44A1142BD3BD98E888EE /* AMScrollingNavbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AMScrollingNavbar.framework; path = AMScrollingNavbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA1F6D68DBF1EFF078B530F607FE8A6D /* ScrollingFollowView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ScrollingFollowView.modulemap; sourceTree = "<group>"; };
-		BD828580CF35ABB39822AB4B4A173FA0 /* ScrollingFollowView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingFollowView-prefix.pch"; sourceTree = "<group>"; };
-		BF12E0C4FE463F9639E6B3A31FCC120B /* SegementSlide.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SegementSlide.xcconfig; sourceTree = "<group>"; };
+		B0DA823ADCF26F061093739ABF49B784 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
+		B22E5AD6AF88B5B5296C4005AD7F84F9 /* ScrollingFollowView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ScrollingFollowView-dummy.m"; sourceTree = "<group>"; };
+		B271E17FE2107D1C5497DC088BCAEB67 /* SegementSlideViewController+scroll.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+scroll.swift"; path = "Source/General/SegementSlideViewController+scroll.swift"; sourceTree = "<group>"; };
+		B406FDA81C49C5242DFF2FE09772F9A3 /* ScrollingFollowView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingFollowView-umbrella.h"; sourceTree = "<group>"; };
+		B864FA5E8031FD8EC96DD2C39358D2C1 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
+		B9E37B8DC13C315A456F313EB2069205 /* AMScrollingNavbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingNavbar-prefix.pch"; sourceTree = "<group>"; };
+		BB17F8C6F9CBCD768B2FF2F7FABFEFFD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		BB4CDFDD6CAF7ECD83E609BD24F09B54 /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
+		BDD0245EC407AC4D8ED0FD29FF00FC38 /* SegementSlideViewController+delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+delegate.swift"; path = "Source/General/SegementSlideViewController+delegate.swift"; sourceTree = "<group>"; };
 		BF2E1518E62E64628C103CD8C8A6D4D4 /* Pods-MyNaverWebtoon3Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyNaverWebtoon3Tests-Info.plist"; sourceTree = "<group>"; };
+		C0E15D0CD70BC197D0D8ADFF049B3BAD /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		C302341B20F8B2688CC69309A43B3101 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
+		C435DDB5257C7BD5666217D236ECE0E4 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		C6859A756BAD8EEDFE34B9FA0B00732A /* Pods-MyNaverWebtoon3UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MyNaverWebtoon3UITests.modulemap"; sourceTree = "<group>"; };
 		C6A91363C00A775E150EC612538258E7 /* Pods-MyNaverWebtoon3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyNaverWebtoon3.debug.xcconfig"; sourceTree = "<group>"; };
+		C7AC69AB5E93E7865C46528289DFF4B5 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		C82B68DADAA6525DF4482CC97182D09E /* Pods-MyNaverWebtoon3-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyNaverWebtoon3-acknowledgements.plist"; sourceTree = "<group>"; };
-		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CC14BF5BD3CC23FB6273AEF043AF583D /* SegementSlideSwitcherView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideSwitcherView.swift; path = Source/Segement/SegementSlideSwitcherView.swift; sourceTree = "<group>"; };
-		CCE4C3EFD702C068767768ECEB5ED2CD /* Pods_MyNaverWebtoon3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyNaverWebtoon3UITests.framework; path = "Pods-MyNaverWebtoon3UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFA8DCAEDB3158E2F61FBF5FC1C484EF /* AMScrollingNavbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMScrollingNavbar-dummy.m"; sourceTree = "<group>"; };
-		D2C60EBC7E8AF9C9E9DA7DE5D7284188 /* SegementSlideHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideHeaderView.swift; path = Source/Header/SegementSlideHeaderView.swift; sourceTree = "<group>"; };
-		D2D3F1FB1897CD9BE68B15685022497B /* SegementSlideViewController+setup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+setup.swift"; path = "Source/General/SegementSlideViewController+setup.swift"; sourceTree = "<group>"; };
-		DD82614B8AA9277D31D878585297D273 /* AMScrollingNavbar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AMScrollingNavbar.modulemap; sourceTree = "<group>"; };
+		CA7ECE368259BCA76F0DD07FA966F896 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0A900B5A926AC967441652BB60204B /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireObjectMapper.swift; path = AlamofireObjectMapper/AlamofireObjectMapper.swift; sourceTree = "<group>"; };
+		CEC00C6ECA2AB758C45031E6662AA88A /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Sources/EnumTransform.swift; sourceTree = "<group>"; };
+		CEE64351E4670348DD21EA6E1C921B7F /* String+Bounding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Bounding.swift"; path = "Source/Utility/String+Bounding.swift"; sourceTree = "<group>"; };
+		CEFA5AD6B7B26D81254F82531799414C /* ScrollingFollowView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingFollowView-prefix.pch"; sourceTree = "<group>"; };
+		D05213786A8E9CC0F43AEB23CBAE0DDF /* SegementSlideSwitcherView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideSwitcherView.swift; path = Source/Segement/SegementSlideSwitcherView.swift; sourceTree = "<group>"; };
+		D756448F7044DBFCEBDF5D4221E9EA62 /* SegementSlide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SegementSlide.framework; path = SegementSlide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76D8DD63A6C23D2DF1654CCF51317BE /* TransparentSlideViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransparentSlideViewController.swift; path = Source/General/TransparentSlideViewController.swift; sourceTree = "<group>"; };
+		D857A511D79CE37A7DBD48BEF6AFF435 /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
+		DA2D89B1B15D6F510BE5E8DEA945704B /* SegementSlide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SegementSlide-Info.plist"; sourceTree = "<group>"; };
+		DA7DCB12EE509ECEA2AFB8FBEDA89567 /* SegementSlide.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SegementSlide.modulemap; sourceTree = "<group>"; };
+		DAA12D7059010991F28EF9DA4F9601D9 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		DF061521FB0E9AAE272C2D2E4E4E9A0A /* AlamofireObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		DF17A51EA72F7CC89C2D6047DE3CE94E /* AlamofireObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireObjectMapper.xcconfig; sourceTree = "<group>"; };
 		E022F51505119AF4C1F5E884F14B96FB /* Pods-MyNaverWebtoon3UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyNaverWebtoon3UITests-dummy.m"; sourceTree = "<group>"; };
-		EA13DDB92672C6C32D5E5FDE620A64D3 /* SegementSlideViewController+ex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+ex.swift"; path = "Source/General/SegementSlideViewController+ex.swift"; sourceTree = "<group>"; };
-		EE2F9C189150D47A9368A298D4671095 /* SegementSlide.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SegementSlide.modulemap; sourceTree = "<group>"; };
+		E0C895A349BFE30EBE8C78204C4B27F5 /* Pods_MyNaverWebtoon3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyNaverWebtoon3Tests.framework; path = "Pods-MyNaverWebtoon3Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E655B2B101DCBE7B65D32BDEE4C82E02 /* IntegerOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerOperators.swift; path = Sources/IntegerOperators.swift; sourceTree = "<group>"; };
+		E803D5ADF5B9645911ED9610660458E4 /* ScrollingFollowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingFollowView.swift; path = ScrollingFollowView/ScrollingFollowView.swift; sourceTree = "<group>"; };
+		E9944FB42B99EF2849CFAAA95A380F3C /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		EECEBE39082EB6E8D8BC1D389519D741 /* Pods-MyNaverWebtoon3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyNaverWebtoon3.release.xcconfig"; sourceTree = "<group>"; };
-		F32258EF8F11BFFD0887AACE8F690B7E /* ScrollingNavigationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingNavigationViewController.swift; path = Source/ScrollingNavigationViewController.swift; sourceTree = "<group>"; };
-		F38ED8F221367E56C403A04CE60865F4 /* AMScrollingNavbar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingNavbar-umbrella.h"; sourceTree = "<group>"; };
-		F74368284993D177D1CEB33B9D82E186 /* SegementSlideViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideViewController.swift; path = Source/General/SegementSlideViewController.swift; sourceTree = "<group>"; };
-		F754E6804A035EFA7595CB6157AC7DFE /* SegementSlideContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideContentView.swift; path = Source/Content/SegementSlideContentView.swift; sourceTree = "<group>"; };
-		FA4129CEDDF00433ED4BD3B7126B4F4C /* ScrollingFollowView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ScrollingFollowView-dummy.m"; sourceTree = "<group>"; };
+		EEFDA12C09CAD69893581508E52DC856 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		F21CF5B85328C2D94619BF78DFE50327 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F224B67AE4AC7700A79B03AB1D2133D5 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		F576EC40C9CA2C68569B72B3D4D6FF2B /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		F6A9DCFE3CCA04CB337CABF46C65AC4C /* BadgeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BadgeView.swift; path = Source/Badge/BadgeView.swift; sourceTree = "<group>"; };
+		F8027CF22090C0A6F352D3163F333C54 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		F8498A0D7954E60324D48138B66A0FEA /* SegementSlideContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegementSlideContentView.swift; path = Source/Content/SegementSlideContentView.swift; sourceTree = "<group>"; };
+		FA1148ED7317D4E3D1AF38254733888A /* SegementSlide.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SegementSlide.xcconfig; sourceTree = "<group>"; };
+		FA2D00CDCCA9C72EBB11093D122F81FC /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
+		FBDD8C368939DA5ABD661106B261888E /* UIView+Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Constraint.swift"; path = "Source/Utility/UIView+Constraint.swift"; sourceTree = "<group>"; };
+		FBDE21FB9A0D5546D56238E1F109406E /* ScrollingFollowView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ScrollingFollowView-Info.plist"; sourceTree = "<group>"; };
+		FC17691B0C8AE7B6CEC6C53977E6741A /* Pods_MyNaverWebtoon3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyNaverWebtoon3UITests.framework; path = "Pods-MyNaverWebtoon3UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD5B04F5CE28684CC7C2BD46E8C8A9C1 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		FF261C40B403415BEBBE1F60D2721B80 /* SegementSlideViewController+ex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SegementSlideViewController+ex.swift"; path = "Source/General/SegementSlideViewController+ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7F005A9AC417037BB0243C082BDF603F /* Frameworks */ = {
+		2C73B04071A984E83078FF5E1D8AC483 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				254E49000651B3D6132D597220B90FA0 /* Foundation.framework in Frameworks */,
+				22C9395CCCCEDD07FD8D8941BAB7A5AD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45ED8B159A97749309D4BE4C9C29C665 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059603888075C317971A67A7C0FB2BDF /* Alamofire.framework in Frameworks */,
+				DE55962F75288607CD2183F80A4D223B /* Foundation.framework in Frameworks */,
+				33E1D1AABC1408623B60017EB8DA0A88 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,64 +351,182 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E63582BFACB02D7AFE4F5F892C8AB391 /* Frameworks */ = {
+		CF7B8B80CA837517DB32A5426DAEF79D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D4E3FA9DDDB5018C40C7B97E4F3767F /* Foundation.framework in Frameworks */,
+				38E557B68266D46E019E2665C4253AD4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EBCC6AAAFC965F70A2EDE7CF5F0D7209 /* Frameworks */ = {
+		D896D41BF1AA3A878EA1904BC96A108F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15351C9AA785CC92A5C4E0B57780E6E /* Foundation.framework in Frameworks */,
+				469FE2321653B2AE4C68C6A25D4FCAFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDEEB5C2D23E4F27458B6F79B1984CD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC82EBAB16AF0BC6FA9B217853FAB5E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1626ADC3A7EC435D2722B3173355D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD1DAFE1F3E6C9E4EB0F2099B6D6FA2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F5818FCBE0861E2287F43A61A395B79 /* Support Files */ = {
+		03BB574D36E87959EFCAED7E9D13FF3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD82614B8AA9277D31D878585297D273 /* AMScrollingNavbar.modulemap */,
-				0CF84762910C4D3999D76708E7F66837 /* AMScrollingNavbar.xcconfig */,
-				CFA8DCAEDB3158E2F61FBF5FC1C484EF /* AMScrollingNavbar-dummy.m */,
-				72FD5D3376324237BDDDFCFC1024B586 /* AMScrollingNavbar-Info.plist */,
-				1897AAD8E500CA3038B1FBB8A1C02622 /* AMScrollingNavbar-prefix.pch */,
-				F38ED8F221367E56C403A04CE60865F4 /* AMScrollingNavbar-umbrella.h */,
+				F21CF5B85328C2D94619BF78DFE50327 /* Alamofire.framework */,
+				CA7ECE368259BCA76F0DD07FA966F896 /* ObjectMapper.framework */,
+				065CB34E3D047FCC9A2EFF556CC3ECCD /* iOS */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/AMScrollingNavbar";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3951D6E51F746C0D836473567CCEFA5C /* Support Files */ = {
+		065CB34E3D047FCC9A2EFF556CC3ECCD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				BA1F6D68DBF1EFF078B530F607FE8A6D /* ScrollingFollowView.modulemap */,
-				1BF380780708B0400D620371A5828347 /* ScrollingFollowView.xcconfig */,
-				FA4129CEDDF00433ED4BD3B7126B4F4C /* ScrollingFollowView-dummy.m */,
-				556F3215EC7B6F4DD55B6445C327BA07 /* ScrollingFollowView-Info.plist */,
-				BD828580CF35ABB39822AB4B4A173FA0 /* ScrollingFollowView-prefix.pch */,
-				84779FE5499760CDB5C35618F33B0FD7 /* ScrollingFollowView-umbrella.h */,
+				9602663518F2A0B5273750F2DB969FFF /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		110CFEB9E5C6B22A7C53E9EC5E073A91 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA7DCB12EE509ECEA2AFB8FBEDA89567 /* SegementSlide.modulemap */,
+				FA1148ED7317D4E3D1AF38254733888A /* SegementSlide.xcconfig */,
+				5AD55FB080CB1282A2DC9D41BEE5A893 /* SegementSlide-dummy.m */,
+				DA2D89B1B15D6F510BE5E8DEA945704B /* SegementSlide-Info.plist */,
+				4428BFED0D77BC9A14CC9E2C0A2C4D28 /* SegementSlide-prefix.pch */,
+				329CCF34658B9EF918588315D42208C4 /* SegementSlide-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SegementSlide";
+			sourceTree = "<group>";
+		};
+		1796F650A0EE724FF630B7D5C76484EF /* SegementSlide */ = {
+			isa = PBXGroup;
+			children = (
+				F6A9DCFE3CCA04CB337CABF46C65AC4C /* BadgeView.swift */,
+				F8498A0D7954E60324D48138B66A0FEA /* SegementSlideContentView.swift */,
+				26C5975DE5FB64AAF57CA38633F9F6EB /* SegementSlideHeaderView.swift */,
+				499542CC16F2A3F3848370F4489B4840 /* SegementSlideScrollView.swift */,
+				8A05ED3ECA85782EF76F43DCB90F347A /* SegementSlideSwitcherConfig.swift */,
+				D05213786A8E9CC0F43AEB23CBAE0DDF /* SegementSlideSwitcherView.swift */,
+				3079E40FC40B8246AF93278F1CA134ED /* SegementSlideViewController.swift */,
+				BDD0245EC407AC4D8ED0FD29FF00FC38 /* SegementSlideViewController+delegate.swift */,
+				FF261C40B403415BEBBE1F60D2721B80 /* SegementSlideViewController+ex.swift */,
+				B271E17FE2107D1C5497DC088BCAEB67 /* SegementSlideViewController+scroll.swift */,
+				36110C8BE2C3C824F6B5CBAC51EE46CF /* SegementSlideViewController+setup.swift */,
+				CEE64351E4670348DD21EA6E1C921B7F /* String+Bounding.swift */,
+				D76D8DD63A6C23D2DF1654CCF51317BE /* TransparentSlideViewController.swift */,
+				FBDD8C368939DA5ABD661106B261888E /* UIView+Constraint.swift */,
+				110CFEB9E5C6B22A7C53E9EC5E073A91 /* Support Files */,
+			);
+			name = SegementSlide;
+			path = SegementSlide;
+			sourceTree = "<group>";
+		};
+		264E35676E2FE1BF6AD2009C5ABF7CEE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				657D3FA958CBBB1C07153E376291524D /* Alamofire.modulemap */,
+				73D1EF90279836C7CCDA57851CCAADB1 /* Alamofire.xcconfig */,
+				FD5B04F5CE28684CC7C2BD46E8C8A9C1 /* Alamofire-dummy.m */,
+				976BFF922104A906B218C6F988A0250F /* Alamofire-Info.plist */,
+				BB17F8C6F9CBCD768B2FF2F7FABFEFFD /* Alamofire-prefix.pch */,
+				F576EC40C9CA2C68569B72B3D4D6FF2B /* Alamofire-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		310CEEF1F0EDA79FB1EEE1EB0D435D6A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				62359BB5DA688F4C69A2C72161FC3D19 /* AlamofireObjectMapper.modulemap */,
+				DF17A51EA72F7CC89C2D6047DE3CE94E /* AlamofireObjectMapper.xcconfig */,
+				39C090C30DDAACF14998E8D7029CE5D0 /* AlamofireObjectMapper-dummy.m */,
+				1BDCF89F8D4E513E37EEFB552EF04363 /* AlamofireObjectMapper-Info.plist */,
+				DF061521FB0E9AAE272C2D2E4E4E9A0A /* AlamofireObjectMapper-prefix.pch */,
+				AEC8A36AC2855ADD9C5C986B3D46E805 /* AlamofireObjectMapper-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AlamofireObjectMapper";
+			sourceTree = "<group>";
+		};
+		3A4AFDAC05CCDCDBC99AD3A7FFA8D5B6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EB6042687957D8682CD6D0005FB4A0F /* ScrollingFollowView.modulemap */,
+				5A824ADD4CE6795B9432B470D227CC99 /* ScrollingFollowView.xcconfig */,
+				B22E5AD6AF88B5B5296C4005AD7F84F9 /* ScrollingFollowView-dummy.m */,
+				FBDE21FB9A0D5546D56238E1F109406E /* ScrollingFollowView-Info.plist */,
+				CEFA5AD6B7B26D81254F82531799414C /* ScrollingFollowView-prefix.pch */,
+				B406FDA81C49C5242DFF2FE09772F9A3 /* ScrollingFollowView-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ScrollingFollowView";
 			sourceTree = "<group>";
 		};
-		57253937843E46AFD9030DC790CBF151 /* Products */ = {
+		47B37C640549E2BFCAC08117D59FBB09 /* ObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
-				B5A36691D8AA44A1142BD3BD98E888EE /* AMScrollingNavbar.framework */,
-				9C9060B91F8E04BBCA3D392FCA8F4905 /* Pods_MyNaverWebtoon3.framework */,
-				3DB2B9EAF0F9A5C16C098C2C0E1F2F8B /* Pods_MyNaverWebtoon3Tests.framework */,
-				CCE4C3EFD702C068767768ECEB5ED2CD /* Pods_MyNaverWebtoon3UITests.framework */,
-				5C4B8C77E62DD83A6049BD36C7C4BFC4 /* ScrollingFollowView.framework */,
-				08A6FEA45933798C0D7172A107D41F80 /* SegementSlide.framework */,
+				87FA9743D128FA9862663C8B559C2C54 /* CodableTransform.swift */,
+				73A8AEAC477E2739BD515508DAA5401F /* CustomDateFormatTransform.swift */,
+				47DF8F99C4BC7833C8174CDEEC96320D /* DataTransform.swift */,
+				20CA8E1257FBFA1634EFE2A7C2CF9582 /* DateFormatterTransform.swift */,
+				B0DA823ADCF26F061093739ABF49B784 /* DateTransform.swift */,
+				00176BBDF395CFCC22BE4604BC4450BA /* DictionaryTransform.swift */,
+				A900FA4D265CAF78A54E18380DE603A5 /* EnumOperators.swift */,
+				CEC00C6ECA2AB758C45031E6662AA88A /* EnumTransform.swift */,
+				8482CF0E5A3325E173DF8F9DA1D3E13E /* FromJSON.swift */,
+				99061FA7E78AA54911AD1AB0A00F9A70 /* HexColorTransform.swift */,
+				045B993DE95FFEFBDEA98950E691BB46 /* ImmutableMappable.swift */,
+				E655B2B101DCBE7B65D32BDEE4C82E02 /* IntegerOperators.swift */,
+				4B81A93F9BD830CA99210BCFB08C6ACB /* ISO8601DateTransform.swift */,
+				60A8C0EF02AD3CA89F549D4CDF0B255D /* Map.swift */,
+				370C8089DFE4C86E20D7EEEA5ABEB45D /* MapError.swift */,
+				C302341B20F8B2688CC69309A43B3101 /* Mappable.swift */,
+				6753BB844EE10353F53F9EF0FCB374B6 /* Mapper.swift */,
+				5C463F2B7792EDE0573ECF9F11465B57 /* NSDecimalNumberTransform.swift */,
+				A3B194CC4348CCDB85274427D09D5037 /* Operators.swift */,
+				A71803D8D128D686B2854346A7784CA2 /* ToJSON.swift */,
+				BB4CDFDD6CAF7ECD83E609BD24F09B54 /* TransformOf.swift */,
+				5E79493C337217DAEA6BE09663CAFEB0 /* TransformOperators.swift */,
+				39F800B843D0B17263C03DB94F8EC7A7 /* TransformType.swift */,
+				FA2D00CDCCA9C72EBB11093D122F81FC /* URLTransform.swift */,
+				B89EAF909BA796C083942953F09AF758 /* Support Files */,
 			);
-			name = Products;
+			name = ObjectMapper;
+			path = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		4D0AD2D251810FCEC67E6C1BA95E7883 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C33F8620DDF12B35F20EA0D13DA73C9 /* Alamofire */,
+				69C5BADD08DDA1EE7577A01F786D1661 /* AlamofireObjectMapper */,
+				636574CFF95DE0CFC9DBEC2A03FA6B30 /* AMScrollingNavbar */,
+				47B37C640549E2BFCAC08117D59FBB09 /* ObjectMapper */,
+				827F69717FB89F0D9FF7B34C50A9D09B /* ScrollingFollowView */,
+				1796F650A0EE724FF630B7D5C76484EF /* SegementSlide */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5C8CCFB11DA6D6076EE2FF7A74AE74E2 /* Pods-MyNaverWebtoon3UITests */ = {
@@ -264,14 +545,62 @@
 			path = "Target Support Files/Pods-MyNaverWebtoon3UITests";
 			sourceTree = "<group>";
 		};
-		8322DA981B15F5AD7705AC891917733D /* ScrollingFollowView */ = {
+		636574CFF95DE0CFC9DBEC2A03FA6B30 /* AMScrollingNavbar */ = {
 			isa = PBXGroup;
 			children = (
-				3A610F575C0AB71F6862CC58CCD4B370 /* ScrollingFollowView.swift */,
-				3951D6E51F746C0D836473567CCEFA5C /* Support Files */,
+				A4ACD747EE04B03ADC431BDC2985FC2D /* ScrollingNavbar+Sizes.swift */,
+				27FC584051F90D0E8452E5D4898C2443 /* ScrollingNavigationController.swift */,
+				61907B2501A3E30F2A2E1480EA5EFB78 /* ScrollingNavigationViewController.swift */,
+				CBBC60E9FB4C2F78BBF93ABA76BDABE1 /* Support Files */,
+			);
+			name = AMScrollingNavbar;
+			path = AMScrollingNavbar;
+			sourceTree = "<group>";
+		};
+		69C5BADD08DDA1EE7577A01F786D1661 /* AlamofireObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				CB0A900B5A926AC967441652BB60204B /* AlamofireObjectMapper.swift */,
+				310CEEF1F0EDA79FB1EEE1EB0D435D6A /* Support Files */,
+			);
+			name = AlamofireObjectMapper;
+			path = AlamofireObjectMapper;
+			sourceTree = "<group>";
+		};
+		827F69717FB89F0D9FF7B34C50A9D09B /* ScrollingFollowView */ = {
+			isa = PBXGroup;
+			children = (
+				E803D5ADF5B9645911ED9610660458E4 /* ScrollingFollowView.swift */,
+				3A4AFDAC05CCDCDBC99AD3A7FFA8D5B6 /* Support Files */,
 			);
 			name = ScrollingFollowView;
 			path = ScrollingFollowView;
+			sourceTree = "<group>";
+		};
+		8C33F8620DDF12B35F20EA0D13DA73C9 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				889C813FBD40DA13027AD57C8A33B501 /* AFError.swift */,
+				F8027CF22090C0A6F352D3163F333C54 /* Alamofire.swift */,
+				93BF0E8A7F77B534103332D8A08ACA4F /* DispatchQueue+Alamofire.swift */,
+				512F2507AE30A651E45234529E95316E /* MultipartFormData.swift */,
+				DAA12D7059010991F28EF9DA4F9601D9 /* NetworkReachabilityManager.swift */,
+				86D143E3658E0D8F8A9B69A37BF413A7 /* Notifications.swift */,
+				F224B67AE4AC7700A79B03AB1D2133D5 /* ParameterEncoding.swift */,
+				C7AC69AB5E93E7865C46528289DFF4B5 /* Request.swift */,
+				86FC847C2E4789BA763C7BA5FF3E7FAC /* Response.swift */,
+				AE683ACD58DB1B4E9FC54AE6BF3FCB2D /* ResponseSerialization.swift */,
+				117FD7C87F22327EA926476FB3EE2616 /* Result.swift */,
+				784DE0474EC0179E2BE34F66684D727F /* ServerTrustPolicy.swift */,
+				A398A2DE9E6EDF62387AA548A180CA80 /* SessionDelegate.swift */,
+				C435DDB5257C7BD5666217D236ECE0E4 /* SessionManager.swift */,
+				7C5392E119351EE0717A4D11E3EBA2E3 /* TaskDelegate.swift */,
+				C0E15D0CD70BC197D0D8ADFF049B3BAD /* Timeline.swift */,
+				EEFDA12C09CAD69893581508E52DC856 /* Validation.swift */,
+				264E35676E2FE1BF6AD2009C5ABF7CEE /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		936C7AE15EC788A9A419B24561FCE1FB /* Targets Support Files */ = {
@@ -284,76 +613,59 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		969CD4BF35C50043CFA3C36AB53E4DC2 /* AMScrollingNavbar */ = {
+		9D081EEEA3CF9C8F966D1996F339F3C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06079C9BA43264FCE064C2E001B83F51 /* ScrollingNavbar+Sizes.swift */,
-				84F22A5B0157398B65C9E574A2FEBFA5 /* ScrollingNavigationController.swift */,
-				F32258EF8F11BFFD0887AACE8F690B7E /* ScrollingNavigationViewController.swift */,
-				2F5818FCBE0861E2287F43A61A395B79 /* Support Files */,
+				1087323FA7028B56711D7966DC455768 /* Alamofire.framework */,
+				871409E83356BBE95BA2E65D645B4F13 /* AlamofireObjectMapper.framework */,
+				2CA49F9D716BB84F659D7F49D09266F2 /* AMScrollingNavbar.framework */,
+				01443A98DE303838DF233ED234B3F929 /* ObjectMapper.framework */,
+				7618AAAD0E1F7F5670F6ABC3501F14E9 /* Pods_MyNaverWebtoon3.framework */,
+				E0C895A349BFE30EBE8C78204C4B27F5 /* Pods_MyNaverWebtoon3Tests.framework */,
+				FC17691B0C8AE7B6CEC6C53977E6741A /* Pods_MyNaverWebtoon3UITests.framework */,
+				235457E92A3E9C16172D0CD66F31C010 /* ScrollingFollowView.framework */,
+				D756448F7044DBFCEBDF5D4221E9EA62 /* SegementSlide.framework */,
 			);
-			name = AMScrollingNavbar;
-			path = AMScrollingNavbar;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+		B89EAF909BA796C083942953F09AF758 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+				D857A511D79CE37A7DBD48BEF6AFF435 /* ObjectMapper.modulemap */,
+				29BAADDC79CDFF62CC33E59E0B0C057B /* ObjectMapper.xcconfig */,
+				B864FA5E8031FD8EC96DD2C39358D2C1 /* ObjectMapper-dummy.m */,
+				ADDF92F44F948A7E276B5C68D4A6B804 /* ObjectMapper-Info.plist */,
+				29D7D2DBD612167390EEBC28CA91A309 /* ObjectMapper-prefix.pch */,
+				E9944FB42B99EF2849CFAAA95A380F3C /* ObjectMapper-umbrella.h */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/ObjectMapper";
 			sourceTree = "<group>";
 		};
-		9F3C819010C8458C561DE799D80BC3B5 /* SegementSlide */ = {
+		CBBC60E9FB4C2F78BBF93ABA76BDABE1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B07C466388CC2DB8DF1A2B1A1AA76E59 /* BadgeView.swift */,
-				F754E6804A035EFA7595CB6157AC7DFE /* SegementSlideContentView.swift */,
-				D2C60EBC7E8AF9C9E9DA7DE5D7284188 /* SegementSlideHeaderView.swift */,
-				6E4B2BA90541519D2C73CEF959C72A2F /* SegementSlideScrollView.swift */,
-				0F5FA4BE876CF886A5EC1C6BBC3E79DF /* SegementSlideSwitcherConfig.swift */,
-				CC14BF5BD3CC23FB6273AEF043AF583D /* SegementSlideSwitcherView.swift */,
-				F74368284993D177D1CEB33B9D82E186 /* SegementSlideViewController.swift */,
-				7711156C735CFB7EE1496012A118607E /* SegementSlideViewController+delegate.swift */,
-				EA13DDB92672C6C32D5E5FDE620A64D3 /* SegementSlideViewController+ex.swift */,
-				341DCF72CD85604DB9A0E236C685786C /* SegementSlideViewController+scroll.swift */,
-				D2D3F1FB1897CD9BE68B15685022497B /* SegementSlideViewController+setup.swift */,
-				9A7328BF010FC3E0FE68693B0C070833 /* String+Bounding.swift */,
-				5A6DF74FD68CE594FB501AA79289346C /* TransparentSlideViewController.swift */,
-				05F6573CB72A9D9F71B714C13F595908 /* UIView+Constraint.swift */,
-				DA45D0DDBEA41B902F20DAA84EC9FF24 /* Support Files */,
+				61FF13FF5EFB99525C2CD64F15C69A24 /* AMScrollingNavbar.modulemap */,
+				5FF5F1531B158E2C16B9D15695C3577D /* AMScrollingNavbar.xcconfig */,
+				36AA08CE12EB0BE4AC50FA6FB5ADE5E5 /* AMScrollingNavbar-dummy.m */,
+				7B4D1DFB3B623963458D6FF685ABAFFF /* AMScrollingNavbar-Info.plist */,
+				B9E37B8DC13C315A456F313EB2069205 /* AMScrollingNavbar-prefix.pch */,
+				5E33220D013F6F65F503B775232EAC3A /* AMScrollingNavbar-umbrella.h */,
 			);
-			name = SegementSlide;
-			path = SegementSlide;
-			sourceTree = "<group>";
-		};
-		AF82F3F4A194E8AAEEDF39E270120C29 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				969CD4BF35C50043CFA3C36AB53E4DC2 /* AMScrollingNavbar */,
-				8322DA981B15F5AD7705AC891917733D /* ScrollingFollowView */,
-				9F3C819010C8458C561DE799D80BC3B5 /* SegementSlide */,
-			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/AMScrollingNavbar";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				AF82F3F4A194E8AAEEDF39E270120C29 /* Pods */,
-				57253937843E46AFD9030DC790CBF151 /* Products */,
+				03BB574D36E87959EFCAED7E9D13FF3B /* Frameworks */,
+				4D0AD2D251810FCEC67E6C1BA95E7883 /* Pods */,
+				9D081EEEA3CF9C8F966D1996F339F3C8 /* Products */,
 				936C7AE15EC788A9A419B24561FCE1FB /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D57662301F4A27F78371F8B061BD9931 /* Pods-MyNaverWebtoon3Tests */ = {
@@ -370,20 +682,6 @@
 			);
 			name = "Pods-MyNaverWebtoon3Tests";
 			path = "Target Support Files/Pods-MyNaverWebtoon3Tests";
-			sourceTree = "<group>";
-		};
-		DA45D0DDBEA41B902F20DAA84EC9FF24 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EE2F9C189150D47A9368A298D4671095 /* SegementSlide.modulemap */,
-				BF12E0C4FE463F9639E6B3A31FCC120B /* SegementSlide.xcconfig */,
-				96D750925A6D9679CE909468BB978233 /* SegementSlide-dummy.m */,
-				1DB555E5A43958ADB9318334E5541F7B /* SegementSlide-Info.plist */,
-				49E4E7BD0730BCA52FFB6529BD6D5791 /* SegementSlide-prefix.pch */,
-				79452A48B8B7F629084689FD54985A54 /* SegementSlide-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SegementSlide";
 			sourceTree = "<group>";
 		};
 		E7BE46C3AAC79BCB23F8A207D7E31152 /* Pods-MyNaverWebtoon3 */ = {
@@ -414,11 +712,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6FD9419283DBCB5FED46F91DB872654E /* Headers */ = {
+		1F45B2EC54FA2F45754F17FC6BD9196C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8F14121338626C78088109AA8795B6 /* SegementSlide-umbrella.h in Headers */,
+				633742D10D3764DD36EC0C3D7B3AD62C /* ScrollingFollowView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D70D9651451F43E7E8CC1A87B4B7E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6F6E4CC26451E91B59FAE0F6841DC1F /* Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E37DC937DFB3F72FCA3BD82C06D5A24 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B31E975DE3B310BE5461250A083B2129 /* Pods-MyNaverWebtoon3-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37143A308730B7204DFB2534AEBA5B95 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861FF6B03C102A0B417D518CEA728747 /* SegementSlide-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D5C17A42F0DEBA97F93493F069DBB8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F424C046646FE578B5BAA8AE3D30B37 /* ObjectMapper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,14 +760,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0AE523707C2282A5018A246A9777008 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				218E2C180EDCC34E9BD6BBBBB481FCDD /* ScrollingFollowView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B1E35641846D2D5C2088778A55CFE8F0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,33 +768,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C366B165F49D44781FF7051742D0622C /* Headers */ = {
+		C06C7EE22DF493D71ECAD634B8720CAD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B883DD02CDC093C9454C241DB9FFFE26 /* Pods-MyNaverWebtoon3-umbrella.h in Headers */,
+				B26DBECE911AB60775C6BE6FC6F7B5FE /* AlamofireObjectMapper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0C036644DE843B12C12F633639114E9D /* ScrollingFollowView */ = {
+		0882708950626A3ECBCB6A065347330B /* ObjectMapper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D01AB53CBC71BB1A5DF08EDB70AADAB /* Build configuration list for PBXNativeTarget "ScrollingFollowView" */;
+			buildConfigurationList = DC92ECEC653C3FB6B1248AA77F2EFE1F /* Build configuration list for PBXNativeTarget "ObjectMapper" */;
 			buildPhases = (
-				B0AE523707C2282A5018A246A9777008 /* Headers */,
-				C3DA13E6407893B014D630B3082478E1 /* Sources */,
-				E63582BFACB02D7AFE4F5F892C8AB391 /* Frameworks */,
-				7E29484A34A673C597E8CC3254DF1424 /* Resources */,
+				69D5C17A42F0DEBA97F93493F069DBB8 /* Headers */,
+				BADCAC58BB9E813BBAA077FA4F1FFD70 /* Sources */,
+				CF7B8B80CA837517DB32A5426DAEF79D /* Frameworks */,
+				E8CF32A8416A059F80976C71919B1CC2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ScrollingFollowView;
-			productName = ScrollingFollowView;
-			productReference = 5C4B8C77E62DD83A6049BD36C7C4BFC4 /* ScrollingFollowView.framework */;
+			name = ObjectMapper;
+			productName = ObjectMapper;
+			productReference = 01443A98DE303838DF233ED234B3F929 /* ObjectMapper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		30988CA34D2EAAFE8FBBB531EDFB537D /* Pods-MyNaverWebtoon3Tests */ = {
@@ -491,7 +813,45 @@
 			);
 			name = "Pods-MyNaverWebtoon3Tests";
 			productName = "Pods-MyNaverWebtoon3Tests";
-			productReference = 3DB2B9EAF0F9A5C16C098C2C0E1F2F8B /* Pods_MyNaverWebtoon3Tests.framework */;
+			productReference = E0C895A349BFE30EBE8C78204C4B27F5 /* Pods_MyNaverWebtoon3Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3383968E74B5371B20BB519B170DC7FD /* Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E87124444A44B7DB55208E7FEC21D331 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildPhases = (
+				23D70D9651451F43E7E8CC1A87B4B7E9 /* Headers */,
+				A1C8B029F600160149A2404C342F6E50 /* Sources */,
+				F1626ADC3A7EC435D2722B3173355D36 /* Frameworks */,
+				28FF73341543B6F0A7DF3C20CFFEA0AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = 1087323FA7028B56711D7966DC455768 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		743E4A349913BA26BF7AEE81D0D0DC34 /* AlamofireObjectMapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5B09037E2CFCEEB926424362BEE6E38 /* Build configuration list for PBXNativeTarget "AlamofireObjectMapper" */;
+			buildPhases = (
+				C06C7EE22DF493D71ECAD634B8720CAD /* Headers */,
+				2BC98BF8C4E14B3FB83458135CCFCFF9 /* Sources */,
+				45ED8B159A97749309D4BE4C9C29C665 /* Frameworks */,
+				2509AD9B738598E845F816F9D7113C6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3155D3CEB59D4A6B616692A447046BAF /* PBXTargetDependency */,
+				DA9C863ED9905AD7ACD4A26C10D28515 /* PBXTargetDependency */,
+			);
+			name = AlamofireObjectMapper;
+			productName = AlamofireObjectMapper;
+			productReference = 871409E83356BBE95BA2E65D645B4F13 /* AlamofireObjectMapper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		91D67B3A6573E4DAF1942115FCACA995 /* AMScrollingNavbar */ = {
@@ -509,7 +869,7 @@
 			);
 			name = AMScrollingNavbar;
 			productName = AMScrollingNavbar;
-			productReference = B5A36691D8AA44A1142BD3BD98E888EE /* AMScrollingNavbar.framework */;
+			productReference = 2CA49F9D716BB84F659D7F49D09266F2 /* AMScrollingNavbar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		98E5CD50F513FD84A44C574DC3127D30 /* Pods-MyNaverWebtoon3UITests */ = {
@@ -528,17 +888,17 @@
 			);
 			name = "Pods-MyNaverWebtoon3UITests";
 			productName = "Pods-MyNaverWebtoon3UITests";
-			productReference = CCE4C3EFD702C068767768ECEB5ED2CD /* Pods_MyNaverWebtoon3UITests.framework */;
+			productReference = FC17691B0C8AE7B6CEC6C53977E6741A /* Pods_MyNaverWebtoon3UITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B11B683425BF0242A4BA9473D54DF3DD /* SegementSlide */ = {
+		9CDD646068377E9B091B68A14559D58B /* SegementSlide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 603B25DED62DB9983CCBA00ED9DEE5D1 /* Build configuration list for PBXNativeTarget "SegementSlide" */;
+			buildConfigurationList = D832960CC677B04AE6DF5EFFEEFAECC3 /* Build configuration list for PBXNativeTarget "SegementSlide" */;
 			buildPhases = (
-				6FD9419283DBCB5FED46F91DB872654E /* Headers */,
-				0C7A0B94825B4025B1A2C82C8A111DB4 /* Sources */,
-				7F005A9AC417037BB0243C082BDF603F /* Frameworks */,
-				7250B3B63A44ECBA890E4F90A44289F0 /* Resources */,
+				37143A308730B7204DFB2534AEBA5B95 /* Headers */,
+				4F0AAFAECA80144569808396722943EB /* Sources */,
+				D896D41BF1AA3A878EA1904BC96A108F /* Frameworks */,
+				634C273B2488E2578986FB5DF232C6DA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -546,28 +906,49 @@
 			);
 			name = SegementSlide;
 			productName = SegementSlide;
-			productReference = 08A6FEA45933798C0D7172A107D41F80 /* SegementSlide.framework */;
+			productReference = D756448F7044DBFCEBDF5D4221E9EA62 /* SegementSlide.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D4E04C3E1798FE78CC6966FA1C1920FF /* Pods-MyNaverWebtoon3 */ = {
+		A77FBC25BDB2AD19365395F58607806A /* ScrollingFollowView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD9A15F0EA8D72E15CFD853887EC0668 /* Build configuration list for PBXNativeTarget "Pods-MyNaverWebtoon3" */;
+			buildConfigurationList = C041E23D3B76394B71C14465F14CE6FC /* Build configuration list for PBXNativeTarget "ScrollingFollowView" */;
 			buildPhases = (
-				C366B165F49D44781FF7051742D0622C /* Headers */,
-				47E0EF345291CBB9DFC87222B4F89BD9 /* Sources */,
-				EBCC6AAAFC965F70A2EDE7CF5F0D7209 /* Frameworks */,
-				634F109295AA88C2D48BB12A48464458 /* Resources */,
+				1F45B2EC54FA2F45754F17FC6BD9196C /* Headers */,
+				E49CDE9C8D12F2058454B4FCF5DF2D83 /* Sources */,
+				EDEEB5C2D23E4F27458B6F79B1984CD2 /* Frameworks */,
+				1D553B0ACD6F936FF0BDD6496B402C70 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4A1EDAC9BDAABF00F46A4E9E1B827B52 /* PBXTargetDependency */,
-				900CDF7A30B0302A6462CAB96B310DA7 /* PBXTargetDependency */,
-				56B7EA542DD0E13A5DBD00EBDED01C6B /* PBXTargetDependency */,
+			);
+			name = ScrollingFollowView;
+			productName = ScrollingFollowView;
+			productReference = 235457E92A3E9C16172D0CD66F31C010 /* ScrollingFollowView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C43963D41C55B552D6B46A28E91E6332 /* Pods-MyNaverWebtoon3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F403A52D660CF2F076C4DA0F5E46059B /* Build configuration list for PBXNativeTarget "Pods-MyNaverWebtoon3" */;
+			buildPhases = (
+				2E37DC937DFB3F72FCA3BD82C06D5A24 /* Headers */,
+				2630B5BA3D1F94F460EA9C6B8C815906 /* Sources */,
+				2C73B04071A984E83078FF5E1D8AC483 /* Frameworks */,
+				4F8A8FAA5CAB76958D70DC9748C2EF0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFCA01933AB1BA297D40E1E5D9885C43 /* PBXTargetDependency */,
+				21202F44DDD65275F4DB88CE00BD1455 /* PBXTargetDependency */,
+				E8A3ADEAFB4D827D90ED7451EB85B86D /* PBXTargetDependency */,
+				A782AE8C4259FD3F36A6759B5CDB39F4 /* PBXTargetDependency */,
+				A4C112309AC2953EC5938EDD50237A7B /* PBXTargetDependency */,
+				B3ACAF922480D76C4720C76D2342BA74 /* PBXTargetDependency */,
 			);
 			name = "Pods-MyNaverWebtoon3";
 			productName = "Pods-MyNaverWebtoon3";
-			productReference = 9C9060B91F8E04BBCA3D392FCA8F4905 /* Pods_MyNaverWebtoon3.framework */;
+			productReference = 7618AAAD0E1F7F5670F6ABC3501F14E9 /* Pods_MyNaverWebtoon3.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -587,21 +968,45 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 57253937843E46AFD9030DC790CBF151 /* Products */;
+			productRefGroup = 9D081EEEA3CF9C8F966D1996F339F3C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				3383968E74B5371B20BB519B170DC7FD /* Alamofire */,
+				743E4A349913BA26BF7AEE81D0D0DC34 /* AlamofireObjectMapper */,
 				91D67B3A6573E4DAF1942115FCACA995 /* AMScrollingNavbar */,
-				D4E04C3E1798FE78CC6966FA1C1920FF /* Pods-MyNaverWebtoon3 */,
+				0882708950626A3ECBCB6A065347330B /* ObjectMapper */,
+				C43963D41C55B552D6B46A28E91E6332 /* Pods-MyNaverWebtoon3 */,
 				30988CA34D2EAAFE8FBBB531EDFB537D /* Pods-MyNaverWebtoon3Tests */,
 				98E5CD50F513FD84A44C574DC3127D30 /* Pods-MyNaverWebtoon3UITests */,
-				0C036644DE843B12C12F633639114E9D /* ScrollingFollowView */,
-				B11B683425BF0242A4BA9473D54DF3DD /* SegementSlide */,
+				A77FBC25BDB2AD19365395F58607806A /* ScrollingFollowView */,
+				9CDD646068377E9B091B68A14559D58B /* SegementSlide */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D553B0ACD6F936FF0BDD6496B402C70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2509AD9B738598E845F816F9D7113C6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28FF73341543B6F0A7DF3C20CFFEA0AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		339C14ACE8562736BF8DE21F375262E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,21 +1014,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		634F109295AA88C2D48BB12A48464458 /* Resources */ = {
+		4F8A8FAA5CAB76958D70DC9748C2EF0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7250B3B63A44ECBA890E4F90A44289F0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E29484A34A673C597E8CC3254DF1424 /* Resources */ = {
+		634C273B2488E2578986FB5DF232C6DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -631,6 +1029,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D0AD9EA3C9A80D90A06E3DD3734E2DF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8CF32A8416A059F80976C71919B1CC2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -647,33 +1052,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0C7A0B94825B4025B1A2C82C8A111DB4 /* Sources */ = {
+		2630B5BA3D1F94F460EA9C6B8C815906 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A67ACDD8992432660A2E312EDEFC13E /* BadgeView.swift in Sources */,
-				979490C402D31784A4E3F9DE5EA19D44 /* SegementSlide-dummy.m in Sources */,
-				B162324D1E57144B6C22CA7B3C22B032 /* SegementSlideContentView.swift in Sources */,
-				BD7390A95B487583D2056DFF2FA572CE /* SegementSlideHeaderView.swift in Sources */,
-				638E43AC005EFA3A0C6571C39A2F1988 /* SegementSlideScrollView.swift in Sources */,
-				F742BB505987990D9D9354D168442746 /* SegementSlideSwitcherConfig.swift in Sources */,
-				E546D81E346BFA970D8B481B51E392B1 /* SegementSlideSwitcherView.swift in Sources */,
-				EABEED1B47E95B287F69D4732CBFCF8E /* SegementSlideViewController+delegate.swift in Sources */,
-				B4A5C896DD4A5E57401B97F521916903 /* SegementSlideViewController+ex.swift in Sources */,
-				CC2D59DECCFC414FA71651977037761F /* SegementSlideViewController+scroll.swift in Sources */,
-				DECCDB75AC88853C4AF4F3479EB42104 /* SegementSlideViewController+setup.swift in Sources */,
-				F2A2883DD30E0FC0FA9EF3EF055EEF21 /* SegementSlideViewController.swift in Sources */,
-				92612108ECF020AB658AEA7A5BBC84B0 /* String+Bounding.swift in Sources */,
-				82049D9954957D87D9EAF54E013559B3 /* TransparentSlideViewController.swift in Sources */,
-				5573E2F2A5F8917E3B5DFC7E89F9FFD6 /* UIView+Constraint.swift in Sources */,
+				8983D08B436178AB4569EB3C2BCC9D00 /* Pods-MyNaverWebtoon3-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47E0EF345291CBB9DFC87222B4F89BD9 /* Sources */ = {
+		2BC98BF8C4E14B3FB83458135CCFCFF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3733314D596051C8440007D536701BFE /* Pods-MyNaverWebtoon3-dummy.m in Sources */,
+				9FDB93E1D2AB4FCC476B39B6C178CE6D /* AlamofireObjectMapper-dummy.m in Sources */,
+				7379A39BC638AEA0AA074DCA25AA47FC /* AlamofireObjectMapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0AAFAECA80144569808396722943EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C0F22E95A2CB3CD72F74911B94FBD2 /* BadgeView.swift in Sources */,
+				F4055B61D4A28904B9674234C8B7A800 /* SegementSlide-dummy.m in Sources */,
+				F0097565891882724729F966E1FE6853 /* SegementSlideContentView.swift in Sources */,
+				CF765F27D6E6A6B745CB2713C967779C /* SegementSlideHeaderView.swift in Sources */,
+				CC354BAD404E8AC1817B85DC9117D95F /* SegementSlideScrollView.swift in Sources */,
+				434CABD0AF808B00BFFE7F65414F9D5E /* SegementSlideSwitcherConfig.swift in Sources */,
+				BEF73CE444CA0AC7DC935A4164DF96D9 /* SegementSlideSwitcherView.swift in Sources */,
+				BEFE6E05E9CC6FCAAFFCEE20E7EA6EE4 /* SegementSlideViewController+delegate.swift in Sources */,
+				94DD2B64AA2E8A0B2C644178164F6EB9 /* SegementSlideViewController+ex.swift in Sources */,
+				B733C858DAC293B438561C23EBA6DF22 /* SegementSlideViewController+scroll.swift in Sources */,
+				C082C780FE3453D53849D479541DCC1C /* SegementSlideViewController+setup.swift in Sources */,
+				15E80A85DD6C67995A038861797A10CE /* SegementSlideViewController.swift in Sources */,
+				5C290631BEF274E1AC237154D06033A2 /* String+Bounding.swift in Sources */,
+				E8AC6613B103B56298FF812F11F1B6B6 /* TransparentSlideViewController.swift in Sources */,
+				0BCB6A36F6091BFFEC1AA7AB23A77444 /* UIView+Constraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +1102,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1C8B029F600160149A2404C342F6E50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3538A6992A38276764936A9733493D /* AFError.swift in Sources */,
+				772911DA6E33D1CBBC30131B7C8BDBB3 /* Alamofire-dummy.m in Sources */,
+				0A39AF55285A3A4F7CBABB6D822FA4A3 /* Alamofire.swift in Sources */,
+				3E0749AF6C51BCF0E4A41CF1D6A76FED /* DispatchQueue+Alamofire.swift in Sources */,
+				AEA829AB1A8AF2AD077A808AED6B178A /* MultipartFormData.swift in Sources */,
+				73AB05789A4982944AF68DBD013E3EB7 /* NetworkReachabilityManager.swift in Sources */,
+				1D29D2ACADF961F69D32B06FA6A09E28 /* Notifications.swift in Sources */,
+				700D3D95AF9520CB227846DFD943A2DA /* ParameterEncoding.swift in Sources */,
+				355C18EEC82624A06A6CC93965258E33 /* Request.swift in Sources */,
+				059D92B7BBFBEC53E9A3B6E11C5C3B3A /* Response.swift in Sources */,
+				6EFD003458AE7F689DEA720A2030C261 /* ResponseSerialization.swift in Sources */,
+				EB0DD8CEA1A69867A30267439C970440 /* Result.swift in Sources */,
+				8D2A6A90A6DDAF75EA52D471258545CC /* ServerTrustPolicy.swift in Sources */,
+				A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */,
+				D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */,
+				77E8F0EB9FFBE2E3EB0C77095C644606 /* TaskDelegate.swift in Sources */,
+				60B6C2A003864AAD3A426448152F67BE /* Timeline.swift in Sources */,
+				AA56769D8733D3F3E7976742D5ABA998 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAD0F312DB72B39299C5B09BD373914C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,12 +1135,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3DA13E6407893B014D630B3082478E1 /* Sources */ = {
+		BADCAC58BB9E813BBAA077FA4F1FFD70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC8E930EBE1E2EC4B2B4C2C7E3D13CF /* ScrollingFollowView-dummy.m in Sources */,
-				AF986B0FB3ED68FD7570708A97A3F976 /* ScrollingFollowView.swift in Sources */,
+				1FE848F3B55196B7E9AF9A0A60A8858D /* CodableTransform.swift in Sources */,
+				991BD190737B8F4F6BA3EE4E1F79A050 /* CustomDateFormatTransform.swift in Sources */,
+				46D2B00CB67EFC58897132DDD7035FCF /* DataTransform.swift in Sources */,
+				12DDF5D318C9D3751C849911AEC01252 /* DateFormatterTransform.swift in Sources */,
+				D331786C87892C26B432086A93BB6634 /* DateTransform.swift in Sources */,
+				E6DE03E3E1E37473B26BDB3B302A0D2D /* DictionaryTransform.swift in Sources */,
+				760AA26FB53D5C927B5C125845C50BB1 /* EnumOperators.swift in Sources */,
+				8CCDCE25A6246A1829FFC0745F48459F /* EnumTransform.swift in Sources */,
+				DF8309B711A4635FD438BF1F8C2D494B /* FromJSON.swift in Sources */,
+				E9EEAA672984812FFBF3CBA15826BB6F /* HexColorTransform.swift in Sources */,
+				B3CD844F6AB8701256B0931EAC4780DD /* ImmutableMappable.swift in Sources */,
+				FD7578F183AA83B2949887C4C1EADF76 /* IntegerOperators.swift in Sources */,
+				6747171D3A39E70D1C7A83325AAA0589 /* ISO8601DateTransform.swift in Sources */,
+				F562EBBB71DFA269B42FD4D8E0BACC35 /* Map.swift in Sources */,
+				D1EBE884C11FF785A91711AF378CAA16 /* MapError.swift in Sources */,
+				EC3217AEA6906A7EC227471D29EE5093 /* Mappable.swift in Sources */,
+				A1F0EC361B7E6719A92C899459A44D5A /* Mapper.swift in Sources */,
+				AC8143A6AFC14DC3F0338EF36445BF38 /* NSDecimalNumberTransform.swift in Sources */,
+				E303598CA94725108F75FBC0253E7C0E /* ObjectMapper-dummy.m in Sources */,
+				FB2FF2FBF0AE83FF31DE1B6B6D08DF59 /* Operators.swift in Sources */,
+				912AA912DC5113A3F4C4DBDCBF2FC639 /* ToJSON.swift in Sources */,
+				87646781F3CA197B0FADF65A73F36CDD /* TransformOf.swift in Sources */,
+				4185FE9A95B12CC0D37F69E0218B4430 /* TransformOperators.swift in Sources */,
+				CEC9BB6496ACA4458CBDAC895780E692 /* TransformType.swift in Sources */,
+				FDD25EFD99DD6732AE1BE5F3F0036505 /* URLTransform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,38 +1175,77 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E49CDE9C8D12F2058454B4FCF5DF2D83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0440733D653C499058567323B2C5AF8 /* ScrollingFollowView-dummy.m in Sources */,
+				EBFACE2E09C3566B22E309C5162B97BA /* ScrollingFollowView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4A1EDAC9BDAABF00F46A4E9E1B827B52 /* PBXTargetDependency */ = {
+		21202F44DDD65275F4DB88CE00BD1455 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = AMScrollingNavbar;
-			target = 91D67B3A6573E4DAF1942115FCACA995 /* AMScrollingNavbar */;
-			targetProxy = 2A47F98F249944727BAA626A1786B641 /* PBXContainerItemProxy */;
+			name = Alamofire;
+			target = 3383968E74B5371B20BB519B170DC7FD /* Alamofire */;
+			targetProxy = C059B88FB59639D62FAC402DC8A2F70B /* PBXContainerItemProxy */;
 		};
-		56B7EA542DD0E13A5DBD00EBDED01C6B /* PBXTargetDependency */ = {
+		3155D3CEB59D4A6B616692A447046BAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SegementSlide;
-			target = B11B683425BF0242A4BA9473D54DF3DD /* SegementSlide */;
-			targetProxy = 30E9196AA2B3C7BBE48A3122AA3226AF /* PBXContainerItemProxy */;
+			name = Alamofire;
+			target = 3383968E74B5371B20BB519B170DC7FD /* Alamofire */;
+			targetProxy = 9F95E621710F4B7EBD56B83C134F6AD5 /* PBXContainerItemProxy */;
 		};
-		900CDF7A30B0302A6462CAB96B310DA7 /* PBXTargetDependency */ = {
+		A4C112309AC2953EC5938EDD50237A7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ScrollingFollowView;
-			target = 0C036644DE843B12C12F633639114E9D /* ScrollingFollowView */;
-			targetProxy = 01E5C45917B578EC3FA7A985D0ABF7D0 /* PBXContainerItemProxy */;
+			target = A77FBC25BDB2AD19365395F58607806A /* ScrollingFollowView */;
+			targetProxy = 5A9FF4DB7450D5F5A9B135E67A4ED97B /* PBXContainerItemProxy */;
+		};
+		A782AE8C4259FD3F36A6759B5CDB39F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectMapper;
+			target = 0882708950626A3ECBCB6A065347330B /* ObjectMapper */;
+			targetProxy = A73BCD5580C1E99FF7B2E9305480CADD /* PBXContainerItemProxy */;
 		};
 		AF81A4BA1063F0E34430E48127AB15B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MyNaverWebtoon3";
-			target = D4E04C3E1798FE78CC6966FA1C1920FF /* Pods-MyNaverWebtoon3 */;
+			target = C43963D41C55B552D6B46A28E91E6332 /* Pods-MyNaverWebtoon3 */;
 			targetProxy = EA8247324688BC1568ADB13033104282 /* PBXContainerItemProxy */;
+		};
+		B3ACAF922480D76C4720C76D2342BA74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SegementSlide;
+			target = 9CDD646068377E9B091B68A14559D58B /* SegementSlide */;
+			targetProxy = 7C201395E9B8264141DEEE18C1379482 /* PBXContainerItemProxy */;
+		};
+		DA9C863ED9905AD7ACD4A26C10D28515 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectMapper;
+			target = 0882708950626A3ECBCB6A065347330B /* ObjectMapper */;
+			targetProxy = E63485A32F51F54076553D54B3F94444 /* PBXContainerItemProxy */;
 		};
 		DB9E16F1C8A1425BC09A1F20D4640051 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MyNaverWebtoon3";
-			target = D4E04C3E1798FE78CC6966FA1C1920FF /* Pods-MyNaverWebtoon3 */;
+			target = C43963D41C55B552D6B46A28E91E6332 /* Pods-MyNaverWebtoon3 */;
 			targetProxy = 0862A9804F5B29322C7E035E88371A18 /* PBXContainerItemProxy */;
+		};
+		DFCA01933AB1BA297D40E1E5D9885C43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AMScrollingNavbar;
+			target = 91D67B3A6573E4DAF1942115FCACA995 /* AMScrollingNavbar */;
+			targetProxy = 0EFFBCC7759582B48FE29B2A7689FD2D /* PBXContainerItemProxy */;
+		};
+		E8A3ADEAFB4D827D90ED7451EB85B86D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlamofireObjectMapper;
+			target = 743E4A349913BA26BF7AEE81D0D0DC34 /* AlamofireObjectMapper */;
+			targetProxy = 96CF016460DD868DF1A4D8AF397941B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -785,6 +1286,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		0661ADF27034244673BC9D454193698F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF17A51EA72F7CC89C2D6047DE3CE94E /* AlamofireObjectMapper.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AlamofireObjectMapper/AlamofireObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AlamofireObjectMapper/AlamofireObjectMapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AlamofireObjectMapper/AlamofireObjectMapper.modulemap";
+				PRODUCT_MODULE_NAME = AlamofireObjectMapper;
+				PRODUCT_NAME = AlamofireObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		07488D4657FB0A78086563621D425F8A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -850,6 +1387,114 @@
 			};
 			name = Debug;
 		};
+		1828B2CFA60046054C21FB9606384D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF17A51EA72F7CC89C2D6047DE3CE94E /* AlamofireObjectMapper.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AlamofireObjectMapper/AlamofireObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AlamofireObjectMapper/AlamofireObjectMapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AlamofireObjectMapper/AlamofireObjectMapper.modulemap";
+				PRODUCT_MODULE_NAME = AlamofireObjectMapper;
+				PRODUCT_NAME = AlamofireObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1B94799A282C6D1638014E601C0F6326 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6A91363C00A775E150EC612538258E7 /* Pods-MyNaverWebtoon3.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1D256AFAD8F18BF1F1E48B504377A4B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29BAADDC79CDFF62CC33E59E0B0C057B /* ObjectMapper.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				PRODUCT_MODULE_NAME = ObjectMapper;
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		238E02088EDA0718AAD869B8921A2817 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29EBC8AB5651D38DD60583A942DA1F87 /* Pods-MyNaverWebtoon3UITests.debug.xcconfig */;
@@ -887,9 +1532,47 @@
 			};
 			name = Debug;
 		};
-		39648524D371D9A25D3E7096400DCC4A /* Debug */ = {
+		428C33E42C0D0170F1D72167D432C46D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BF380780708B0400D620371A5828347 /* ScrollingFollowView.xcconfig */;
+			baseConfigurationReference = EECEBE39082EB6E8D8BC1D389519D741 /* Pods-MyNaverWebtoon3.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		53F579EB33F69E2357E748B5E9CF12D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29BAADDC79CDFF62CC33E59E0B0C057B /* ObjectMapper.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -900,8 +1583,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollingFollowView/ScrollingFollowView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -909,9 +1592,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView.modulemap";
-				PRODUCT_MODULE_NAME = ScrollingFollowView;
-				PRODUCT_NAME = ScrollingFollowView;
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				PRODUCT_MODULE_NAME = ObjectMapper;
+				PRODUCT_NAME = ObjectMapper;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -960,44 +1643,9 @@
 			};
 			name = Release;
 		};
-		78862F3ADA802BC754B9CB49A47A73D4 /* Debug */ = {
+		5E573D3E46123FB3ACABBE71AF64AAC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CF84762910C4D3999D76708E7F66837 /* AMScrollingNavbar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar.modulemap";
-				PRODUCT_MODULE_NAME = AMScrollingNavbar;
-				PRODUCT_NAME = AMScrollingNavbar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		92E0AB5891BC5A70E13F828C20DF6794 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF12E0C4FE463F9639E6B3A31FCC120B /* SegementSlide.xcconfig */;
+			baseConfigurationReference = FA1148ED7317D4E3D1AF38254733888A /* SegementSlide.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1030,6 +1678,148 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		78862F3ADA802BC754B9CB49A47A73D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FF5F1531B158E2C16B9D15695C3577D /* AMScrollingNavbar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar.modulemap";
+				PRODUCT_MODULE_NAME = AMScrollingNavbar;
+				PRODUCT_NAME = AMScrollingNavbar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		87FDF447AAB1FB0648071C18C180F82B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A824ADD4CE6795B9432B470D227CC99 /* ScrollingFollowView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollingFollowView/ScrollingFollowView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView.modulemap";
+				PRODUCT_MODULE_NAME = ScrollingFollowView;
+				PRODUCT_NAME = ScrollingFollowView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		91B80E9E3949DC43CD3029E02DC91053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A824ADD4CE6795B9432B470D227CC99 /* ScrollingFollowView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollingFollowView/ScrollingFollowView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView.modulemap";
+				PRODUCT_MODULE_NAME = ScrollingFollowView;
+				PRODUCT_NAME = ScrollingFollowView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9CF36E6AA46D597086D835E1724A4D87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73D1EF90279836C7CCDA57851CCAADB1 /* Alamofire.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		A1962E6FF39BBAC201A2E5DDF99557DF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1091,45 +1881,9 @@
 			};
 			name = Release;
 		};
-		B3FC7D4DCBC9707B6FE8EFDEBD176625 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BF380780708B0400D620371A5828347 /* ScrollingFollowView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollingFollowView/ScrollingFollowView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ScrollingFollowView/ScrollingFollowView.modulemap";
-				PRODUCT_MODULE_NAME = ScrollingFollowView;
-				PRODUCT_NAME = ScrollingFollowView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		B4281E1F1335AADAE091FD163DE2AA93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CF84762910C4D3999D76708E7F66837 /* AMScrollingNavbar.xcconfig */;
+			baseConfigurationReference = 5FF5F1531B158E2C16B9D15695C3577D /* AMScrollingNavbar.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1163,11 +1917,10 @@
 			};
 			name = Release;
 		};
-		C7944DE8520DB36A5F9CAFD453C64AA6 /* Release */ = {
+		B914025A518B53556696F19D8D477057 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EECEBE39082EB6E8D8BC1D389519D741 /* Pods-MyNaverWebtoon3.release.xcconfig */;
+			baseConfigurationReference = 73D1EF90279836C7CCDA57851CCAADB1 /* Alamofire.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1177,33 +1930,31 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		D2A5090C99270EFA8A7EDF9F8DA0AF7E /* Release */ = {
+		D96817922024B2D4EBBB7B3D062832C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF12E0C4FE463F9639E6B3A31FCC120B /* SegementSlide.xcconfig */;
+			baseConfigurationReference = FA1148ED7317D4E3D1AF38254733888A /* SegementSlide.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1237,43 +1988,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		E176C70DA324603EB6419BEA2612BEC1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6A91363C00A775E150EC612538258E7 /* Pods-MyNaverWebtoon3.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MyNaverWebtoon3/Pods-MyNaverWebtoon3.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		FCA33280CE3B2D4D598384DE84C2F20E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1325,29 +2039,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D01AB53CBC71BB1A5DF08EDB70AADAB /* Build configuration list for PBXNativeTarget "ScrollingFollowView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				39648524D371D9A25D3E7096400DCC4A /* Debug */,
-				B3FC7D4DCBC9707B6FE8EFDEBD176625 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07488D4657FB0A78086563621D425F8A /* Debug */,
 				A1962E6FF39BBAC201A2E5DDF99557DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		603B25DED62DB9983CCBA00ED9DEE5D1 /* Build configuration list for PBXNativeTarget "SegementSlide" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				92E0AB5891BC5A70E13F828C20DF6794 /* Debug */,
-				D2A5090C99270EFA8A7EDF9F8DA0AF7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1361,11 +2057,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD9A15F0EA8D72E15CFD853887EC0668 /* Build configuration list for PBXNativeTarget "Pods-MyNaverWebtoon3" */ = {
+		C041E23D3B76394B71C14465F14CE6FC /* Build configuration list for PBXNativeTarget "ScrollingFollowView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E176C70DA324603EB6419BEA2612BEC1 /* Debug */,
-				C7944DE8520DB36A5F9CAFD453C64AA6 /* Release */,
+				91B80E9E3949DC43CD3029E02DC91053 /* Debug */,
+				87FDF447AAB1FB0648071C18C180F82B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5B09037E2CFCEEB926424362BEE6E38 /* Build configuration list for PBXNativeTarget "AlamofireObjectMapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1828B2CFA60046054C21FB9606384D45 /* Debug */,
+				0661ADF27034244673BC9D454193698F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D832960CC677B04AE6DF5EFFEEFAECC3 /* Build configuration list for PBXNativeTarget "SegementSlide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E573D3E46123FB3ACABBE71AF64AAC2 /* Debug */,
+				D96817922024B2D4EBBB7B3D062832C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC92ECEC653C3FB6B1248AA77F2EFE1F /* Build configuration list for PBXNativeTarget "ObjectMapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F579EB33F69E2357E748B5E9CF12D5 /* Debug */,
+				1D256AFAD8F18BF1F1E48B504377A4B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1375,6 +2098,24 @@
 			buildConfigurations = (
 				238E02088EDA0718AAD869B8921A2817 /* Debug */,
 				FCA33280CE3B2D4D598384DE84C2F20E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E87124444A44B7DB55208E7FEC21D331 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B914025A518B53556696F19D8D477057 /* Debug */,
+				9CF36E6AA46D597086D835E1724A4D87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F403A52D660CF2F076C4DA0F5E46059B /* Build configuration list for PBXNativeTarget "Pods-MyNaverWebtoon3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B94799A282C6D1638014E601C0F6326 /* Debug */,
+				428C33E42C0D0170F1D72167D432C46D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
