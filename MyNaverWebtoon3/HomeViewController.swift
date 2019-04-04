@@ -9,37 +9,48 @@
 import UIKit
 import SegementSlide
 
-class HomeViewController: SegementSlideViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    var collectionview: UICollectionView!
-    var cellId = "CollectionViewCell"
-    
- 
+var collectionviewMon: UICollectionView!
+var collectionviewTue: UICollectionView!
+var cellId = "CollectionViewCell"
+class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
     
+    //var cellId = "CollectionViewCell"
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-        if let label = cell.contentView.subviews.first as? UILabel {
-            label.text = "\(indexPath.row + 1)"
-            label.textColor = UIColor(red: 0.45, green: 0.35, blue: 0.35, alpha: 1)
+        
+        //guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? ToDoCell else {print("error")
+        //    return UITableViewCell() }
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? CollectionViewCell else {print("error")
+            return UICollectionViewCell()
         }
+        cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+        cell.label?.text = "\(indexPath.row + 1)"
+        cell.label?.text = "1231"
+        cell.label?.textColor = UIColor(red: 0.45, green: 0.35, blue: 0.35, alpha: 1)
+            print("label text : ", cell.label?.text)
+        print(indexPath.row)
         return cell
     }
+ 
+    
+    
+    
     override var headerHeight: CGFloat? {
         return view.bounds.height/10
     }
     
     override var headerView: UIView? {
+        //self.headerView?.backgroundColor = .black
         return UIView()
     }
     
     override var titlesInSwitcher: [String] {
-        return ["Swift", "Ruby", "Kotlin"]
+        return ["월","화","수","목","금","토","일","신작","완결"]
     }
     
     override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
@@ -50,53 +61,37 @@ class HomeViewController: SegementSlideViewController, UICollectionViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollToSlide(at: 0, animated: false)
+        print("dddd")
         
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = 1;
-        flowLayout.minimumLineSpacing = 1;
-        let cellSize = (CGFloat.minimum(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) - 2) / 3;
-        flowLayout.itemSize = CGSize(width: cellSize, height: cellSize)
-        flowLayout.scrollDirection = .vertical
-        collectionview?.collectionViewLayout = flowLayout
-        
-        
-        
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        layout.itemSize = CGSize(width: view.frame.width, height: 700)
-//
-        collectionview = UICollectionView(frame: self.slideScrollView.frame, collectionViewLayout: flowLayout)
-        collectionview.dataSource = self
-        collectionview.delegate = self
-        collectionview.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionview.showsVerticalScrollIndicator = false
-        collectionview.backgroundColor = UIColor.white
         
         reloadData()
-
         
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 1;
+        layout.minimumLineSpacing = 1;
+        let cellSize = (CGFloat.minimum(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) - 2) / 3;
+        layout.itemSize = CGSize(width: cellSize, height: cellSize)
+        layout.scrollDirection = .vertical
+        collectionviewMon?.collectionViewLayout = layout
+        
+        collectionviewMon = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionviewMon.delegate = self
+        collectionviewMon.dataSource = self
+        collectionviewMon.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionviewMon.backgroundColor = UIColor.white
+        self.slideContentView.addSubview(collectionviewMon)
+        //print(collectionviewMon)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
 
-class ContentViewController: UICollectionViewController, SegementSlideContentScrollViewDelegate {
-    var collectionview: UICollectionView!
-    
-    
+class ContentViewController: UITableViewController, SegementSlideContentScrollViewDelegate  {
+    //var collectionviewMon: UICollectionView!
     @objc var scrollView: UIScrollView {
-        return collectionview
+        print("scrolled")
+        return collectionviewMon
     }
 }
+
+
