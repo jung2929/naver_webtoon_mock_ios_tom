@@ -12,8 +12,11 @@ import SegementSlide
 var collectionviewMon: UICollectionView!
 var collectionviewTue: UICollectionView!
 var cellId = "CollectionViewCell"
+
+
 class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var tabView: UIView!
     
     //var cellId = "CollectionViewCell"
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -24,19 +27,17 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
         
         //guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? ToDoCell else {print("error")
         //    return UITableViewCell() }
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? CollectionViewCell else {print("error")
             return UICollectionViewCell()
         }
         cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         //cell.label.frame =
         //cell.label?.text = "\(indexPath.row + 1)"
-        cell.label?.text = "1231"
-        cell.textLabel = "asdf"
-        cell.label?.textColor = UIColor(red: 0.45, green: 0.35, blue: 0.35, alpha: 1)
-            print("label text : ", cell.label?.text)
+        cell.nameLabel.text = "작가명"
+        //cell.label?.textColor = UIColor(red: 0.45, green: 0.35, blue: 0.35, alpha: 1)
+        //    print("label text : ", cell.label?.text)
         print(indexPath.row)
-        print(cell.textLabel)
+        //print(cell.textLabel)
         return cell
     }
  
@@ -84,17 +85,39 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
         collectionviewMon.backgroundColor = UIColor.white
         self.slideContentView.addSubview(collectionviewMon)
         //print(collectionviewMon)
+        //tabView.addSubview(slideContentView)
+        //self.slideContentView.addSubview(tabView)
+        self.view.bringSubviewToFront(tabView)
+        self.navigationController?.isToolbarHidden = true
+        self.tabBarController?.delegate = (self as! UITabBarControllerDelegate)
+        print(tabView)
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+    }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        if scrollView.contentOffset.y == 0 {
+            self.navigationController?.setNavigationBarHidden(true, animated:true)
+        }
+        else {
+            self.navigationController?.setNavigationBarHidden(false, animated:true)
+        }
+        
     }
 }
+
 
 
 
 class ContentViewController: UITableViewController, SegementSlideContentScrollViewDelegate  {
     //var collectionviewMon: UICollectionView!
     @objc var scrollView: UIScrollView {
-        print("scrolled")
+        //if touchesBegan(<#T##touches: Set<UITouch>##Set<UITouch>#>, with: <#T##UIEvent?#>)
         return collectionviewMon
     }
 }
-
 

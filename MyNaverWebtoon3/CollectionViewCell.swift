@@ -9,7 +9,35 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    @IBOutlet var label: UILabel!
-    var textLabel: String!
+    override init(frame: CGRect) {
+        super.init(frame : frame)
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    let sumnailOfWebtoon: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    func setupViews(){
+        addSubview(nameLabel)
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":nameLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":nameLabel]))
+        addSubview(sumnailOfWebtoon)
+        //sumnailOfWebtoon.topAnchor.constraint(equalTo: CollectionViewCell.layoutMarginsGuide.topAnchor)
+    }
+//    
+//    @IBOutlet var label: UILabel!
+//    var textLabel: String!
 
 }

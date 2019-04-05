@@ -12,7 +12,7 @@ import ObjectMapper
 class comicDayDTO: Mappable {
     var result : Result?
     required init?(map: Map) {
-        <#code#>
+        
     }
     func mapping(map: Map) {
         result <- map["result"]

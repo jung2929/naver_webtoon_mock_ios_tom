@@ -29,7 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "CollectionView"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
         navigationController?.navigationBar.barTintColor = UIColor(red:0.91, green:0.3, blue:0.24, alpha:1)
@@ -43,8 +43,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //        collectionView?.contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        
+        
+        
     }
 
+    @objc func pushToNextVC() {
+        let newVC = UIViewController()
+        newVC.view.backgroundColor = UIColor.red
+        self.navigationController?.pushViewController(newVC, animated:
+            true)
+    }
 
 }
 
