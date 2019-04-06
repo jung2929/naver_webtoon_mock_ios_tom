@@ -18,6 +18,37 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
     
     @IBOutlet weak var tabView: UIView!
     
+    let someImageView: UIImageView = {
+        let theImageView = UIImageView()
+        theImageView.image = UIImage(named: "tom.png")
+        theImageView.translatesAutoresizingMaskIntoConstraints = false
+        print(theImageView.frame.width)
+        theImageView.contentMode = .scaleAspectFill
+        return theImageView
+    }()
+    func someImageViewConstraints() {
+//        someImageView.widthAnchor.constraint(equalToConstant: slideScrollView.bounds.width).isActive = true
+//        someImageView.heightAnchor.constraint(equalToConstant:slideScrollView.bounds.height).isActive = true
+//
+//        let leftConstraint = someImageView.leftAnchor.constraint(equalTo: self.slideScrollView.leftAnchor)
+//        let rightConstraint = someImageView.rightAnchor.constraint(equalTo: self.slideScrollView.rightAnchor)
+//        let bottomConstraint = someImageView.bottomAnchor.constraint(equalTo: self.slideScrollView.bottomAnchor)
+//        let topConstraint = someImageView.topAnchor.constraint(equalTo: self.slideScrollView.topAnchor)
+        //let leadingConstraint = NSLayoutConstraint(item: someImageView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
+        let bottomConstraint = someImageView.bottomAnchor.constraint(equalTo: self.slideScrollView.bottomAnchor)
+        //let bottomConstraint = NSLayoutConstraint(item: someImageView, attribute: .bottom, relatedBy: .equal, toItem: slideScrollView, attribute: .bottom, multiplier: 0.2, constant: 0)
+        let leftConstraint = someImageView.leftAnchor.constraint(equalTo: self.slideScrollView.leftAnchor)
+        let rightConstraint = someImageView.rightAnchor.constraint(equalTo: self.slideScrollView.rightAnchor)
+        //let widthConstraint = NSLayoutConstraint(item: someImageView, attribute: .width, relatedBy: .equal, toItem: slideScrollView, attribute: .width, multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: someImageView, attribute: .height, relatedBy: .equal, toItem: slideScrollView, attribute: .height, multiplier: 0.5, constant: 0)
+        NSLayoutConstraint.activate([leftConstraint, bottomConstraint, rightConstraint, heightConstraint])
+        
+        
+        
+        //someImageView.topAnchor. .isActive = true
+        //someImageView.centerYAnchor.constraint(equalTo: (headerView?.centerYAnchor)!, constant: 28).isActive = true
+    }
+    
     //var cellId = "CollectionViewCell"
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
@@ -49,7 +80,8 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
     }
     
     override var headerView: UIView? {
-        //self.headerView?.backgroundColor = .black
+        
+        print("headerView")
         return UIView()
     }
     
@@ -90,7 +122,23 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
         self.view.bringSubviewToFront(tabView)
         self.navigationController?.isToolbarHidden = true
         self.tabBarController?.delegate = (self as! UITabBarControllerDelegate)
-        print(tabView)
+        //print(tabView)
+        
+        //self.slideContentView.addSubview(someImageView)
+        //self.slideContentView.bringSubviewToFront(someImageView)
+//        self.headerView!.frame = CGRect.init(x: 0, y: 0, width: 100, height: 200)
+//        self.headerView?.translatesAutoresizingMaskIntoConstraints = false
+//        self.headerView?.backgroundColor = .black
+//        print(headerView)
+//        print(slideContentView)
+        
+        
+        if ((self.slideScrollView.addSubview(someImageView)) != nil) {
+            print("success")
+        }
+        slideScrollView.translatesAutoresizingMaskIntoConstraints = false
+        someImageViewConstraints()
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -106,7 +154,6 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
         else {
             self.navigationController?.setNavigationBarHidden(false, animated:true)
         }
-        
     }
 }
 
