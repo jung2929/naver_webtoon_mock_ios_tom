@@ -22,7 +22,7 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
         let theImageView = UIImageView()
         theImageView.image = UIImage(named: "tom.png")
         theImageView.translatesAutoresizingMaskIntoConstraints = false
-        print(theImageView.frame.width)
+        //print(theImageView.frame.width)
         theImageView.contentMode = .scaleAspectFill
         return theImageView
     }()
@@ -35,12 +35,12 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
 //        let bottomConstraint = someImageView.bottomAnchor.constraint(equalTo: self.slideScrollView.bottomAnchor)
 //        let topConstraint = someImageView.topAnchor.constraint(equalTo: self.slideScrollView.topAnchor)
         //let leadingConstraint = NSLayoutConstraint(item: someImageView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
-        let bottomConstraint = someImageView.bottomAnchor.constraint(equalTo: self.slideScrollView.bottomAnchor)
+        let bottomConstraint = someImageView.bottomAnchor.constraint(equalTo: self.slideSwitcherView.topAnchor)
         //let bottomConstraint = NSLayoutConstraint(item: someImageView, attribute: .bottom, relatedBy: .equal, toItem: slideScrollView, attribute: .bottom, multiplier: 0.2, constant: 0)
         let leftConstraint = someImageView.leftAnchor.constraint(equalTo: self.slideScrollView.leftAnchor)
         let rightConstraint = someImageView.rightAnchor.constraint(equalTo: self.slideScrollView.rightAnchor)
         //let widthConstraint = NSLayoutConstraint(item: someImageView, attribute: .width, relatedBy: .equal, toItem: slideScrollView, attribute: .width, multiplier: 1, constant: 0)
-        let heightConstraint = NSLayoutConstraint(item: someImageView, attribute: .height, relatedBy: .equal, toItem: slideScrollView, attribute: .height, multiplier: 0.5, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: someImageView, attribute: .height, relatedBy: .equal, toItem: slideScrollView, attribute: .height, multiplier: 1, constant: 21)
         NSLayoutConstraint.activate([leftConstraint, bottomConstraint, rightConstraint, heightConstraint])
         
         
@@ -64,7 +64,7 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
         cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         //cell.label.frame =
         //cell.label?.text = "\(indexPath.row + 1)"
-        cell.nameLabel.text = "작가명"
+        cell.author.text = "작가명"
         //cell.label?.textColor = UIColor(red: 0.45, green: 0.35, blue: 0.35, alpha: 1)
         //    print("label text : ", cell.label?.text)
         print(indexPath.row)
@@ -76,7 +76,7 @@ class HomeViewController: SegementSlideViewController,UICollectionViewDelegate, 
     
     
     override var headerHeight: CGFloat? {
-        return view.bounds.height/10
+        return view.bounds.height/8
     }
     
     override var headerView: UIView? {

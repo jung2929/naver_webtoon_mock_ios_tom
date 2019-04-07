@@ -1,0 +1,27 @@
+{
+    "result": [
+        {
+            "Content_No": 6,
+            "Comic_No": 2,
+            "Content_Img": "",
+            "Content_Name": "소녀의 세계 1화",
+            "Content_Content": "소녀들의 이야기 1화를 시작합니다.",
+            "Content_Date": "2019-03-25 13:46:50",
+            "Content_Heart": 1,
+            "Content_Type": 0,
+            "Content_Rating": 10
+        },
+        {
+            "Content_No": 7,
+            "Comic_No": 2,
+            "Content_Img": "",
+            "Content_Name": "소녀의 세계 2화",
+            "Content_Content": "소녀들의 전후 사정",
+            "Content_Date": "2019-03-25 13:46:50",
+            "Content_Heart": 0,
+            "Content_Type": 0,
+            "Content_Rating": 10
+        }],
+    "code": 100,
+    "message": "테스트 성공"
+}

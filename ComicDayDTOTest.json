@@ -1,0 +1,28 @@
+{
+ "result": [
+ {
+ "Comic_No": 1,
+ "Comic_Name": "신의탑 ",
+ "Comic_Story": "SIU",
+ "Comic_Painting": null,
+ "Comic_Img": null,
+ "Comic_Text": "탑을오르는 비선별인원",
+ "Comic_Day": "Monday",
+ "Comic_Heart": 1,
+ "Comic_Rating": 7.4
+ },
+ {
+ "Comic_No": 2,
+ "Comic_Name": "소녀의 세계",
+ "Comic_Story": "모랑지",
+ "Comic_Painting": null,
+ "Comic_Img": null,
+ "Comic_Text": "소녀들의 이야기",
+ "Comic_Day": "Monday",
+ "Comic_Heart": 0,
+ "Comic_Rating": 10
+ }
+ ],
+ "code": 100,
+ "message": "테스트 성공"
+ }
