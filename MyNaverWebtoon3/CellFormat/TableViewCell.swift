@@ -11,8 +11,6 @@ import UIKit
 class TableViewCell: UITableViewCell {
     @IBOutlet weak var imageSumnailDetail: UIImageView!
     @IBOutlet weak var titleDetail: UILabel!
-    
     @IBOutlet weak var gradeDetail: UILabel!
-    
     @IBOutlet weak var dateDetail: UILabel!
 }

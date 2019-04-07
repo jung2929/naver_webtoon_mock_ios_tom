@@ -16,7 +16,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(DataManager.resultComicDay.count)
         return DataManager.resultComicDay.count
     }
     
@@ -28,7 +27,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.title.text = DataManager.resultComicDay[indexPath.row]["Comic_Name"]!! as? String
         cell.author.text = DataManager.resultComicDay[indexPath.row]["Comic_Story"]!! as? String
-        cell.grade.text = DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!! as? String
+        cell.grade.text = "★ "+String(describing: DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!!)
+        cell.grade.textColor = .red
+        print("comicrating ",DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!!)
         cell.sumnail.image = UIImage(named: "tom.png")
         cell.comicNumber =  DataManager.resultComicDay[indexPath.row]["Comic_No"]! as! Int
         return cell
@@ -49,8 +50,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         
         
-        title = "title"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        //title = "title"
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: nil, action: nil)
         //navigationController?.navigationBar.barTintColor = UIColor(red:0.91, green:0.3, blue:0.24, alpha:1)
         
         

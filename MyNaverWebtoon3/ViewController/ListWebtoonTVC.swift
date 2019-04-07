@@ -19,13 +19,15 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.resultComicDay.count
+        return DataManager.resultComicContents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell else {print("error")
             return UITableViewCell() }
-        cell.titleDetail.text = "Row \((indexPath as NSIndexPath).row + 1)"
+        cell.titleDetail.text = DataManager.resultComicContents[indexPath.row]["Content_Name"]!! as? String
+        cell.gradeDetail.text = "★ "+String(describing: DataManager.resultComicContents[indexPath.row]["Content_Rating"]!!)
+        cell.dateDetail.text = DataManager.resultComicContents[indexPath.row]["Content_Date"]!! as? String
         return cell
     }
     
@@ -52,9 +54,9 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     if let JSON = response.result.value {
                         //print("JSON: \(JSON)")
                         //print(response.result.value?.resultComicDay)
-                        DataManager.resultComicDay = JSON.resultComicDay
-                        print("resultComicDay",DataManager.resultComicDay)
-                        print(DataManager.resultComicDay.count)
+                        DataManager.resultComicContents = JSON.resultComicContents
+                        print("resultComicDay",DataManager.resultComicContents)
+                        print(DataManager.resultComicContents.count)
                     }
                 }
             }
@@ -63,7 +65,7 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(mode)
         }
         DispatchQueue.main.async {
-            //self.collectionView.reloadData()
+            self.tableView.reloadData()
         }
     }
 
