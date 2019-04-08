@@ -9,7 +9,8 @@
  "Comic_Text": "탑을오르는 비선별인원",
  "Comic_Day": "Monday",
  "Comic_Heart": 1,
- "Comic_Rating": 7.4
+ "Comic_Rating": 7.4,
+ "Comic_Date": "2019-03-31 11:09:14"
  },
  {
  "Comic_No": 2,
@@ -20,7 +21,8 @@
  "Comic_Text": "소녀들의 이야기",
  "Comic_Day": "Monday",
  "Comic_Heart": 0,
- "Comic_Rating": 10
+ "Comic_Rating": 10,
+ "Comic_Date": "2019-03-31 11:09:14"
  }
  ],
  "code": 100,

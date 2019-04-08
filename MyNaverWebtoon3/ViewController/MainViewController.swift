@@ -58,7 +58,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         setupDayScrollView()
         setupCollectionView()
-        getDatafromJson(mode: "test")
+        getComicDayDatafromJson(mode: "test")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.reloadData()
@@ -91,7 +91,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     
-    func getDatafromJson(mode:String){
+    func getComicDayDatafromJson(mode:String){
         if mode == "test" {
             print(mode)
             if let path = Bundle.main.path(forResource: "ComicDayDTOTest", ofType: "json") {
@@ -109,6 +109,19 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             //print("out:",DataManager.resultComicDay.count)
         } else if mode == "real" {
             print(mode)
+            let url = "http://softcomics.co.kr/comic/day/Monday"
+           // DispatchQueue.global(qos:.userInteractive).async {
+            print(url)
+                Alamofire.request(url).responseObject{(response : DataResponse<ComicDayDTO>) in
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                        print(response.result.value?.resultComicDay)
+                        DataManager.resultComicDay = JSON.resultComicDay
+                        print("resultComicDay",DataManager.resultComicDay)
+                        print(DataManager.resultComicDay.count)
+                    }
+                }
+            //}
         }
         DispatchQueue.main.async {
             self.collectionView.reloadData()
