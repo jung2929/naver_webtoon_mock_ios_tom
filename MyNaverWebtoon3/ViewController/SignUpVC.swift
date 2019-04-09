@@ -7,23 +7,53 @@
 //
 
 import UIKit
+import AlamofireObjectMapper
+import Alamofire
 
 class SignUpVC: UIViewController {
 
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var subpwTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var telTextField: UITextField!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        
+        let id = idTextField.text
+        let pw = pwTextField.text
+        let subpw = pwTextField.text
+        let email = emailTextField.text
+        let tel = telTextField.text
+        
+        let url = "http://softcomics.co.kr/user"
+        print(url)
+        Alamofire.request(url).responseObject{(response : DataResponse<userDTO>) in
+            let JSON = response.result.value
+                print("JSON: \(JSON)")
+                print(response.result.value?.code)
+                print(response.result.error)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        errorLabel.text = ""
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func validateString(validateValue:String ,value:String){
+        
+        switch validateValue {
+        case "email":
+            break
+        case "tel":
+            break
+        default:
+            break
+        }
+        
     }
-    */
 
 }

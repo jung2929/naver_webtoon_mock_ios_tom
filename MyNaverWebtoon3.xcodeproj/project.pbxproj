@@ -16,6 +16,8 @@
 		325958B8225B99080055C967 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958B7225B99080055C967 /* MyPageVC.swift */; };
 		325958BA225B995E0055C967 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958B9225B995E0055C967 /* SignUpVC.swift */; };
 		325958BC225BA7240055C967 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958BB225BA7240055C967 /* LoginVC.swift */; };
+		325958BE225CB2830055C967 /* userDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958BD225CB2830055C967 /* userDTO.swift */; };
+		325958C0225CF4600055C967 /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958BF225CF4600055C967 /* MyPageTVC.swift */; };
 		327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B752253B3B000342C36 /* AppDelegate.swift */; };
 		327F2B782253B3B000342C36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B772253B3B000342C36 /* MainViewController.swift */; };
 		327F2B7B2253B3B000342C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327F2B792253B3B000342C36 /* Main.storyboard */; };
@@ -66,6 +68,8 @@
 		325958B7225B99080055C967 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		325958B9225B995E0055C967 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		325958BB225BA7240055C967 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		325958BD225CB2830055C967 /* userDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDTO.swift; sourceTree = "<group>"; };
+		325958BF225CF4600055C967 /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
 		327F2B722253B3B000342C36 /* MyNaverWebtoon3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNaverWebtoon3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327F2B752253B3B000342C36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327F2B772253B3B000342C36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				327F2BAA2253D26200342C36 /* CollectionViewCell.swift */,
 				325958A92259F1AB0055C967 /* TableViewCell.swift */,
+				325958BF225CF4600055C967 /* MyPageTVC.swift */,
 			);
 			path = CellFormat;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				325958B1225A19BA0055C967 /* ComicDayDTOTest.json */,
 				325958B5225A316F0055C967 /* ComicContentsDTOTest.json */,
 				327F2BB22256601200342C36 /* ComicDayDTO.swift */,
+				325958BD225CB2830055C967 /* userDTO.swift */,
 				325958B3225A30D90055C967 /* ComicContentsDTO.swift */,
 				325958AD225A13460055C967 /* DataManager.swift */,
 				325958AF225A16330055C967 /* ConfigureProperties.swift */,
@@ -481,6 +487,7 @@
 				325958B4225A30D90055C967 /* ComicContentsDTO.swift in Sources */,
 				327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */,
 				325958AA2259F1AB0055C967 /* TableViewCell.swift in Sources */,
+				325958C0225CF4600055C967 /* MyPageTVC.swift in Sources */,
 				327F2BB522578CB800342C36 /* BestChallengeViewController.swift in Sources */,
 				327F2BAD2253D50600342C36 /* ListWebtoonTVC.swift in Sources */,
 				325958BC225BA7240055C967 /* LoginVC.swift in Sources */,
@@ -488,6 +495,7 @@
 				325958B8225B99080055C967 /* MyPageVC.swift in Sources */,
 				327F2BAB2253D26200342C36 /* CollectionViewCell.swift in Sources */,
 				325958BA225B995E0055C967 /* SignUpVC.swift in Sources */,
+				325958BE225CB2830055C967 /* userDTO.swift in Sources */,
 				327F2BB12254F5B700342C36 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,15 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
+    
+    
+    @IBOutlet weak var loginButton: UIButton!
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
