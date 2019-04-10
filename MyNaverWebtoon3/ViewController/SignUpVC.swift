@@ -29,14 +29,44 @@ class SignUpVC: UIViewController {
         let tel = telTextField.text
         
         let url = "http://softcomics.co.kr/user"
-        print(url)
-        Alamofire.request(url).responseObject{(response : DataResponse<userDTO>) in
-            let JSON = response.result.value
-                print("JSON: \(JSON)")
-                print(response.result.value?.code)
-                print(response.result.error)
+        let parameters: [String: String] = [
+            "id" : id!,
+            "pw" : pw!,
+            "subpw" : subpw!,
+            "mail" : email!,
+            "tel" : tel!
+        ]
+        print(parameters)
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                let status = response.response?.statusCode
+                print(status)
+                switch status {
+                case 100:
+                    self.performSegue(withIdentifier: "LoginVC", sender: nil)
+                    break
+                case 200:
+                    self.errorLabel.text = "아이디나 패스워드를 확인해주세요."
+                    break
+                case 201:
+                    self.errorLabel.text = "아이디나 패스워드를 확인해주세요."
+                    break
+                case 202:
+                    self.errorLabel.text = "중복된 이메일이 이미 있습니다."
+                    break
+                case 203:
+                    self.errorLabel.text = "이메일 형식이 잘못되었습니다."
+                    break
+                default:
+                    break
+                }
         }
+        
     }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.text = ""

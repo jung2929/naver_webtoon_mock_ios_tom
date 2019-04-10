@@ -11,16 +11,20 @@ import UIKit
 class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var myPageTableView: UITableView = UITableView()
-    var isLogin:Bool = true
+    //var isLogin:Bool = true
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var segments: UISegmentedControl!
     @IBOutlet weak var bottomView: UIView!
+    @IBAction func unwindToMyPageVC(segue:UIStoryboardSegue){
+        self.viewDidLoad()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.topItem?.title = "MY"
         topView.layer.addBorder([.bottom], color: UIColor.lightGray, width: 1)
-        if isLogin {
+        if DataManager.loginFlag {
             tableViewSetup(myPageTableView: myPageTableView, superView: bottomView)
         }
         self.myPageTableView.reloadData()

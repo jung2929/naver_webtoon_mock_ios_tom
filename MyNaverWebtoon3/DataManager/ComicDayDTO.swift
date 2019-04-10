@@ -12,14 +12,14 @@ import ObjectMapper
 class ComicDayDTO: Mappable {
     var code : Int?
     var message : String?
-    var resultComicDay = [[ String : AnyObject ]]()
+    var result = [[ String : AnyObject ]]()
     required init?(map: Map) {
         
     }
     func mapping(map: Map) {
         code <- map["code"]
         message <- map["message"]
-        resultComicDay <- map["result"]
+        result <- map["result"]
     }
 //    class Result :Mappable{
 //        var comic_No : Int?

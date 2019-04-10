@@ -100,7 +100,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                     if let JSON = response.result.value {
                         //print("JSON: \(JSON)")
                         //print(response.result.value?.resultComicDay)
-                        DataManager.resultComicDay = JSON.resultComicDay
+                        DataManager.resultComicDay = JSON.result
                         print("resultComicDay",DataManager.resultComicDay)
                         print(DataManager.resultComicDay.count)
                     }
@@ -115,8 +115,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 Alamofire.request(url).responseObject{(response : DataResponse<ComicDayDTO>) in
                     if let JSON = response.result.value {
                         print("JSON: \(JSON)")
-                        print(response.result.value?.resultComicDay)
-                        DataManager.resultComicDay = JSON.resultComicDay
+                        print(response.result.value?.result)
+                        DataManager.resultComicDay = JSON.result
                         print("resultComicDay",DataManager.resultComicDay)
                         print(DataManager.resultComicDay.count)
                     }

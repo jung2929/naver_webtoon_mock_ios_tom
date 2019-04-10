@@ -485,7 +485,7 @@
         <!--Title-->
         <scene sceneID="YE1-bi-kU6">
             <objects>
-                <viewController id="hAp-gc-JuQ" customClass="MyPageVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hAp-gc-JuQ" customClass="MyPageVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qy6-7Y-2p8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -761,7 +761,7 @@
         <!--LoginVC-->
         <scene sceneID="Plb-Vx-dyP">
             <objects>
-                <viewController id="yjf-hL-AeB" customClass="LoginVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yjf-hL-AeB" customClass="LoginVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZFM-0b-IRo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -807,6 +807,12 @@
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘못된 형식의 입력 처리 Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pA-ET-qSg">
+                                        <rect key="frame" x="8" y="110" width="183" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="0.18687949440000001" blue="0.20406904719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -814,6 +820,8 @@
                                     <constraint firstItem="0h3-RP-Yyu" firstAttribute="leading" secondItem="9TG-Sh-aHr" secondAttribute="leading" constant="8" id="75J-wM-8gy"/>
                                     <constraint firstItem="13o-xT-0sh" firstAttribute="leading" secondItem="9TG-Sh-aHr" secondAttribute="leading" constant="8" id="8gE-Gk-P5G"/>
                                     <constraint firstItem="Rae-vj-3nZ" firstAttribute="leading" secondItem="13o-xT-0sh" secondAttribute="trailing" constant="3" id="Bks-Ly-EsD"/>
+                                    <constraint firstItem="3pA-ET-qSg" firstAttribute="leading" secondItem="9TG-Sh-aHr" secondAttribute="leading" constant="8" id="GJF-6x-8uE"/>
+                                    <constraint firstItem="3pA-ET-qSg" firstAttribute="top" secondItem="Rae-vj-3nZ" secondAttribute="bottom" constant="8" id="HII-fQ-M1t"/>
                                     <constraint firstItem="zhM-ey-tJi" firstAttribute="top" secondItem="0h3-RP-Yyu" secondAttribute="bottom" constant="8" id="Ix2-GT-dg9"/>
                                     <constraint firstAttribute="height" constant="131" id="Jf7-RN-KF5"/>
                                     <constraint firstItem="atV-bA-Q4o" firstAttribute="leading" secondItem="zhM-ey-tJi" secondAttribute="trailing" constant="26" id="L4J-mI-xUF"/>
@@ -836,6 +844,7 @@
                                     <color key="titleColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="test:" destination="yjf-hL-AeB" eventType="touchUpInside" id="KDs-A2-YzZ"/>
                                     <segue destination="A7K-De-keU" kind="show" id="M1x-M7-42D"/>
                                 </connections>
                             </button>
@@ -850,7 +859,7 @@
                                     <color key="titleColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="yjf-hL-AeB" eventType="touchUpInside" id="13O-QV-UW6"/>
+                                    <action selector="loginButtonTapped:" destination="yjf-hL-AeB" eventType="touchUpInside" id="Y7U-bG-uHP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -867,12 +876,15 @@
                         <viewLayoutGuide key="safeArea" id="G2l-mu-GPZ"/>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="3pA-ET-qSg" id="ydG-NX-hOY"/>
                         <outlet property="idTextField" destination="atV-bA-Q4o" id="m0r-7J-hub"/>
                         <outlet property="loginButton" destination="ICo-pF-Afn" id="5Gc-lT-Bzw"/>
                         <outlet property="pwTextField" destination="Rae-vj-3nZ" id="vbv-gh-v4r"/>
+                        <segue destination="6sJ-2f-tZH" kind="unwind" identifier="unwindMyPageVC" unwindAction="unwindToMyPageVCWithSegue:" id="2dK-iG-QQT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TJ-Ib-HY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6sJ-2f-tZH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1852" y="505.99700149925042"/>
         </scene>
