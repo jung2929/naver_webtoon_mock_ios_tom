@@ -32,15 +32,14 @@ class LoginVC: UIViewController {
                 print("JSON: \(JSON)")
                 print(response.result.value?.code)
                 print(response.result.value?.message)
-                print(response.result.value?.result)
+                print(response.result.value?.result["jwt"])
                 //DataManager.resultComicDay = JSON.result
                 let status = response.result.value?.code
                 print(status)
                 switch status {
                 case 100:
                     print("login")
-                    DataManager.loginFlag = true
-                    print(DataManager.loginFlag)
+                    DataManager.logintoken = response.result.value?.result["jwt"] as! String
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "unwindMyPageVC", sender: nil)
                     }

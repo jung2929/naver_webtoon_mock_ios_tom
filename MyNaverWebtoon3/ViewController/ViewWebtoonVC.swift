@@ -11,7 +11,13 @@ import AMScrollingNavbar
 
 class ViewWebtoonVC: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
-
+    @IBOutlet weak var bottomView: UIView!
+    
+    
+    @IBOutlet weak var viewInstantMessage: UIButton!
+    
+    @IBAction func viewInstantMessageTapped(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,17 +44,22 @@ class ViewWebtoonVC: ScrollingNavigationViewController, ScrollingNavigationContr
         label.sizeToFit()
         
         scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: label.frame.size.height)
-        scrollView.delegate = self    }
+        scrollView.delegate = self
+        self.view.bringSubviewToFront(bottomView)
+    }
     
 
     func scrollingNavigationController(_ controller: ScrollingNavigationController, didChangeState state: NavigationBarState) {
         switch state {
         case .collapsed:
             print("navbar collapsed")
+            self.view.sendSubviewToBack(bottomView)
         case .expanded:
             print("navbar expanded")
+            self.view.bringSubviewToFront(bottomView)
         case .scrolling:
             print("navbar is moving")
+            self.view.sendSubviewToBack(bottomView)
         }
     }
     

@@ -36,12 +36,32 @@ class MyPageTVC: UITableViewCell {
                 "dateLabel" : dateLabel,
                 "alamImg" : alamImg,
                 ] as [String : Any]
-            
-            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[sumnailImg(10)]", options: [], metrics: nil, views: viewsDict))
-            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
-            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[alamImg(10)]-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
-            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[alamImg(10)]-[sumnailImg(10)]-|", options: [], metrics: nil, views: viewsDict))
-            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[dateLabel]-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
+        
+        
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[sumnailImg]-(0)-|", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[sumnailImg]", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[sumnailImg(44)]", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[sumnailImg(44)]", options: [], metrics: nil, views: viewsDict))
+        
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[alamImg]-(0)-|", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[alamImg]-(0)-|", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[alamImg(44)]", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[alamImg(44)]", options: [], metrics: nil, views: viewsDict))
+        
+        
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[sumnailImg]-[titleLabel]-|", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(3)-[titleLabel]", options: [], metrics: nil, views: viewsDict))
+        
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[sumnailImg]-(15)-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[dateLabel]-(3)-|", options: [], metrics: nil, views: viewsDict))
+        
+        
+//
+//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[sumnailImg(10)]", options: [], metrics: nil, views: viewsDict))
+//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
+//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[alamImg(10)]-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
+//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[alamImg(10)]-[sumnailImg(10)]-|", options: [], metrics: nil, views: viewsDict))
+//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[dateLabel]-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
         }
         
         required init?(coder aDecoder: NSCoder) {

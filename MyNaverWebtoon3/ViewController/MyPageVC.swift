@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireObjectMapper
+
 
 class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -21,14 +24,53 @@ class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getDataIfLogin(logintoken: DataManager.logintoken)
         navigationController?.navigationBar.topItem?.title = "MY"
         topView.layer.addBorder([.bottom], color: UIColor.lightGray, width: 1)
-        if DataManager.loginFlag {
-            tableViewSetup(myPageTableView: myPageTableView, superView: bottomView)
-        }
+//        if DataManager.loginFlag {
+//            tableViewSetup(myPageTableView: myPageTableView, superView: bottomView)
+//        }
+       // tableViewSetup(myPageTableView: myPageTableView, superView: bottomView)
         self.myPageTableView.reloadData()
         
+        
+        
+    }
+    
+    func getDataIfLogin(logintoken:String){
+        print(logintoken)
+        let header = ["x-access-token":logintoken]
+        let url = "http://softcomics.co.kr/my/comic/list"
+        Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<MyComicListDTO>) in
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+                print(response.result.value?.data)
+                print(response.result.value?.code)
+                print(response.result.value?.list)
+                //DataManager.resultComicDay = JSON.result
+                let status = response.result.value?.code
+                print(status)
+                switch status {
+                case 100:
+                    print("login")
+                    DataManager.resultMyComic = (response.result.value?.list)!
+                    print("DataManager.resultMyComic",DataManager.resultMyComic)
+                    self.tableViewSetup(myPageTableView: self.myPageTableView, superView: self.bottomView)
+                    self.myPageTableView.reloadData()
+                    break
+                case 200:
+                    print(status)
+                    //perfrom LoginVC
+                    break
+                case 201:
+                    print(status)
+                    break
+                default:
+                    break
+                }
+                
+            }
+        }
     }
     
     func tableViewSetup(myPageTableView:UITableView, superView:UIView){
@@ -64,7 +106,7 @@ class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MyPageTVC else {print("error")
             return UITableViewCell() }
         cell.titleLabel.text = DataManager.resultComicDay[indexPath.row]["Comic_Name"]!! as? String
-        cell.dateLabel.text = DataManager.resultComicDay[indexPath.row]["Comic_Date"]!! as? String
+        cell.dateLabel.text = DataManager.resultComicDay[indexPath.row]["Comic_Text"]!! as? String
         print("aaa")
         return cell
     }

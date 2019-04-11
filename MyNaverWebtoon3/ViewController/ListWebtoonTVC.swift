@@ -12,10 +12,50 @@ import Alamofire
 import AlamofireObjectMapper
 
 class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var isRegister:Bool = false
+    var isGivenHeart:Bool = false
+    @IBOutlet weak var comicHeart: UIButton!
+    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    
+    @IBAction func giveToonHeart(_ sender: Any) {
+        if isGivenHeart {
+            heartButton.setTitle("♡", for: .normal)
+            heartButton.setTitleColor(.black, for: .normal)
+            tmpComicNumberofHeart = tmpComicNumberofHeart! - 1
+            self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
+            isGivenHeart = false
+            //request 수정해야함.
+        }else {
+            heartButton.setTitle("♥︎", for: .normal)
+            heartButton.setTitleColor(.red, for: .normal)
+            tmpComicNumberofHeart = tmpComicNumberofHeart! + 1
+            self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
+            isGivenHeart = true
+            //request 수정해야함.
+        }
+    }
+    
+    @IBAction func registerMyToon(_ sender: Any) {
+        if isRegister {
+            isRegister = false
+            registerButton.setTitle("☑︎ 관심", for: .normal)
+            registerButton.setTitleColor(.black, for: .normal)
+            //request 수정해야함.
+
+        }else{
+            isRegister = true
+            registerButton.setTitle("☑︎ 관심", for: .normal)
+            registerButton.setTitleColor(.green, for: .normal)
+            //request 수정해야함.
+
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
     var tmpNaviBarTopItem:String?
     var tmpComicNumber:Int?
+    var tmpComicNumberofHeart:Int?
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +79,7 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.navigationController?.navigationBar.topItem!.title = tmpNaviBarTopItem
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
         print("tmpComicNumber ; ",tmpComicNumber)
         
         getDatafromJson(mode: "test")
@@ -64,19 +105,11 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else if mode == "real" {
             print(mode)
         }
+        self.tableView.reloadData()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

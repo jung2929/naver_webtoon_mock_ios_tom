@@ -31,7 +31,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.grade.textColor = .red
         print("comicrating ",DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!!)
         cell.sumnail.image = UIImage(named: "tom.png")
-        cell.comicNumber =  DataManager.resultComicDay[indexPath.row]["Comic_No"]! as! Int
+        cell.comicNumber = DataManager.resultComicDay[indexPath.row]["Comic_No"]! as! Int
+        cell.comicNumberOfHeart = DataManager.resultComicDay[indexPath.row]["Comic_Heart"]! as! Int
         return cell
     }
     
@@ -135,9 +136,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if indexPath != nil{
             let currentCell = collectionView.cellForItem(at: indexPath!) as! CollectionViewCell
             if ((collectionView?.indexPathsForSelectedItems) != nil){
+                
                 destination.tmpNaviBarTopItem = currentCell.title.text
                 destination.tmpComicNumber = currentCell.comicNumber
-                //print( currentCell.title.text )
+                destination.tmpComicNumberofHeart = currentCell.comicNumberOfHeart
                 /*
                  destination.tempOrgTiTleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!
                  destination.tempTitleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!

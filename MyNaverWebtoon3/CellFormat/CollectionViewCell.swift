@@ -15,6 +15,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var grade: UILabel!
     @IBOutlet weak var author: UILabel!
     var comicNumber:Int = 0
+    var comicNumberOfHeart:Int = 0
     
     
     

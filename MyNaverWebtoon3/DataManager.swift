@@ -11,5 +11,7 @@ import UIKit
 class DataManager: NSObject {
     static var resultComicDay = [[ String? : AnyObject? ]]()
     static var resultComicContents = [[ String? : AnyObject? ]]()
+    static var resultMyComic = [[ String : AnyObject ]]()
     static var loginFlag:Bool = false
+    static var logintoken = ""
 }

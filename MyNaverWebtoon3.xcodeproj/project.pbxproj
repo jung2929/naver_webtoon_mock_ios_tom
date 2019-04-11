@@ -19,6 +19,8 @@
 		325958BE225CB2830055C967 /* userDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958BD225CB2830055C967 /* userDTO.swift */; };
 		325958C0225CF4600055C967 /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958BF225CF4600055C967 /* MyPageTVC.swift */; };
 		325958C2225E27ED0055C967 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958C1225E27ED0055C967 /* LoginDTO.swift */; };
+		325958C4225E488A0055C967 /* MyComicListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958C3225E488A0055C967 /* MyComicListDTO.swift */; };
+		325958C6225FBD640055C967 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958C5225FBD640055C967 /* CommentVC.swift */; };
 		327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B752253B3B000342C36 /* AppDelegate.swift */; };
 		327F2B782253B3B000342C36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B772253B3B000342C36 /* MainViewController.swift */; };
 		327F2B7B2253B3B000342C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327F2B792253B3B000342C36 /* Main.storyboard */; };
@@ -72,6 +74,8 @@
 		325958BD225CB2830055C967 /* userDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDTO.swift; sourceTree = "<group>"; };
 		325958BF225CF4600055C967 /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
 		325958C1225E27ED0055C967 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
+		325958C3225E488A0055C967 /* MyComicListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyComicListDTO.swift; sourceTree = "<group>"; };
+		325958C5225FBD640055C967 /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		327F2B722253B3B000342C36 /* MyNaverWebtoon3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNaverWebtoon3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327F2B752253B3B000342C36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327F2B772253B3B000342C36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -146,8 +150,8 @@
 				325958BD225CB2830055C967 /* userDTO.swift */,
 				325958C1225E27ED0055C967 /* LoginDTO.swift */,
 				325958B3225A30D90055C967 /* ComicContentsDTO.swift */,
-				325958AD225A13460055C967 /* DataManager.swift */,
 				325958AF225A16330055C967 /* ConfigureProperties.swift */,
+				325958C3225E488A0055C967 /* MyComicListDTO.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -180,6 +184,7 @@
 				325958AC2259F2550055C967 /* DataManager */,
 				327F2BC42259BB6800342C36 /* ViewController */,
 				327F2B752253B3B000342C36 /* AppDelegate.swift */,
+				325958AD225A13460055C967 /* DataManager.swift */,
 				325958AB2259F1B70055C967 /* CellFormat */,
 				327F2B792253B3B000342C36 /* Main.storyboard */,
 				327F2B7C2253B3B100342C36 /* Assets.xcassets */,
@@ -212,13 +217,14 @@
 			children = (
 				327F2B772253B3B000342C36 /* MainViewController.swift */,
 				327F2BAC2253D50600342C36 /* ListWebtoonTVC.swift */,
+				325958C5225FBD640055C967 /* CommentVC.swift */,
 				327F2BAE2253D79700342C36 /* ViewWebtoonVC.swift */,
-				327F2BB02254F5B600342C36 /* HomeViewController.swift */,
-				327F2BB422578CB800342C36 /* BestChallengeViewController.swift */,
-				327F2BB622578F4100342C36 /* Test1ViewController.swift */,
 				325958B7225B99080055C967 /* MyPageVC.swift */,
 				325958BB225BA7240055C967 /* LoginVC.swift */,
 				325958B9225B995E0055C967 /* SignUpVC.swift */,
+				327F2BB622578F4100342C36 /* Test1ViewController.swift */,
+				327F2BB422578CB800342C36 /* BestChallengeViewController.swift */,
+				327F2BB02254F5B600342C36 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -489,10 +495,12 @@
 				327F2BAF2253D79700342C36 /* ViewWebtoonVC.swift in Sources */,
 				325958B4225A30D90055C967 /* ComicContentsDTO.swift in Sources */,
 				327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */,
+				325958C4225E488A0055C967 /* MyComicListDTO.swift in Sources */,
 				325958AA2259F1AB0055C967 /* TableViewCell.swift in Sources */,
 				325958C0225CF4600055C967 /* MyPageTVC.swift in Sources */,
 				325958C2225E27ED0055C967 /* LoginDTO.swift in Sources */,
 				327F2BB522578CB800342C36 /* BestChallengeViewController.swift in Sources */,
+				325958C6225FBD640055C967 /* CommentVC.swift in Sources */,
 				327F2BAD2253D50600342C36 /* ListWebtoonTVC.swift in Sources */,
 				325958BC225BA7240055C967 /* LoginVC.swift in Sources */,
 				325958AE225A13460055C967 /* DataManager.swift in Sources */,
