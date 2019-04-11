@@ -517,27 +517,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXz-qa-NI9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="52"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sg-6O-tjs">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
                                         <color key="backgroundColor" red="0.3398044824" green="0.7258541127" blue="0.3997838131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="BEST 댓글">
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bestCommentTapped:" destination="3rQ-gg-qH3" eventType="touchUpInside" id="C7Q-ZZ-zTt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-eH-O5p">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="52"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="전체 댓글">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="allCommentTapped:" destination="3rQ-gg-qH3" eventType="touchUpInside" id="bac-rt-EbE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bCj-eH-O5p" firstAttribute="leading" secondItem="6Sg-6O-tjs" secondAttribute="trailing" id="7ma-cq-jBi"/>
                                     <constraint firstAttribute="bottom" secondItem="6Sg-6O-tjs" secondAttribute="bottom" id="IeI-na-R2U"/>
+                                    <constraint firstAttribute="height" constant="40" id="SZF-FM-0sW"/>
                                     <constraint firstItem="6Sg-6O-tjs" firstAttribute="top" secondItem="QXz-qa-NI9" secondAttribute="top" id="TRc-x2-DJ6"/>
                                     <constraint firstItem="bCj-eH-O5p" firstAttribute="top" secondItem="QXz-qa-NI9" secondAttribute="top" id="We8-Sf-Sq5"/>
                                     <constraint firstItem="6Sg-6O-tjs" firstAttribute="width" secondItem="bCj-eH-O5p" secondAttribute="width" id="a1I-kl-DJq"/>
@@ -547,17 +554,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wc4-cK-SVJ">
-                                <rect key="frame" x="0.0" y="583" width="375" height="84"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-F7-w4e">
-                                <rect key="frame" x="0.0" y="116" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="467" id="fjt-9H-dS9"/>
+                                    <constraint firstAttribute="height" constant="50" id="yYu-Rh-ktG"/>
                                 </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-F7-w4e">
+                                <rect key="frame" x="0.0" y="104" width="375" height="513"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="fBI-fE-VWn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="70" id="fBI-fE-VWn" customClass="CommentCellTableViewCell" customModule="MyNaverWebtoon3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBI-fE-VWn" id="np8-Rq-4ca">
@@ -603,20 +610,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-1d-giB">
-                                                    <rect key="frame" x="253" y="39.5" width="51" height="20"/>
+                                                    <rect key="frame" x="269" y="39.5" width="42" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="527-U3-8FV"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="👍 100">
                                                         <color key="titleColor" red="1" green="0.18687949440000001" blue="0.20406904719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="goodTapped:" destination="3rQ-gg-qH3" eventType="touchUpInside" id="psF-uv-wHh"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-Cw-ObC">
-                                                    <rect key="frame" x="319" y="39.5" width="41" height="20"/>
+                                                    <rect key="frame" x="326" y="39.5" width="34" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Mnx-2B-5h3"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="👎 12"/>
+                                                    <connections>
+                                                        <action selector="badTapped:" destination="3rQ-gg-qH3" eventType="touchUpInside" id="nWs-u8-2HM"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tw-Je-UEG">
                                                     <rect key="frame" x="228" y="0.0" width="30" height="20"/>
@@ -646,6 +661,12 @@
                                                 <constraint firstItem="6Rm-8W-eX1" firstAttribute="top" secondItem="np8-Rq-4ca" secondAttribute="top" id="xKS-J8-MHa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bestLabel" destination="WeQ-3u-1EW" id="aSv-Or-06H"/>
+                                            <outlet property="commentLabel" destination="uPm-1S-8Ll" id="deU-Iy-BF3"/>
+                                            <outlet property="dateLabel" destination="6Rm-8W-eX1" id="oGb-V1-hXR"/>
+                                            <outlet property="idLabel" destination="6Gg-lD-HEi" id="zC7-hn-Nxj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -659,13 +680,17 @@
                             <constraint firstAttribute="bottom" secondItem="wc4-cK-SVJ" secondAttribute="bottom" id="Kke-7B-VEK"/>
                             <constraint firstItem="EjO-F7-w4e" firstAttribute="top" secondItem="QXz-qa-NI9" secondAttribute="bottom" id="N0l-qV-Msn"/>
                             <constraint firstItem="wc4-cK-SVJ" firstAttribute="trailing" secondItem="Gzd-ul-DSV" secondAttribute="trailing" id="Z2D-dK-311"/>
-                            <constraint firstItem="EjO-F7-w4e" firstAttribute="top" secondItem="A3S-mW-vn5" secondAttribute="top" constant="116" id="aeb-yx-1hL"/>
                             <constraint firstItem="wc4-cK-SVJ" firstAttribute="leading" secondItem="Gzd-ul-DSV" secondAttribute="leading" id="iS8-HR-cCV"/>
                             <constraint firstItem="EjO-F7-w4e" firstAttribute="leading" secondItem="Gzd-ul-DSV" secondAttribute="leading" id="jdW-3a-Kd0"/>
                             <constraint firstItem="QXz-qa-NI9" firstAttribute="trailing" secondItem="Gzd-ul-DSV" secondAttribute="trailing" id="qGF-Dh-kQD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gzd-ul-DSV"/>
                     </view>
+                    <connections>
+                        <outlet property="allComment" destination="bCj-eH-O5p" id="Vlh-Uy-ffq"/>
+                        <outlet property="bestComment" destination="6Sg-6O-tjs" id="zZX-98-tjg"/>
+                        <outlet property="tableView" destination="EjO-F7-w4e" id="6xM-P3-XAZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrj-qw-vHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
