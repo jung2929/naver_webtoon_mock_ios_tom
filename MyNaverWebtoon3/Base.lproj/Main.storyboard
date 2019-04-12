@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dCx-os-UdE">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-iL-ULS" customClass="UIScrollView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
-                                <color key="backgroundColor" red="1" green="0.45728443419999998" blue="0.40131530479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="61X-H0-B75"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PUJ-it-MKl">
-                                <rect key="frame" x="0.0" y="194" width="375" height="424"/>
+                                <rect key="frame" x="0.0" y="218" width="414" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i07-st-0lu">
                                     <size key="itemSize" width="115" height="131"/>
@@ -102,7 +102,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-kr-MON">
-                                <rect key="frame" x="0.0" y="164" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-pl-YZ8">
                                         <rect key="frame" x="48" y="1" width="30" height="30"/>
@@ -186,11 +186,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" image="document" badgeValue="웹툰" id="g2P-oK-tyF"/>
                     <navigationItem key="navigationItem" title="조회순" id="zpQ-om-9MK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="TzB-bM-B2x"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="search" id="TzB-bM-B2x">
+                            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="PUJ-it-MKl" id="DKD-Gq-s4q"/>
+                        <outlet property="navigationItem" destination="zpQ-om-9MK" id="ZoC-hM-Uy9"/>
                         <outlet property="topScrollView" destination="vIg-iL-ULS" id="EZT-hi-Zrh"/>
                     </connections>
                 </viewController>
@@ -203,42 +206,42 @@
             <objects>
                 <viewController id="jtx-95-2Zm" customClass="HomeViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUQ-A8-nht">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbX-Wl-2ax">
-                                <rect key="frame" x="0.0" y="548" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="743" width="414" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbarWebtoon" translatesAutoresizingMaskIntoConstraints="NO" id="O45-vu-Fs9">
-                                        <rect key="frame" x="17.5" y="5" width="60" height="60"/>
+                                        <rect key="frame" x="37" y="5" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Zxi-LL-Vst"/>
                                             <constraint firstAttribute="height" constant="60" id="mBI-8k-4OS"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbarBestChallenge" translatesAutoresizingMaskIntoConstraints="NO" id="lsR-G7-uPW">
-                                        <rect key="frame" x="87.5" y="5" width="60" height="60"/>
+                                        <rect key="frame" x="107" y="5" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="lvZ-Xe-4g7"/>
                                             <constraint firstAttribute="height" constant="60" id="un4-85-pES"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbarPLAY" translatesAutoresizingMaskIntoConstraints="NO" id="5FV-Rh-1Br">
-                                        <rect key="frame" x="157.5" y="5" width="60" height="60"/>
+                                        <rect key="frame" x="177" y="5" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="NGc-4s-I1S"/>
                                             <constraint firstAttribute="width" constant="60" id="Rja-tb-Kds"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbarMY" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-KB-7qd">
-                                        <rect key="frame" x="227.5" y="5" width="60" height="60"/>
+                                        <rect key="frame" x="247" y="5" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="6O7-BY-Qu0"/>
                                             <constraint firstAttribute="width" constant="60" id="gQR-GH-kfQ"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbarConfig" translatesAutoresizingMaskIntoConstraints="NO" id="3yv-el-asw">
-                                        <rect key="frame" x="297.5" y="5" width="60" height="60"/>
+                                        <rect key="frame" x="317" y="5" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="bKB-jh-Q3J"/>
                                             <constraint firstAttribute="width" constant="60" id="mg3-Ch-CHe"/>
@@ -291,38 +294,64 @@
             </objects>
             <point key="canvasLocation" x="522" y="2014"/>
         </scene>
-        <!--Best Challenge View Controller-->
+        <!--Test1 View Controller-->
         <scene sceneID="Q0M-hg-QmO">
             <objects>
-                <viewController id="lQU-GE-0eE" customClass="BestChallengeViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lQU-GE-0eE" customClass="Test1ViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ie5-mK-fLV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8e-Gb-mbJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="REp-hS-6oK">
+                                        <rect key="frame" x="141" y="83" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="REp-hS-6oK" secondAttribute="trailing" constant="60" id="LOt-go-9tX"/>
+                                    <constraint firstItem="REp-hS-6oK" firstAttribute="top" secondItem="u8e-Gb-mbJ" secondAttribute="top" constant="83" id="SfB-Rh-ucf"/>
+                                    <constraint firstAttribute="bottom" secondItem="REp-hS-6oK" secondAttribute="bottom" constant="8" id="jt5-Gb-DqS"/>
+                                    <constraint firstItem="REp-hS-6oK" firstAttribute="leading" secondItem="u8e-Gb-mbJ" secondAttribute="leading" constant="141" id="o6P-9y-9KP"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u8e-Gb-mbJ" firstAttribute="bottom" secondItem="Xn0-yn-okb" secondAttribute="bottom" id="HQp-E0-ATz"/>
+                            <constraint firstItem="u8e-Gb-mbJ" firstAttribute="top" secondItem="Xn0-yn-okb" secondAttribute="top" id="Vbm-f3-7FD"/>
+                            <constraint firstItem="u8e-Gb-mbJ" firstAttribute="trailing" secondItem="Xn0-yn-okb" secondAttribute="trailing" id="Zd7-Lu-ERF"/>
+                            <constraint firstItem="u8e-Gb-mbJ" firstAttribute="leading" secondItem="Xn0-yn-okb" secondAttribute="leading" id="fpr-nV-nJi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xn0-yn-okb"/>
                     </view>
+                    <connections>
+                        <outlet property="colorDots" destination="REp-hS-6oK" id="OMD-L8-1pG"/>
+                        <outlet property="scrollColors" destination="u8e-Gb-mbJ" id="XzR-ME-3pV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBA-68-d3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="2014"/>
+            <point key="canvasLocation" x="-204" y="2013.6431784107947"/>
         </scene>
         <!--List WebtoonTVC-->
         <scene sceneID="JKT-Vx-3EV">
             <objects>
                 <viewController id="d0y-Jk-hLF" customClass="ListWebtoonTVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gFa-3e-zwe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EbO-WI-QuF">
-                                <rect key="frame" x="0.0" y="114" width="375" height="504"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="SpG-4w-M0d" customClass="TableViewCell" customModule="MyNaverWebtoon3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SpG-4w-M0d" id="Fxb-X0-ciC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jwV-tc-5D5">
@@ -333,7 +362,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="118화 소애튜브(마지막)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s98-hA-6Im">
-                                                    <rect key="frame" x="90" y="12.5" width="270" height="21"/>
+                                                    <rect key="frame" x="90" y="12.5" width="265" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -375,10 +404,10 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-ak-IEa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crr-Qy-Tme">
-                                        <rect key="frame" x="318" y="10" width="52" height="30"/>
+                                        <rect key="frame" x="357" y="10" width="52" height="30"/>
                                         <state key="normal" title="첫회보기">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -457,11 +486,11 @@
             <objects>
                 <viewController id="X8C-eg-Ebk" customClass="ViewWebtoonVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ye9-Yg-J4v">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZH-1w-kpv">
-                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lu-9y-9jm">
                                         <rect key="frame" x="35" y="20" width="78" height="30"/>
@@ -482,8 +511,8 @@
                                     <constraint firstAttribute="height" constant="70" id="itn-Eo-Fd3"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVS-wl-pjZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVS-wl-pjZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -513,14 +542,14 @@
             <objects>
                 <viewController id="3rQ-gg-qH3" customClass="CommentVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A3S-mW-vn5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXz-qa-NI9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sg-6O-tjs">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="40"/>
                                         <color key="backgroundColor" red="0.3398044824" green="0.7258541127" blue="0.3997838131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="BEST 댓글">
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -530,7 +559,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-eH-O5p">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
+                                        <rect key="frame" x="207" y="0.0" width="207" height="40"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="전체 댓글">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -554,10 +583,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wc4-cK-SVJ">
-                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Inv-0i-PVh">
-                                        <rect key="frame" x="8" y="8" width="311" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="350" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="oKf-6X-JU7"/>
                                         </constraints>
@@ -566,7 +595,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7Z-KF-cfu">
-                                        <rect key="frame" x="327" y="8" width="40" height="30"/>
+                                        <rect key="frame" x="366" y="8" width="40" height="30"/>
                                         <color key="backgroundColor" red="0.3398044824" green="0.7258541127" blue="0.3997838131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="SVv-SL-8o0"/>
@@ -590,18 +619,18 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-F7-w4e">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="70" id="fBI-fE-VWn" customClass="CommentCellTableViewCell" customModule="MyNaverWebtoon3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBI-fE-VWn" id="np8-Rq-4ca">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-3u-1EW">
-                                                    <rect key="frame" x="15" y="21" width="30.5" height="20"/>
+                                                    <rect key="frame" x="20" y="21" width="30.5" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="G0t-rW-XYj"/>
                                                     </constraints>
@@ -629,7 +658,7 @@
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아랑사 점점 아린닮아가네ㅋㅋㅋㅋㅋㅋㅋㅋ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPm-1S-8Ll">
-                                                    <rect key="frame" x="55" y="21" width="204" height="20"/>
+                                                    <rect key="frame" x="60" y="21" width="204" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="8VJ-Sh-Icc"/>
                                                     </constraints>
@@ -734,26 +763,26 @@
             <objects>
                 <viewController storyboardIdentifier="MyPageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hAp-gc-JuQ" customClass="MyPageVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qy6-7Y-2p8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLD-Fl-VOA">
-                                <rect key="frame" x="0.0" y="128" width="375" height="490"/>
+                                <rect key="frame" x="0.0" y="152" width="414" height="661"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 하시면 PC와 모바일에 등록하신" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs5-g6-Ps6">
-                                        <rect key="frame" x="72" y="236" width="231" height="18"/>
+                                        <rect key="frame" x="91.5" y="321.5" width="231" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심웹툰을 모두 보실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3W-fS-l7u">
-                                        <rect key="frame" x="86.5" y="265" width="202" height="18"/>
+                                        <rect key="frame" x="106" y="350.5" width="202" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcz-4T-usp">
-                                        <rect key="frame" x="145" y="291" width="85" height="49"/>
+                                        <rect key="frame" x="164.5" y="376.5" width="85" height="49"/>
                                         <color key="backgroundColor" red="0.3398044824" green="0.7258541127" blue="0.3997838131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="bsv-cB-8a1"/>
@@ -778,10 +807,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axo-Xn-7R6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="64"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-KJ-ms8">
-                                        <rect key="frame" x="10" y="34" width="355" height="29"/>
+                                        <rect key="frame" x="10" y="34" width="394" height="29"/>
                                         <segments>
                                             <segment title="관심웹툰"/>
                                             <segment title="최근 본"/>
@@ -834,20 +863,20 @@
             <objects>
                 <viewController id="A7K-De-keU" customClass="SignUpVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbf-uH-N4h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-Ux-O6L">
-                                <rect key="frame" x="16" y="80" width="343" height="230"/>
+                                <rect key="frame" x="16" y="104" width="382" height="230"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsG-S8-Nfv">
-                                        <rect key="frame" x="105" y="34" width="230" height="30"/>
+                                        <rect key="frame" x="105" y="34" width="269" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQc-dK-T5t">
-                                        <rect key="frame" x="105" y="72" width="230" height="30"/>
+                                        <rect key="frame" x="105" y="72" width="269" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -879,7 +908,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9F7-MF-vZv">
-                                        <rect key="frame" x="104.5" y="148" width="230.5" height="30"/>
+                                        <rect key="frame" x="104.5" y="148" width="269.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -895,7 +924,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1V-I7-piU">
-                                        <rect key="frame" x="105" y="186" width="230" height="30"/>
+                                        <rect key="frame" x="105" y="186" width="269" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -911,7 +940,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="한번 더!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMp-In-adx">
-                                        <rect key="frame" x="105" y="110" width="230" height="30"/>
+                                        <rect key="frame" x="105" y="110" width="269" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -960,7 +989,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-F6-mg9">
-                                <rect key="frame" x="274" y="318" width="85" height="49"/>
+                                <rect key="frame" x="313" y="342" width="85" height="49"/>
                                 <color key="backgroundColor" red="0.24218701270000001" green="0.7258541127" blue="0.52137397500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="5rb-So-TX5"/>
@@ -974,7 +1003,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘못된 형식의 입력 처리 Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-lP-LkV">
-                                <rect key="frame" x="16" y="318" width="183" height="18"/>
+                                <rect key="frame" x="16" y="342" width="183" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.18687949440000001" blue="0.20406904719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1010,20 +1039,20 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yjf-hL-AeB" customClass="LoginVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZFM-0b-IRo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-Sh-aHr">
-                                <rect key="frame" x="16" y="80" width="343" height="131"/>
+                                <rect key="frame" x="16" y="104" width="382" height="131"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atV-bA-Q4o">
-                                        <rect key="frame" x="105" y="34" width="230" height="30"/>
+                                        <rect key="frame" x="105" y="34" width="269" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-vj-3nZ">
-                                        <rect key="frame" x="105" y="72" width="230" height="30"/>
+                                        <rect key="frame" x="105" y="72" width="269" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1081,7 +1110,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXf-MS-FdJ">
-                                <rect key="frame" x="203" y="219" width="85" height="49"/>
+                                <rect key="frame" x="242" y="243" width="85" height="49"/>
                                 <color key="backgroundColor" red="0.24218701270000001" green="0.7258541127" blue="0.52137397500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="JRT-4N-0kn"/>
@@ -1096,7 +1125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICo-pF-Afn">
-                                <rect key="frame" x="87" y="219" width="85" height="49"/>
+                                <rect key="frame" x="87" y="243" width="85" height="49"/>
                                 <color key="backgroundColor" red="0.3398044824" green="0.7258541127" blue="0.3997838131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="kMJ-DV-FQE"/>
@@ -1141,7 +1170,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dCx-os-UdE" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yOU-Cu-j6i">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1176,6 +1205,7 @@
     </scenes>
     <resources>
         <image name="document" width="30" height="30"/>
+        <image name="search" width="30" height="30"/>
         <image name="tabbarBestChallenge" width="151" height="136"/>
         <image name="tabbarConfig" width="151" height="136"/>
         <image name="tabbarMY" width="151" height="136"/>

@@ -47,12 +47,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         
         
-        
-        //title = "title"
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: nil, action: nil)
+        self.title = "조회순"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search"), style: .plain, target: nil, action: nil)
         //navigationController?.navigationBar.barTintColor = UIColor(red:0.91, green:0.3, blue:0.24, alpha:1)
-        
-        
+        //self.view.addSubview(navigationBar)
+       
         initArrays()
         setupDayScrollView()
         setupCollectionView()
@@ -83,7 +82,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setupDayScrollView(){
         testImage = [#imageLiteral(resourceName: "메인뷰광고2"),#imageLiteral(resourceName: "메인뷰광고3"),#imageLiteral(resourceName: "메인뷰광고1")]
         topScrollView.isPagingEnabled = true
-        topScrollView.contentMode = .scaleAspectFit
+        topScrollView.contentMode = .scaleToFill
         for i in 0..<testImage.count{
             let imgView = UIImageView()
             imgView.image = testImage[i]
