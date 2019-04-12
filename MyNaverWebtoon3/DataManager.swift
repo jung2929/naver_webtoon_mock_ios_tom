@@ -15,4 +15,7 @@ class DataManager: NSObject {
     static var comments = [[ String : AnyObject ]]()
     static var loginFlag:Bool = false
     static var logintoken = ""
+    static var mainCollectionViewImage = [UIImage]()
+    static var topOfGodViewImage = [UIImage]()
+    static var worldOfGirlsViewImage = [UIImage]()
 }

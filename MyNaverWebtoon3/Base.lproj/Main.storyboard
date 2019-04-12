@@ -184,7 +184,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="g2P-oK-tyF"/>
+                    <tabBarItem key="tabBarItem" image="document" badgeValue="웹툰" id="g2P-oK-tyF"/>
                     <navigationItem key="navigationItem" title="조회순" id="zpQ-om-9MK">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="TzB-bM-B2x"/>
                     </navigationItem>
@@ -602,12 +602,11 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-3u-1EW">
                                                     <rect key="frame" x="15" y="21" width="30.5" height="20"/>
-                                                    <color key="backgroundColor" red="1" green="0.18687949440000001" blue="0.20406904719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="G0t-rW-XYj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="1" green="0.18687949440000001" blue="0.20406904719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.03.08 23:18:58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rm-8W-eX1">
@@ -814,7 +813,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6lv-NC-jMh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="P8I-4V-35c"/>
+                    <tabBarItem key="tabBarItem" image="user_male" badgeValue="MY" id="P8I-4V-35c"/>
                     <navigationItem key="navigationItem" title="Title" id="kL3-kT-QSC">
                         <barButtonItem key="rightBarButtonItem" title="쿠키샵&gt;" style="plain" id="Kad-ax-D2Y">
                             <color key="tintColor" red="0.3398044824" green="0.7258541127" blue="0.3997838131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1176,10 +1175,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="document" width="30" height="30"/>
         <image name="tabbarBestChallenge" width="151" height="136"/>
         <image name="tabbarConfig" width="151" height="136"/>
         <image name="tabbarMY" width="151" height="136"/>
         <image name="tabbarPLAY" width="151" height="136"/>
-        <image name="tabbarWebtoon" width="151" height="136"/>
+        <image name="tabbarWebtoon" width="50" height="50"/>
+        <image name="user_male" width="30" height="30"/>
     </resources>
 </document>

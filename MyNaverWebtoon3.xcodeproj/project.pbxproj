@@ -25,6 +25,7 @@
 		32720A45226023BD005FC2F2 /* CommentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A44226023BD005FC2F2 /* CommentDTO.swift */; };
 		32720A4722604ED2005FC2F2 /* TestCommentsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 32720A4622604ED2005FC2F2 /* TestCommentsTest.json */; };
 		32720A4A22605E19005FC2F2 /* AllCommentsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 32720A4922605E19005FC2F2 /* AllCommentsTest.json */; };
+		32720A4C2260A023005FC2F2 /* SimpleResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A4B2260A023005FC2F2 /* SimpleResponseDTO.swift */; };
 		327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B752253B3B000342C36 /* AppDelegate.swift */; };
 		327F2B782253B3B000342C36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B772253B3B000342C36 /* MainViewController.swift */; };
 		327F2B7B2253B3B000342C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327F2B792253B3B000342C36 /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 		32720A44226023BD005FC2F2 /* CommentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDTO.swift; sourceTree = "<group>"; };
 		32720A4622604ED2005FC2F2 /* TestCommentsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestCommentsTest.json; sourceTree = "<group>"; };
 		32720A4922605E19005FC2F2 /* AllCommentsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllCommentsTest.json; sourceTree = "<group>"; };
+		32720A4B2260A023005FC2F2 /* SimpleResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleResponseDTO.swift; sourceTree = "<group>"; };
 		327F2B722253B3B000342C36 /* MyNaverWebtoon3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNaverWebtoon3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327F2B752253B3B000342C36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327F2B772253B3B000342C36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				325958AF225A16330055C967 /* ConfigureProperties.swift */,
 				325958C3225E488A0055C967 /* MyComicListDTO.swift */,
 				32720A44226023BD005FC2F2 /* CommentDTO.swift */,
+				32720A4B2260A023005FC2F2 /* SimpleResponseDTO.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -195,8 +198,8 @@
 			children = (
 				325958AC2259F2550055C967 /* DataManager */,
 				327F2BC42259BB6800342C36 /* ViewController */,
-				327F2B752253B3B000342C36 /* AppDelegate.swift */,
 				325958AD225A13460055C967 /* DataManager.swift */,
+				327F2B752253B3B000342C36 /* AppDelegate.swift */,
 				325958AB2259F1B70055C967 /* CellFormat */,
 				327F2B792253B3B000342C36 /* Main.storyboard */,
 				327F2B7C2253B3B100342C36 /* Assets.xcassets */,
@@ -502,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32720A4C2260A023005FC2F2 /* SimpleResponseDTO.swift in Sources */,
 				327F2BB722578F4100342C36 /* Test1ViewController.swift in Sources */,
 				327F2BB32256601200342C36 /* ComicDayDTO.swift in Sources */,
 				327F2B782253B3B000342C36 /* MainViewController.swift in Sources */,

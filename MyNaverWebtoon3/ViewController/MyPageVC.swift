@@ -27,10 +27,6 @@ class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         getDataIfLogin(logintoken: DataManager.logintoken)
         navigationController?.navigationBar.topItem?.title = "MY"
         topView.layer.addBorder([.bottom], color: UIColor.lightGray, width: 1)
-//        if DataManager.loginFlag {
-//            tableViewSetup(myPageTableView: myPageTableView, superView: bottomView)
-//        }
-       // tableViewSetup(myPageTableView: myPageTableView, superView: bottomView)
         self.myPageTableView.reloadData()
         
         
@@ -94,8 +90,8 @@ class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(DataManager.resultComicDay.count)
-        return DataManager.resultComicDay.count
+        print(DataManager.resultMyComic.count)
+        return DataManager.resultMyComic.count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -105,9 +101,11 @@ class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MyPageTVC else {print("error")
             return UITableViewCell() }
-        cell.titleLabel.text = DataManager.resultComicDay[indexPath.row]["Comic_Name"]!! as? String
-        cell.dateLabel.text = DataManager.resultComicDay[indexPath.row]["Comic_Text"]!! as? String
-        print("aaa")
+        cell.titleLabel.text = DataManager.resultMyComic[indexPath.row]["Comic_Name"]! as? String
+        cell.dateLabel.text = DataManager.resultMyComic[indexPath.row]["Comic_Text"]! as? String
+        cell.sumnailImg.image = DataManager.worldOfGirlsViewImage[indexPath.row]
+        cell.alamImg.image = UIImage(named: "following")
+        //print("aaa")
         return cell
     }
 

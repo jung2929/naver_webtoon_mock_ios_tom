@@ -23,13 +23,21 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as? CommentCellTableViewCell else {print("error")
             return UITableViewCell() }
         //cell.bestLabel.text = "best"
+        cell.bestLabel.layer.borderWidth=1
+        cell.bestLabel.layer.borderColor = UIColor.white.cgColor
+        cell.bestLabel.layer.cornerRadius=10
         cell.commentLabel.text = DataManager.comments[indexPath.row]["Comment_Content"] as! String
         cell.dateLabel.text = DataManager.comments[indexPath.row]["Comment_Date"] as! String
         cell.idLabel.text = DataManager.comments[indexPath.row]["User_Id"] as! String
         let tmpCommentLike:String = String(DataManager.comments[indexPath.row]["Comment_Like"] as! Int)
+        cell.goodButton.layer.cornerRadius = 5
+        cell.goodButton.layer.borderWidth = 1
         cell.goodButton.setTitle("👍 "+tmpCommentLike, for: .normal)
         let tmpCommentDislike:String = String(DataManager.comments[indexPath.row]["Comment_DisLike"] as! Int)
+        cell.badButton.layer.cornerRadius = 5
+        cell.badButton.layer.borderWidth = 1
         cell.badButton.setTitle("👎 "+tmpCommentDislike, for: .normal)
+        
         cell.goodButton.addTarget(self, action: #selector(giveThemLike(_:)), for: .touchUpInside)
         cell.badButton.addTarget(self, action: #selector(giveThemDisLike(_:)), for: .touchUpInside)
         return cell
@@ -37,17 +45,15 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @objc func giveThemLike(_ sender: UIButton){
         print("giveThemLike")
-//        let alert = UIAlertController(title: "Subscribed!", message: "giveThemLike", preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//
-//        self.present(alert, animated: true, completion: nil)
+        sender.layer.borderWidth = 1
+        sender.layer.borderColor = UIColor.orange.cgColor
+        
+        
     }
     @objc func giveThemDisLike(_ sender: UIButton){
         print("giveThemDisLike")
-//        let alert = UIAlertController(title: "Subscribed!", message: "giveThemDisLike", preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//
-//        self.present(alert, animated: true, completion: nil)
+        sender.layer.borderWidth = 1
+        sender.layer.borderColor = UIColor.orange.cgColor
     }
     
     @IBAction func bestCommentTapped(_ sender: UIButton) {
@@ -60,7 +66,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             allComment.backgroundColor = UIColor.lightGray
             allComment.setTitleColor(UIColor.black, for: .normal)
             //bestComment.setTitle("ON", for: .normal)
-            getCommentsDatafromJson(mode: "testBestComments", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
+            getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
             sender.isSelected = false
             self.tableView.reloadData()
         }
@@ -87,7 +93,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             bestComment.backgroundColor = UIColor.lightGray
             bestComment.setTitleColor(UIColor.black, for: .normal)
             //bestComment.setTitle("ON", for: .normal)
-            getCommentsDatafromJson(mode: "testAllComments", url: "http://softcomics.co.kr/comic/content/comment/", contentNo: String(tmpCotentNo))
+            getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/comment/", contentNo: String(tmpCotentNo))
             sender.isSelected = false
             self.tableView.reloadData()
         }
@@ -109,7 +115,38 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     @IBAction func insertCommentRequest(_ sender: Any) {
-        //alamofire 로 request 수정해야함.
+        let comment:String = commentTextField.text!
+        let url = "http://softcomics.co.kr/comic/content/comment"
+        let parameters: [String: Any] = [
+            "contentno":1,
+            "comment":comment
+        ]
+        let header = ["x-access-token":DataManager.logintoken]
+        print(parameters)
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<SimpleResponseDTO>) in
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+                print(response.result.value?.code)
+                let status = response.result.value?.code
+                print(status)
+                switch status {
+                case 100:
+                    print("comment ok")
+                    let alert = UIAlertController(title: "댓글", message: "댓글이 달렸습니다.", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                    self.commentTextField.resignFirstResponder()
+                    break
+                default:
+                    print(status)
+                    print("로그인하세요.")
+                    break
+                }
+            }
+        }
+        
     }
     
     
@@ -133,12 +170,12 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         self.tableView.dataSource = self
         
         // Do any additional setup after loading the view.
-        getCommentsDatafromJson(mode: "testBestComments", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
+        
         
         print("tmpContentNo",tmpCotentNo)
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        tmpCotentNo = 1  /// 서버에 1밖에 없음.
+        print("tmpContentNo",tmpCotentNo)
+        getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -173,10 +210,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         UIView.animate(withDuration: 0.5){
             self.view.layoutIfNeeded()
         }
-        
     }
-    
-    
     
     func getCommentsDatafromJson(mode:String, url:String, contentNo:String){
         if mode == "testBestComments" {
@@ -192,6 +226,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                         DataManager.comments = JSON.data
                         print("resultComicDay",DataManager.comments)
                         print(DataManager.comments.count)
+                        self.tableView.reloadData()
                     }
                 }
             }
@@ -209,6 +244,7 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                         DataManager.comments = JSON.data
                         print("resultComicDay",DataManager.comments)
                         print(DataManager.comments.count)
+                        self.tableView.reloadData()
                     }
                 }
             }
@@ -224,13 +260,14 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                     DataManager.comments = JSON.data
                     print("resultComicDay",DataManager.comments)
                     print(DataManager.comments.count)
+                    self.tableView.reloadData()
                 }
             }
             //}
         }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            print("tableView reloaded")
-        }
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//            print("tableView reloaded")
+//        }
     }
 }

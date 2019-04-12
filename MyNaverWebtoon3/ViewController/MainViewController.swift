@@ -30,7 +30,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.grade.text = "★ "+String(describing: DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!!)
         cell.grade.textColor = .red
         print("comicrating ",DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!!)
-        cell.sumnail.image = UIImage(named: "tom.png")
+        cell.sumnail.image = DataManager.mainCollectionViewImage[indexPath.row]
         cell.comicNumber = DataManager.resultComicDay[indexPath.row]["Comic_No"]! as! Int
         cell.comicNumberOfHeart = DataManager.resultComicDay[indexPath.row]["Comic_Heart"]! as! Int
         return cell
@@ -43,9 +43,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var testImage = [UIImage]()
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,13 +53,19 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         //navigationController?.navigationBar.barTintColor = UIColor(red:0.91, green:0.3, blue:0.24, alpha:1)
         
         
-        
+        initArrays()
         setupDayScrollView()
         setupCollectionView()
-        getComicDayDatafromJson(mode: "test")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.reloadData()
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.getComicDayDatafromJson(mode: "real")
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        
+        
     }
     
     func setupCollectionView(){
@@ -78,7 +81,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setupDayScrollView(){
-        testImage = [#imageLiteral(resourceName: "tabbarBestChallenge"),#imageLiteral(resourceName: "tabbarWebtoon"),#imageLiteral(resourceName: "tabbarConfig")]
+        testImage = [#imageLiteral(resourceName: "메인뷰광고2"),#imageLiteral(resourceName: "메인뷰광고3"),#imageLiteral(resourceName: "메인뷰광고1")]
         topScrollView.isPagingEnabled = true
         topScrollView.contentMode = .scaleAspectFit
         for i in 0..<testImage.count{
@@ -104,6 +107,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                         DataManager.resultComicDay = JSON.result
                         print("resultComicDay",DataManager.resultComicDay)
                         print(DataManager.resultComicDay.count)
+                        self.collectionView.reloadData()
                     }
                 }
             }
@@ -120,13 +124,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                         DataManager.resultComicDay = JSON.result
                         print("resultComicDay",DataManager.resultComicDay)
                         print(DataManager.resultComicDay.count)
+                        self.collectionView.reloadData()
                     }
                 }
             //}
         }
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+//        DispatchQueue.main.async {
+//            self.collectionView.reloadData()
+//        }
     }
     
     
@@ -140,21 +145,21 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 destination.tmpNaviBarTopItem = currentCell.title.text
                 destination.tmpComicNumber = currentCell.comicNumber
                 destination.tmpComicNumberofHeart = currentCell.comicNumberOfHeart
-                /*
-                 destination.tempOrgTiTleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!
-                 destination.tempTitleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!
-                 destination.tempNoteToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].note!
-                 destination.tempDueDateToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].dueDate!
-                 destination.tempTableViewSelectedRow = tableView.indexPathForSelectedRow?.row
-                 */
             }
         }
-        //print("text : ", currentCell.titleLabel.text)
         
         
     }
     
-    
+    func initArrays(){
+        DataManager.comments.removeAll()
+        DataManager.resultComicContents.removeAll()
+        DataManager.resultComicDay.removeAll()
+        DataManager.resultMyComic.removeAll()
+        DataManager.mainCollectionViewImage = [UIImage(named: "신의탑메인섬네일"), UIImage(named: "소녀의세계메인섬네일")] as! [UIImage]
+        DataManager.topOfGodViewImage = [UIImage(named: "신의탑컨텐츠섬네일1"), UIImage(named: "신의탑컨텐츠섬네일2"),UIImage(named: "신의탑컨텐츠섬네일3"), UIImage(named: "신의탑컨텐츠섬네일4"),UIImage(named: "신의탑컨텐츠섬네일5"), UIImage(named: "신의탑컨텐츠섬네일6"),UIImage(named: "신의탑컨텐츠섬네일7"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9") ] as! [UIImage]
+        DataManager.worldOfGirlsViewImage = [ UIImage(named: "소녀의세계컨텐츠섬네일1"), UIImage(named: "소녀의세계컨텐츠섬네일2"),UIImage(named: "소녀의세계컨텐츠섬네일3"), UIImage(named: "소녀의세계컨텐츠섬네일4"),UIImage(named: "소녀의세계컨텐츠섬네일5"), UIImage(named: "소녀의세계컨텐츠섬네일6"),UIImage(named: "소녀의세계컨텐츠섬네일7"), UIImage(named: "소녀의세계컨텐츠섬네일8"),UIImage(named: "소녀의세계컨텐츠섬네일9")] as! [UIImage]
+    }
     
 
     @objc func pushToNextVC() {

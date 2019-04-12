@@ -24,14 +24,14 @@ class ViewWebtoonVC: ScrollingNavigationViewController, ScrollingNavigationContr
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "ScrollView"
+        title = "WebToon"
         
         // navigationItem.prompt = "Prompt"
         
-        navigationController?.navigationBar.barTintColor = UIColor(red:0.17, green:0.59, blue:0.87, alpha:1)
-        tabBarController?.tabBar.barTintColor = UIColor(red:0.17, green:0.59, blue:0.87, alpha:1)
-        tabBarController?.tabBar.tintColor = .white
-        
+//        navigationController?.navigationBar.barTintColor = UIColor(red:0.17, green:0.59, blue:0.87, alpha:1)
+//        tabBarController?.tabBar.barTintColor = UIColor(red:0.17, green:0.59, blue:0.87, alpha:1)
+//        tabBarController?.tabBar.tintColor = .white
+//
         scrollView.backgroundColor = UIColor(red:0.13, green:0.5, blue:0.73, alpha:1)
         
         let label = UILabel(frame: CGRect(x: 10, y: 10, width: 0, height: 0))
@@ -91,13 +91,5 @@ class ViewWebtoonVC: ScrollingNavigationViewController, ScrollingNavigationContr
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? CommentVC else { return }
                 destination.tmpCotentNo = tmpCotentNo
-                /*
-                 destination.tempOrgTiTleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!
-                 destination.tempTitleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!
-                 destination.tempNoteToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].note!
-                 destination.tempDueDateToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].dueDate!
-                 destination.tempTableViewSelectedRow = tableView.indexPathForSelectedRow?.row
-                 */
-        
     }
 }

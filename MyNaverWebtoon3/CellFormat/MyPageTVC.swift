@@ -18,7 +18,7 @@ class MyPageTVC: UITableViewCell {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
             
             sumnailImg.backgroundColor = UIColor.blue
-            alamImg.backgroundColor = UIColor.gray
+            //alamImg.backgroundColor = UIColor.gray
             
             sumnailImg.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.translatesAutoresizingMaskIntoConstraints = false

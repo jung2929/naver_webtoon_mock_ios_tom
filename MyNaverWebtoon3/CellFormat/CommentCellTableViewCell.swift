@@ -18,5 +18,4 @@ class CommentCellTableViewCell: UITableViewCell {
     @IBOutlet weak var badButton: UIButton!
     
     var contentNo:Int = 0
-
 }
