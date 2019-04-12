@@ -68,6 +68,7 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.titleDetail.text = DataManager.resultComicContents[indexPath.row]["Content_Name"]!! as? String
         cell.gradeDetail.text = "★ "+String(describing: DataManager.resultComicContents[indexPath.row]["Content_Rating"]!!)
         cell.dateDetail.text = DataManager.resultComicContents[indexPath.row]["Content_Date"]!! as? String
+        cell.conTentNo = DataManager.resultComicContents[indexPath.row]["Content_No"] as! Int
         return cell
     }
     
@@ -83,6 +84,11 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("tmpComicNumber ; ",tmpComicNumber)
         
         getDatafromJson(mode: "test")
+        
+        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -109,6 +115,27 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? ViewWebtoonVC else { return }
+        let indexPath = tableView.indexPath(for: sender as! TableViewCell)
+        if indexPath != nil{
+            let currentCell = tableView.cellForRow(at: indexPath!) as! TableViewCell
+            if ((tableView?.indexPathsForSelectedRows) != nil){
+                destination.tmpCotentNo = currentCell.conTentNo
+                /*
+                 destination.tempOrgTiTleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!
+                 destination.tempTitleToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].title!
+                 destination.tempNoteToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].note!
+                 destination.tempDueDateToDo = ToDoManager.toDoArray[(tableView.indexPathForSelectedRow?.row)!].dueDate!
+                 destination.tempTableViewSelectedRow = tableView.indexPathForSelectedRow?.row
+                 */
+            }
+        }
+        //print("text : ", currentCell.titleLabel.text)
+        
+        
     }
 
 

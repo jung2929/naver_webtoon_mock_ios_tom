@@ -7,30 +7,100 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireObjectMapper
 
 class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    //BEST Label 없애려면 TableView를 2개 써야할듯.
+    //2번 눌러야 refresh 되는것 좀 고쳐야할듯..
+    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return DataManager.comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as? CommentCellTableViewCell else {print("error")
             return UITableViewCell() }
         //cell.bestLabel.text = "best"
-        cell.commentLabel.text = "commnet"
-        cell.dateLabel.text = "date"
-        cell.idLabel.text = "id"
+        cell.commentLabel.text = DataManager.comments[indexPath.row]["Comment_Content"] as! String
+        cell.dateLabel.text = DataManager.comments[indexPath.row]["Comment_Date"] as! String
+        cell.idLabel.text = DataManager.comments[indexPath.row]["User_Id"] as! String
+        let tmpCommentLike:String = String(DataManager.comments[indexPath.row]["Comment_Like"] as! Int)
+        cell.goodButton.setTitle("👍 "+tmpCommentLike, for: .normal)
+        let tmpCommentDislike:String = String(DataManager.comments[indexPath.row]["Comment_DisLike"] as! Int)
+        cell.badButton.setTitle("👎 "+tmpCommentDislike, for: .normal)
+        cell.goodButton.addTarget(self, action: #selector(giveThemLike(_:)), for: .touchUpInside)
+        cell.badButton.addTarget(self, action: #selector(giveThemDisLike(_:)), for: .touchUpInside)
         return cell
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var bestComment: UIButton!
-    @IBOutlet weak var allComment: UIButton!
-    
-    @IBAction func bestCommentTapped(_ sender: Any) {
+    @objc func giveThemLike(_ sender: UIButton){
+        print("giveThemLike")
+//        let alert = UIAlertController(title: "Subscribed!", message: "giveThemLike", preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//        self.present(alert, animated: true, completion: nil)
     }
-    @IBAction func allCommentTapped(_ sender: Any) {
+    @objc func giveThemDisLike(_ sender: UIButton){
+        print("giveThemDisLike")
+//        let alert = UIAlertController(title: "Subscribed!", message: "giveThemDisLike", preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func bestCommentTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            
+            print(sender.isSelected)
+            bestComment.backgroundColor = UIColor.green
+            bestComment.setTitleColor(UIColor.white, for: .normal)
+            allComment.backgroundColor = UIColor.lightGray
+            allComment.setTitleColor(UIColor.black, for: .normal)
+            //bestComment.setTitle("ON", for: .normal)
+            getCommentsDatafromJson(mode: "testBestComments", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
+            sender.isSelected = false
+            self.tableView.reloadData()
+        }
+            
+        else {
+            bestComment.backgroundColor = UIColor.lightGray
+            bestComment.setTitleColor(UIColor.black, for: .normal)
+            allComment.backgroundColor = UIColor.green
+            allComment.setTitleColor(UIColor.white, for: .normal)
+            print(sender.isSelected)
+            //sender.isSelected = true
+            //bestComment.setTitle("OFF", for: .normal)
+        }
+    }
+    
+    @IBAction func allCommentTapped(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            
+            print(sender.isSelected)
+            allComment.backgroundColor = UIColor.green
+            allComment.setTitleColor(UIColor.white, for: .normal)
+            bestComment.backgroundColor = UIColor.lightGray
+            bestComment.setTitleColor(UIColor.black, for: .normal)
+            //bestComment.setTitle("ON", for: .normal)
+            getCommentsDatafromJson(mode: "testAllComments", url: "http://softcomics.co.kr/comic/content/comment/", contentNo: String(tmpCotentNo))
+            sender.isSelected = false
+            self.tableView.reloadData()
+        }
+            
+        else {
+            allComment.backgroundColor = UIColor.lightGray
+            allComment.setTitleColor(UIColor.black, for: .normal)
+            bestComment.backgroundColor = UIColor.green
+            bestComment.setTitleColor(UIColor.white, for: .normal)
+            print(sender.isSelected)
+            //bestComment.setTitle("OFF", for: .normal)
+        }
+        
     }
     
     @IBAction func goodTapped(_ sender: Any) {
@@ -38,24 +108,129 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBAction func badTapped(_ sender: Any) {
     }
     
+    @IBAction func insertCommentRequest(_ sender: Any) {
+        //alamofire 로 request 수정해야함.
+    }
+    
+    
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var bestComment: UIButton!
+    @IBOutlet weak var allComment: UIButton!
+    
+    @IBOutlet weak var insertCommentConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var commentTextField: UITextField!
+    
+    var tmpCotentNo:Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
+        getCommentsDatafromJson(mode: "testBestComments", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
+        
+        print("tmpContentNo",tmpCotentNo)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        self.view.bringSubviewToFront(bottomView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        commentTextField.resignFirstResponder()
     }
-    */
-
+    
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let keyboardSize = (notification.userInfo?  [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let keyboardHeight = keyboardSize?.height
+        if #available(iOS 11.0, *){
+            self.insertCommentConstraint.constant = keyboardHeight! - view.safeAreaInsets.bottom + 10
+        }
+        else {
+            self.insertCommentConstraint.constant = view.safeAreaInsets.bottom
+        }
+        UIView.animate(withDuration: 0.5){
+            self.view.layoutIfNeeded()
+        }
+        
+        
+    }
+    
+    @objc func keyboardWillHide(notification: Notification){
+        self.insertCommentConstraint.constant =  0
+        UIView.animate(withDuration: 0.5){
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    
+    
+    func getCommentsDatafromJson(mode:String, url:String, contentNo:String){
+        if mode == "testBestComments" {
+            print(mode)
+            let path = Bundle.main.path(forResource: "TestCommentsTest", ofType: "json")
+            print(path)
+            if let path = Bundle.main.path(forResource: "TestCommentsTest", ofType: "json") {
+                let url=URL(fileURLWithPath: path)
+                Alamofire.request(url).responseObject {(response : DataResponse<CommentDTO>) in
+                    if let JSON = response.result.value {
+                        //print("JSON: \(JSON)")
+                        //print(response.result.value?.resultComicDay)
+                        DataManager.comments = JSON.data
+                        print("resultComicDay",DataManager.comments)
+                        print(DataManager.comments.count)
+                    }
+                }
+            }
+            //print("out:",DataManager.resultComicDay.count)
+        } else if mode == "testAllComments"{
+             print(mode)
+            let path = Bundle.main.path(forResource: "AllCommentsTest", ofType: "json")
+            print(path)
+            if let path = Bundle.main.path(forResource: "AllCommentsTest", ofType: "json") {
+                let url=URL(fileURLWithPath: path)
+                Alamofire.request(url).responseObject {(response : DataResponse<CommentDTO>) in
+                    if let JSON = response.result.value {
+                        //print("JSON: \(JSON)")
+                        //print(response.result.value?.resultComicDay)
+                        DataManager.comments = JSON.data
+                        print("resultComicDay",DataManager.comments)
+                        print(DataManager.comments.count)
+                    }
+                }
+            }
+        } else if mode == "real" {
+            print(mode)
+            let url = url+contentNo
+            // DispatchQueue.global(qos:.userInteractive).async {
+            print(url)
+            Alamofire.request(url).responseObject{(response : DataResponse<CommentDTO>) in
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    print(response.result.value?.data)
+                    DataManager.comments = JSON.data
+                    print("resultComicDay",DataManager.comments)
+                    print(DataManager.comments.count)
+                }
+            }
+            //}
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            print("tableView reloaded")
+        }
+    }
 }

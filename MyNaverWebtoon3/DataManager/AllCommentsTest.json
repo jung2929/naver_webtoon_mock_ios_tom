@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "User_Id": "yha",
+            "Comment_No": 6,
+            "Comment_Content": "All Comment Test 입니다.",
+            "Comment_Like": 5,
+            "Comment_DisLike": 1,
+            "Comment_Date": "2019-04-01 06:09:27"
+        },
+        {
+            "User_Id": "홀리(wjsr****)",
+            "Comment_No": 5,
+            "Comment_Content": "아랑사 점점 아린닮아가네ㅋㅋㅋㅋㅋㅋㅋㅋ",
+            "Comment_Like": 10,
+            "Comment_DisLike": 1,
+            "Comment_Date": "2019-04-01 06:08:42"
+        }
+    ],
+    "code": 100,
+    "message": "테스트 성공"
+}
