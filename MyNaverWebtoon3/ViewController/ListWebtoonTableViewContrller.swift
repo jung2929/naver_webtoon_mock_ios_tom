@@ -11,7 +11,7 @@ import AMScrollingNavbar
 import Alamofire
 import AlamofireObjectMapper
 
-class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var isRegister:Bool = false
     var isGivenHeart:Bool = false
     @IBOutlet weak var comicHeart: UIButton!
@@ -57,25 +57,10 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var tmpComicNumberofHeart:Int?
 
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.resultComicContents.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell else {print("error")
-            return UITableViewCell() }
-        cell.titleDetail.text = DataManager.resultComicContents[indexPath.row]["Content_Name"]!! as? String
-        cell.gradeDetail.text = "★ "+String(describing: DataManager.resultComicContents[indexPath.row]["Content_Rating"]!!)
-        cell.dateDetail.text = DataManager.resultComicContents[indexPath.row]["Content_Date"]!! as? String
-        cell.conTentNo = DataManager.resultComicContents[indexPath.row]["Content_No"] as! Int
-        cell.imageSumnailDetail.image = DataManager.topOfGodViewImage[indexPath.row]
-        return cell
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
         getDatafromJson(mode: "real")
-        
         self.tableView.reloadData()
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -166,14 +151,10 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         }
-//        self.tableView.reloadData()
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? ViewWebtoonVC else { return }
+        guard let destination = segue.destination as? ViewWebtoonViewController else { return }
         let indexPath = tableView.indexPath(for: sender as! TableViewCell)
         if indexPath != nil{
             let currentCell = tableView.cellForRow(at: indexPath!) as! TableViewCell
@@ -182,6 +163,21 @@ class ListWebtoonTVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
+}
 
-
+extension ListWebtoonTableViewContrller {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DataManager.resultComicContents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell else {print("error")
+            return UITableViewCell() }
+        cell.titleDetail.text = DataManager.resultComicContents[indexPath.row].contentName
+        cell.gradeDetail.text = "★ "+String(describing: DataManager.resultComicContents[indexPath.row].contentRating!)
+        cell.dateDetail.text = DataManager.resultComicContents[indexPath.row].contentDate
+        cell.conTentNo = DataManager.resultComicContents[indexPath.row].contentNo!
+        cell.imageSumnailDetail.image = DataManager.topOfGodViewImage[indexPath.row]
+        return cell
+    }
 }

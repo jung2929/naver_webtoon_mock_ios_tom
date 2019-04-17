@@ -9,14 +9,11 @@
 import UIKit
 import ObjectMapper
 
-class MyComicListDTO: Mappable {
-    var data = [ String : AnyObject ]()
-    var code : Int?
+class MyComicListDTO: BaseDTO {
+
     var list = [[ String : AnyObject ]]()
-    required init?(map: Map) {
-        
-    }
-    func mapping(map: Map) {
+    
+    override func mapping(map: Map) {
         data <- map["data"]
         code <- map["code"]
         list <- map["list"]

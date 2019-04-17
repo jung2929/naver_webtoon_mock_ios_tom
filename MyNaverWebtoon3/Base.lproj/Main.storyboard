@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-iL-ULS" customClass="UIScrollView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="61X-H0-B75"/>
+                                    <constraint firstAttribute="height" constant="188" id="61X-H0-B75"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PUJ-it-MKl">
@@ -171,16 +171,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PUJ-it-MKl" firstAttribute="top" secondItem="PDw-kr-MON" secondAttribute="bottom" id="6Y0-eJ-xmU"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8I7-En-VVH"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="top" secondItem="vIg-iL-ULS" secondAttribute="bottom" id="AD1-Zg-m98"/>
-                            <constraint firstItem="PUJ-it-MKl" firstAttribute="top" secondItem="vIg-iL-ULS" secondAttribute="bottom" constant="30" id="GnL-Zd-QrW"/>
                             <constraint firstItem="vIg-iL-ULS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PWu-eL-vZy"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VNs-oT-514"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WkX-0w-s0f"/>
+                            <constraint firstItem="vIg-iL-ULS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b6Y-kI-NCc"/>
                             <constraint firstItem="vIg-iL-ULS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fMu-ep-X4j"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="neg-e8-qBn"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nqH-sI-kFF"/>
-                            <constraint firstItem="vIg-iL-ULS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r3e-lq-bTQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -193,6 +193,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="PUJ-it-MKl" id="DKD-Gq-s4q"/>
+                        <outlet property="dayView" destination="PDw-kr-MON" id="xaH-Qn-jZg"/>
+                        <outlet property="headerConnectConstraint" destination="AD1-Zg-m98" id="7oc-qk-aPJ"/>
                         <outlet property="navigationItem" destination="zpQ-om-9MK" id="ZoC-hM-Uy9"/>
                         <outlet property="topScrollView" destination="vIg-iL-ULS" id="EZT-hi-Zrh"/>
                     </connections>
@@ -294,6 +296,21 @@
             </objects>
             <point key="canvasLocation" x="522" y="2014"/>
         </scene>
+        <!--Content View Controller-->
+        <scene sceneID="DPe-m8-phd">
+            <objects>
+                <viewController id="Lwp-Wz-0sv" customClass="ContentViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8b3-nC-HrX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8ca-p7-wcw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERD-TV-TIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579" y="2026"/>
+        </scene>
         <!--Test1 View Controller-->
         <scene sceneID="Q0M-hg-QmO">
             <objects>
@@ -335,10 +352,10 @@
             </objects>
             <point key="canvasLocation" x="-204" y="2013.6431784107947"/>
         </scene>
-        <!--List WebtoonTVC-->
+        <!--List Webtoon Table View Contrller-->
         <scene sceneID="JKT-Vx-3EV">
             <objects>
-                <viewController id="d0y-Jk-hLF" customClass="ListWebtoonTVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d0y-Jk-hLF" customClass="ListWebtoonTableViewContrller" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gFa-3e-zwe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -362,7 +379,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="118화 소애튜브(마지막)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s98-hA-6Im">
-                                                    <rect key="frame" x="90" y="12.5" width="265" height="21"/>
+                                                    <rect key="frame" x="90" y="12.5" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -481,10 +498,10 @@
             </objects>
             <point key="canvasLocation" x="1852" y="1164"/>
         </scene>
-        <!--View WebtoonVC-->
+        <!--View Webtoon View Controller-->
         <scene sceneID="utI-o2-Q6X">
             <objects>
-                <viewController id="X8C-eg-Ebk" customClass="ViewWebtoonVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X8C-eg-Ebk" customClass="ViewWebtoonViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ye9-Yg-J4v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -537,10 +554,10 @@
             </objects>
             <point key="canvasLocation" x="2596" y="1164"/>
         </scene>
-        <!--CommentVC-->
+        <!--Comment View Controller-->
         <scene sceneID="Acs-Cx-Ibd">
             <objects>
-                <viewController id="3rQ-gg-qH3" customClass="CommentVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3rQ-gg-qH3" customClass="CommentViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A3S-mW-vn5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -667,7 +684,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-1d-giB">
-                                                    <rect key="frame" x="269" y="39.5" width="42" height="20"/>
+                                                    <rect key="frame" x="308" y="39.5" width="42" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="527-U3-8FV"/>
                                                     </constraints>
@@ -680,7 +697,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-Cw-ObC">
-                                                    <rect key="frame" x="326" y="39.5" width="34" height="20"/>
+                                                    <rect key="frame" x="365" y="39.5" width="34" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Mnx-2B-5h3"/>
                                                     </constraints>
@@ -761,7 +778,7 @@
         <!--Title-->
         <scene sceneID="YE1-bi-kU6">
             <objects>
-                <viewController storyboardIdentifier="MyPageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hAp-gc-JuQ" customClass="MyPageVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hAp-gc-JuQ" customClass="MyPageViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qy6-7Y-2p8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -858,10 +875,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="505.99700149925042"/>
         </scene>
-        <!--Sign UpVC-->
+        <!--Sign Up View Controller-->
         <scene sceneID="GoX-Bd-2II">
             <objects>
-                <viewController id="A7K-De-keU" customClass="SignUpVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A7K-De-keU" customClass="SignUpViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbf-uH-N4h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1034,10 +1051,10 @@
             </objects>
             <point key="canvasLocation" x="2596" y="505.99700149925042"/>
         </scene>
-        <!--LoginVC-->
+        <!--Login Veiw Controller-->
         <scene sceneID="Plb-Vx-dyP">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yjf-hL-AeB" customClass="LoginVC" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yjf-hL-AeB" customClass="LoginVeiwController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZFM-0b-IRo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

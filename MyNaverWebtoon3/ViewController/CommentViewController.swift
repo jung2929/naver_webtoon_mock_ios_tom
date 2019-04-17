@@ -10,38 +10,11 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 
-class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class CommentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //BEST Label 없애려면 TableView를 2개 써야할듯.
-    //2번 눌러야 refresh 되는것 좀 고쳐야할듯..
     
    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.comments.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as? CommentCellTableViewCell else {print("error")
-            return UITableViewCell() }
-        //cell.bestLabel.text = "best"
-        cell.bestLabel.layer.borderWidth=1
-        cell.bestLabel.layer.borderColor = UIColor.white.cgColor
-        cell.bestLabel.layer.cornerRadius=10
-        cell.commentLabel.text = DataManager.comments[indexPath.row]["Comment_Content"] as! String
-        cell.dateLabel.text = DataManager.comments[indexPath.row]["Comment_Date"] as! String
-        cell.idLabel.text = DataManager.comments[indexPath.row]["User_Id"] as! String
-        let tmpCommentLike:String = String(DataManager.comments[indexPath.row]["Comment_Like"] as! Int)
-        cell.goodButton.layer.cornerRadius = 5
-        cell.goodButton.layer.borderWidth = 1
-        cell.goodButton.setTitle("👍 "+tmpCommentLike, for: .normal)
-        let tmpCommentDislike:String = String(DataManager.comments[indexPath.row]["Comment_DisLike"] as! Int)
-        cell.badButton.layer.cornerRadius = 5
-        cell.badButton.layer.borderWidth = 1
-        cell.badButton.setTitle("👎 "+tmpCommentDislike, for: .normal)
-        
-        cell.goodButton.addTarget(self, action: #selector(giveThemLike(_:)), for: .touchUpInside)
-        cell.badButton.addTarget(self, action: #selector(giveThemDisLike(_:)), for: .touchUpInside)
-        return cell
-    }
     
     @objc func giveThemLike(_ sender: UIButton){
         print("giveThemLike")
@@ -269,5 +242,36 @@ class CommentVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 //            self.tableView.reloadData()
 //            print("tableView reloaded")
 //        }
+    }
+}
+
+
+extension CommentViewController{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DataManager.comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as? CommentCellTableViewCell else {print("error")
+            return UITableViewCell() }
+        //cell.bestLabel.text = "best"
+        cell.bestLabel.layer.borderWidth=1
+        cell.bestLabel.layer.borderColor = UIColor.white.cgColor
+        cell.bestLabel.layer.cornerRadius=10
+        cell.commentLabel.text = DataManager.comments[indexPath.row].commentContent
+        cell.dateLabel.text = DataManager.comments[indexPath.row].commentDate
+        cell.idLabel.text = DataManager.comments[indexPath.row].userId
+        let tmpCommentLike:String = String(DataManager.comments[indexPath.row].commentLike!)
+        cell.goodButton.layer.cornerRadius = 5
+        cell.goodButton.layer.borderWidth = 1
+        cell.goodButton.setTitle("👍 "+tmpCommentLike, for: .normal)
+        let tmpCommentDislike:String = String(DataManager.comments[indexPath.row].commentDislike!)
+        cell.badButton.layer.cornerRadius = 5
+        cell.badButton.layer.borderWidth = 1
+        cell.badButton.setTitle("👎 "+tmpCommentDislike, for: .normal)
+        
+        cell.goodButton.addTarget(self, action: #selector(giveThemLike(_:)), for: .touchUpInside)
+        cell.badButton.addTarget(self, action: #selector(giveThemDisLike(_:)), for: .touchUpInside)
+        return cell
     }
 }

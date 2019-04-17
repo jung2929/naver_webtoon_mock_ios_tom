@@ -10,7 +10,7 @@ import UIKit
 import AlamofireObjectMapper
 import Alamofire
 
-class SignUpVC: UIViewController {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!

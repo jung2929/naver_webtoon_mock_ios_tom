@@ -17,6 +17,10 @@ class Test1ViewController: UIViewController, UIScrollViewDelegate {
     var pics = ["1", "2", "메인뷰광고2", "메인뷰광고3"]
     var pageIndex: Int = 0
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

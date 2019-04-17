@@ -12,7 +12,7 @@ import ObjectMapper
 class ComicContentsDTO: Mappable {
     var code : Int?
     var message : String?
-    var resultComicContents = [[ String : AnyObject ]]()
+    var resultComicContents = [ComicContents]()
     required init?(map: Map) {
         
     }

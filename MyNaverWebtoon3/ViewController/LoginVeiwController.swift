@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 
-class LoginVC: UIViewController {
+class LoginVeiwController: UIViewController {
 
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
@@ -72,7 +72,7 @@ class LoginVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("in")
         if segue.identifier == "unwindMyPageVC" {
-            let vc = segue.destination as! MyPageVC
+            let vc = segue.destination as! MyPageViewController
             print("in")
             vc.navigationItem.title = idTextField.text
             //vc.viewDidLoad()

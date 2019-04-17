@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 
-class MyPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MyPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var myPageTableView: UITableView = UITableView()
     //var isLogin:Bool = true

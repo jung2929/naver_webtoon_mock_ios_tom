@@ -9,7 +9,7 @@
 import UIKit
 import AMScrollingNavbar
 
-class ViewWebtoonVC: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate{
+class ViewWebtoonViewController: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bottomView: UIView!
     
@@ -88,7 +88,7 @@ class ViewWebtoonVC: ScrollingNavigationViewController, ScrollingNavigationContr
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? CommentVC else { return }
+        guard let destination = segue.destination as? CommentViewController else { return }
                 destination.tmpCotentNo = tmpCotentNo
     }
 }

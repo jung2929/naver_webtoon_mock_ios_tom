@@ -9,10 +9,10 @@
 import UIKit
 
 class DataManager: NSObject {
-    static var resultComicDay = [[ String? : AnyObject? ]]()
-    static var resultComicContents = [[ String? : AnyObject? ]]()
+    static var resultComicDay = [ComicDay]()
+    static var resultComicContents = [ComicContents]()
     static var resultMyComic = [[ String : AnyObject ]]()
-    static var comments = [[ String : AnyObject ]]()
+    static var comments = [Comments]()
     static var loginFlag:Bool = false
     static var logintoken = ""
     static var mainCollectionViewImage = [UIImage]()

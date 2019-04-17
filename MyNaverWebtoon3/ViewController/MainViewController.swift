@@ -15,50 +15,30 @@ import AlamofireObjectMapper
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataManager.resultComicDay.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else {print("error")
-            return UICollectionViewCell() }
-        //cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-        cell.layer.borderWidth = 0.1
-        cell.layer.borderColor = UIColor.gray.cgColor
-        cell.title.text = DataManager.resultComicDay[indexPath.row]["Comic_Name"]!! as? String
-        cell.author.text = DataManager.resultComicDay[indexPath.row]["Comic_Story"]!! as? String
-        cell.grade.text = "★ "+String(describing: DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!!)
-        cell.grade.textColor = .red
-        print("comicrating ",DataManager.resultComicDay[indexPath.row]["Comic_Rating"]!!)
-        cell.sumnail.image = DataManager.mainCollectionViewImage[indexPath.row]
-        cell.comicNumber = DataManager.resultComicDay[indexPath.row]["Comic_No"]! as! Int
-        cell.comicNumberOfHeart = DataManager.resultComicDay[indexPath.row]["Comic_Heart"]! as! Int
-        return cell
-    }
-    
-    
-    
     @IBOutlet weak var topScrollView: UIScrollView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var dayView: UIView!
+    @IBOutlet weak var headerConnectConstraint: NSLayoutConstraint!
+    
+
     var testImage = [UIImage]()
-    
-    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         self.title = "조회순"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search"), style: .plain, target: nil, action: nil)
-        //navigationController?.navigationBar.barTintColor = UIColor(red:0.91, green:0.3, blue:0.24, alpha:1)
-        //self.view.addSubview(navigationBar)
-       
+        self.navigationController?.navigationBar.isHidden = true
         initArrays()
         setupDayScrollView()
         setupCollectionView()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         DispatchQueue.global(qos: .userInteractive).async {
-            self.getComicDayDatafromJson(mode: "real")
+            self.getComicDayDatafromJson(mode: "test")
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -101,7 +81,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 let url=URL(fileURLWithPath: path)
                 Alamofire.request(url).responseObject {(response : DataResponse<ComicDayDTO>) in
                     if let JSON = response.result.value {
-                        //print("JSON: \(JSON)")
+                        //print("JSON: \(JSON)")F
                         //print(response.result.value?.resultComicDay)
                         DataManager.resultComicDay = JSON.result
                         print("resultComicDay",DataManager.resultComicDay)
@@ -135,7 +115,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? ListWebtoonTVC else { return }
+        guard let destination = segue.destination as? ListWebtoonTableViewContrller else { return }
         let indexPath = collectionView.indexPath(for: sender as! CollectionViewCell)
         if indexPath != nil{
             let currentCell = collectionView.cellForItem(at: indexPath!) as! CollectionViewCell
@@ -155,7 +135,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         DataManager.resultComicContents.removeAll()
         DataManager.resultComicDay.removeAll()
         DataManager.resultMyComic.removeAll()
-        DataManager.mainCollectionViewImage = [UIImage(named: "신의탑메인섬네일"), UIImage(named: "소녀의세계메인섬네일")] as! [UIImage]
+        DataManager.mainCollectionViewImage = [UIImage(named: "신의탑메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일")] as! [UIImage]
         DataManager.topOfGodViewImage = [UIImage(named: "신의탑컨텐츠섬네일1"), UIImage(named: "신의탑컨텐츠섬네일2"),UIImage(named: "신의탑컨텐츠섬네일3"), UIImage(named: "신의탑컨텐츠섬네일4"),UIImage(named: "신의탑컨텐츠섬네일5"), UIImage(named: "신의탑컨텐츠섬네일6"),UIImage(named: "신의탑컨텐츠섬네일7"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9") ] as! [UIImage]
         DataManager.worldOfGirlsViewImage = [ UIImage(named: "소녀의세계컨텐츠섬네일1"), UIImage(named: "소녀의세계컨텐츠섬네일2"),UIImage(named: "소녀의세계컨텐츠섬네일3"), UIImage(named: "소녀의세계컨텐츠섬네일4"),UIImage(named: "소녀의세계컨텐츠섬네일5"), UIImage(named: "소녀의세계컨텐츠섬네일6"),UIImage(named: "소녀의세계컨텐츠섬네일7"), UIImage(named: "소녀의세계컨텐츠섬네일8"),UIImage(named: "소녀의세계컨텐츠섬네일9")] as! [UIImage]
     }
@@ -169,3 +149,51 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 }
 
+
+extension MainViewController {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return DataManager.resultComicDay.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else {print("error")
+            return UICollectionViewCell() }
+        cell.layer.borderWidth = 0.1
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.title.text = DataManager.resultComicDay[indexPath.row].comicName
+        cell.author.text = DataManager.resultComicDay[indexPath.row].comicStory
+        cell.grade.text = "★ "+String(describing: DataManager.resultComicDay[indexPath.row].comicRating!)
+        cell.grade.textColor = .red
+        cell.sumnail.image = DataManager.mainCollectionViewImage[indexPath.row]
+        cell.comicNumber = DataManager.resultComicDay[indexPath.row].comicNo!
+        cell.comicNumberOfHeart = DataManager.resultComicDay[indexPath.row].comicHeart!
+        return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollViewHeight:Float = Float(scrollView.frame.size.height)
+        let scrollContentSizeHeight:Float = Float(scrollView.contentSize.height)
+        let scrollOffset = scrollView.contentOffset.y
+        print(scrollOffset)
+        if (scrollOffset <= 0)
+        {
+            print("didscrolltotop")
+            navigationController?.navigationBar.isHidden=true
+            headerConnectConstraint.constant = 0
+            UIView.animate(withDuration: 0.2) {
+                self.view.layoutIfNeeded()
+            }
+        } else if (scrollOffset > 0){
+            print("scrolled")
+            navigationController?.navigationBar.isHidden=false
+            headerConnectConstraint.constant = -100
+            UIView.animate(withDuration: 0.2) {
+                self.view.layoutIfNeeded()
+            }
+        }
+        
+        //((self.navigationController?.navigationBar.frame.height)!)*2 - self.topScrollView.frame.height
+        
+        //dayView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -100)
+    }
+}
