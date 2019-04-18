@@ -25,6 +25,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     override var prefersStatusBarHidden: Bool{
         return true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        <#code#>
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,14 +42,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         setupCollectionView()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        DispatchQueue.global(qos: .userInteractive).async {
-            self.getComicDayDatafromJson(mode: "test")
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-        
-        
+        self.getComicDayDatafromJson(mode: "test")
     }
     
     func setupCollectionView(){
@@ -72,7 +70,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             topScrollView.addSubview(imgView)
         }
     }
-    
     
     func getComicDayDatafromJson(mode:String){
         if mode == "test" {
@@ -112,7 +109,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 //            self.collectionView.reloadData()
 //        }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? ListWebtoonTableViewContrller else { return }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dCx-os-UdE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5JS-9d-Zey">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--조회순-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,31 +177,25 @@
                             <constraint firstItem="vIg-iL-ULS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PWu-eL-vZy"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VNs-oT-514"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WkX-0w-s0f"/>
-                            <constraint firstItem="vIg-iL-ULS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b6Y-kI-NCc"/>
                             <constraint firstItem="vIg-iL-ULS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fMu-ep-X4j"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="neg-e8-qBn"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nqH-sI-kFF"/>
+                            <constraint firstItem="vIg-iL-ULS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pnJ-tB-AVG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="document" badgeValue="웹툰" id="g2P-oK-tyF"/>
-                    <navigationItem key="navigationItem" title="조회순" id="zpQ-om-9MK">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="search" id="TzB-bM-B2x">
-                            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="GUm-0f-n26"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="PUJ-it-MKl" id="DKD-Gq-s4q"/>
                         <outlet property="dayView" destination="PDw-kr-MON" id="xaH-Qn-jZg"/>
                         <outlet property="headerConnectConstraint" destination="AD1-Zg-m98" id="7oc-qk-aPJ"/>
-                        <outlet property="navigationItem" destination="zpQ-om-9MK" id="ZoC-hM-Uy9"/>
                         <outlet property="topScrollView" destination="vIg-iL-ULS" id="EZT-hi-Zrh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="1163.568215892054"/>
+            <point key="canvasLocation" x="1985.5072463768117" y="1163.1696428571429"/>
         </scene>
         <!--조회순-->
         <scene sceneID="tD8-M5-lMv">
@@ -415,7 +409,7 @@
                                             <outlet property="gradeDetail" destination="qKx-P5-wGy" id="A0I-0t-JPm"/>
                                             <outlet property="imageSumnailDetail" destination="jwV-tc-5D5" id="REr-rS-ysm"/>
                                             <outlet property="titleDetail" destination="s98-hA-6Im" id="HSv-JH-P82"/>
-                                            <segue destination="X8C-eg-Ebk" kind="show" id="6HU-KX-f6c"/>
+                                            <segue destination="X8C-eg-Ebk" kind="show" id="6sT-UZ-Ezj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -496,12 +490,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tb3-4m-dIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="1164"/>
+            <point key="canvasLocation" x="2760.8695652173915" y="1163.8392857142856"/>
         </scene>
         <!--View Webtoon View Controller-->
         <scene sceneID="utI-o2-Q6X">
             <objects>
-                <viewController id="X8C-eg-Ebk" customClass="ViewWebtoonViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X8C-eg-Ebk" customClass="ViewWebtoonViewController" customModule="MyNaverWebtoon3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ye9-Yg-J4v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -515,8 +509,8 @@
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="viewInstantMessageTapped:" destination="X8C-eg-Ebk" eventType="touchUpInside" id="Q62-nZ-lCX"/>
-                                            <segue destination="3rQ-gg-qH3" kind="show" id="dbr-sa-pwZ"/>
+                                            <action selector="viewInstantMessageTapped:" destination="X8C-eg-Ebk" eventType="touchUpInside" id="L3K-Bj-2Zj"/>
+                                            <segue destination="3rQ-gg-qH3" kind="show" id="xxc-lO-iAT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -544,15 +538,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wQs-ke-QCj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4wO-1w-cRX"/>
                     <connections>
-                        <outlet property="bottomView" destination="AZH-1w-kpv" id="uwM-OP-Dkl"/>
-                        <outlet property="scrollView" destination="UVS-wl-pjZ" id="dG7-Gv-xrv"/>
-                        <outlet property="viewInstantMessage" destination="3lu-9y-9jm" id="INs-uo-rKL"/>
+                        <outlet property="bottomView" destination="AZH-1w-kpv" id="jSd-eO-aLu"/>
+                        <outlet property="scrollView" destination="UVS-wl-pjZ" id="cfW-Ad-dQL"/>
+                        <outlet property="viewInstantMessage" destination="3lu-9y-9jm" id="cq7-OZ-QeM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jI-Jo-Noj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="1164"/>
+            <point key="canvasLocation" x="4259" y="1180"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Acs-Cx-Ibd">
@@ -773,7 +768,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrj-qw-vHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3333.5999999999999" y="1165.3673163418291"/>
+            <point key="canvasLocation" x="5187" y="1235"/>
         </scene>
         <!--Title-->
         <scene sceneID="YE1-bi-kU6">
@@ -859,7 +854,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6lv-NC-jMh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="user_male" badgeValue="MY" id="P8I-4V-35c"/>
                     <navigationItem key="navigationItem" title="Title" id="kL3-kT-QSC">
                         <barButtonItem key="rightBarButtonItem" title="쿠키샵&gt;" style="plain" id="Kad-ax-D2Y">
                             <color key="tintColor" red="0.3398044824" green="0.7258541127" blue="0.3997838131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -873,7 +867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kf9-KI-0dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="505.99700149925042"/>
+            <point key="canvasLocation" x="1985.5072463768117" y="505.58035714285711"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="GoX-Bd-2II">
@@ -1049,7 +1043,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Le4-8F-KHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="505.99700149925042"/>
+            <point key="canvasLocation" x="3505.7971014492755" y="505.58035714285711"/>
         </scene>
         <!--Login Veiw Controller-->
         <scene sceneID="Plb-Vx-dyP">
@@ -1179,7 +1173,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TJ-Ib-HY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6sJ-2f-tZH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="505.99700149925042"/>
+            <point key="canvasLocation" x="2760.8695652173915" y="505.58035714285711"/>
         </scene>
         <!--Scrolling Navigation Controller-->
         <scene sceneID="RuQ-Cz-Jg1">
@@ -1191,13 +1185,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5JS-9d-Zey" kind="relationship" relationship="rootViewController" id="NNC-80-cA7"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tY-UJ-uGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-658" y="1164"/>
+            <point key="canvasLocation" x="3506" y="1803"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YYO-pU-4fV">
@@ -1211,18 +1202,55 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="4c1-SX-CBn"/>
-                        <segue destination="hAp-gc-JuQ" kind="relationship" relationship="viewControllers" id="Fnc-d0-PFL"/>
+                        <segue destination="ozr-jM-Pyv" kind="relationship" relationship="viewControllers" id="4c1-SX-CBn"/>
+                        <segue destination="0Or-aK-Ouj" kind="relationship" relationship="viewControllers" id="Fnc-d0-PFL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BM4-Eg-mev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="1163.568215892054"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PDD-G7-Flx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ozr-jM-Pyv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="document" badgeValue="웹툰" id="g2P-oK-tyF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TvG-Fi-0rj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4mV-DC-pOM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N42-3s-TW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075.3623188405797" y="1163.1696428571429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J1S-yb-rme">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Or-aK-Ouj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="user_male" badgeValue="MY" id="P8I-4V-35c"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kv7-br-XMY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hAp-gc-JuQ" kind="relationship" relationship="rootViewController" id="xlN-10-eYM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rc5-cQ-iY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075.3623188405797" y="505.58035714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="document" width="30" height="30"/>
-        <image name="search" width="30" height="30"/>
         <image name="tabbarBestChallenge" width="151" height="136"/>
         <image name="tabbarConfig" width="151" height="136"/>
         <image name="tabbarMY" width="151" height="136"/>

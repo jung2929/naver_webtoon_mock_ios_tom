@@ -61,10 +61,8 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
         getDatafromJson(mode: "real")
-        self.tableView.reloadData()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func viewDidLoad() {
@@ -72,6 +70,8 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         
         //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
         self.navigationController?.navigationBar.topItem!.title = tmpNaviBarTopItem
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
@@ -140,6 +140,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             print(mode)
             let url = "http://softcomics.co.kr/comic/contentAll/"+"\(tmpComicNumber!)"
             print(url)
+            print("aaaaaaaaa")
             Alamofire.request(url).responseObject{(response : DataResponse<ComicContentsDTO>) in
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
