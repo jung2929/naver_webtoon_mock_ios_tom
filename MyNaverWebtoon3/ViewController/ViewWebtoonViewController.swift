@@ -116,13 +116,6 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.isEqual(scrollView) {
             switch scrollView.panGestureRecognizer.state {
-            case .ended:
-                print("ended")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    // your code here
-                    self.navigationController?.navigationBar.isHidden = false
-                    self.view.bringSubviewToFront(self.bottomView)
-                }
             case .began:
                 // User began dragging
                 print("began")

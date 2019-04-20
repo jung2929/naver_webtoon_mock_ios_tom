@@ -18,13 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-iL-ULS" customClass="UIScrollView">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="blO-Rp-uXm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="188" id="61X-H0-B75"/>
+                                    <constraint firstAttribute="height" constant="188" id="P6v-Ka-oEi"/>
                                 </constraints>
-                            </view>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="msN-Th-txZ">
+                                    <size key="itemSize" width="82" height="41"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AdCell" id="enF-1p-8f2">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="82" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="123" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8B-kN-MCF">
+                                                    <rect key="frame" x="0.0" y="91" width="414" height="188"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PUJ-it-MKl">
                                 <rect key="frame" x="0.0" y="218" width="414" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,6 +123,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <pageControl opaque="NO" tag="124" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="UjS-uo-Pjz">
+                                <rect key="frame" x="355" y="143" width="39" height="37"/>
+                            </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-kr-MON">
                                 <rect key="frame" x="0.0" y="188" width="414" height="30"/>
                                 <subviews>
@@ -168,29 +193,49 @@
                                     <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="iWZ-Ox-OIb" secondAttribute="baseline" id="yqb-Yr-J70"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="광고1" translatesAutoresizingMaskIntoConstraints="NO" id="lfM-wq-FHy">
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mSz-NA-gjp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lfM-wq-FHy" secondAttribute="trailing" id="4lq-wj-gGl"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="top" secondItem="PDw-kr-MON" secondAttribute="bottom" id="6Y0-eJ-xmU"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8I7-En-VVH"/>
-                            <constraint firstItem="PDw-kr-MON" firstAttribute="top" secondItem="vIg-iL-ULS" secondAttribute="bottom" id="AD1-Zg-m98"/>
-                            <constraint firstItem="vIg-iL-ULS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PWu-eL-vZy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UjS-uo-Pjz" secondAttribute="trailing" constant="20" id="8ki-tr-Vt7"/>
+                            <constraint firstItem="PDw-kr-MON" firstAttribute="top" secondItem="UjS-uo-Pjz" secondAttribute="bottom" constant="8" id="Hcn-D9-IPV"/>
+                            <constraint firstItem="blO-Rp-uXm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Itr-EW-zUm"/>
+                            <constraint firstItem="lfM-wq-FHy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MKX-KS-TQ0"/>
+                            <constraint firstItem="blO-Rp-uXm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SDv-tF-DoR"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VNs-oT-514"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WkX-0w-s0f"/>
-                            <constraint firstItem="vIg-iL-ULS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fMu-ep-X4j"/>
+                            <constraint firstItem="PDw-kr-MON" firstAttribute="top" secondItem="blO-Rp-uXm" secondAttribute="bottom" id="hNf-Ea-nM9"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="neg-e8-qBn"/>
+                            <constraint firstAttribute="bottom" secondItem="lfM-wq-FHy" secondAttribute="bottom" id="nhO-Um-Awn"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nqH-sI-kFF"/>
-                            <constraint firstItem="vIg-iL-ULS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pnJ-tB-AVG"/>
+                            <constraint firstItem="blO-Rp-uXm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vOU-bH-1rd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="GUm-0f-n26"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="adViewConstraint" destination="nhO-Um-Awn" id="1YU-Lq-geJ"/>
                         <outlet property="collectionView" destination="PUJ-it-MKl" id="DKD-Gq-s4q"/>
                         <outlet property="dayView" destination="PDw-kr-MON" id="xaH-Qn-jZg"/>
-                        <outlet property="headerConnectConstraint" destination="AD1-Zg-m98" id="7oc-qk-aPJ"/>
-                        <outlet property="topScrollView" destination="vIg-iL-ULS" id="EZT-hi-Zrh"/>
+                        <outlet property="friday" destination="iXK-gK-eeH" id="ypl-8h-B8x"/>
+                        <outlet property="headerConnectConstraint" destination="hNf-Ea-nM9" id="NKi-Ie-010"/>
+                        <outlet property="monday" destination="ugw-Pl-s6y" id="Ljw-XX-6hk"/>
+                        <outlet property="pageView" destination="UjS-uo-Pjz" id="DCY-OI-QlP"/>
+                        <outlet property="saturday" destination="iWZ-Ox-OIb" id="rAN-Ne-FFc"/>
+                        <outlet property="sunday" destination="AbI-TB-dw0" id="DOx-ZC-Npk"/>
+                        <outlet property="thursday" destination="ck8-aO-aNo" id="vEV-4T-Xfd"/>
+                        <outlet property="topSlideCollectionView" destination="blO-Rp-uXm" id="DJL-IG-SJr"/>
+                        <outlet property="tuesday" destination="Lfr-pl-YZ8" id="Nbk-CH-0mE"/>
+                        <outlet property="wednesday" destination="Oiu-sd-g9v" id="ekb-hF-LTB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1221,6 +1266,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YTp-Av-ZSu">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4mV-DC-pOM"/>
                     </connections>
@@ -1257,5 +1305,6 @@
         <image name="tabbarPLAY" width="151" height="136"/>
         <image name="tabbarWebtoon" width="50" height="50"/>
         <image name="user_male" width="30" height="30"/>
+        <image name="광고1" width="1119" height="144"/>
     </resources>
 </document>

@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UITabBar.appearance().tintColor = .red
         UITabBar.appearance().backgroundColor = .black
+        //application.isStatusBarHidden = true
+        //UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+//        UIApplication.shared.statusBarStyle = .lightContent
+//        
+//        UINavigationBar.appearance().clipsToBounds = true
+//        
+//        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+//        
+//        statusBar.backgroundColor = UIColor.clear
+        //UIApplication.shared.status= UIColor.white
         return true
     }
 
