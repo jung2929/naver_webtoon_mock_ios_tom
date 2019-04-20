@@ -16,8 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UITabBar.appearance().tintColor = .red
-        UITabBar.appearance().backgroundColor = .black
+        
+        print("goooooood",NetworkManager.shared().baseURL)
+        //UITabBar.appearance().tintColor = .red
+        //UITabBar.appearance().backgroundColor = .black
+        
         //application.isStatusBarHidden = true
         //UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
 //        UIApplication.shared.statusBarStyle = .lightContent

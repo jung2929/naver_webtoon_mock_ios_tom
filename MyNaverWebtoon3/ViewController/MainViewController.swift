@@ -10,7 +10,7 @@ import UIKit
 import AMScrollingNavbar
 import Alamofire
 import AlamofireObjectMapper
-
+import BetterSegmentedControl
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -19,8 +19,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var dayView: UIView!
     @IBOutlet weak var headerConnectConstraint: NSLayoutConstraint!
     @IBOutlet weak var adViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomAdView: UIImageView!
     @IBOutlet weak var pageView: UIPageControl!
-    
+    @IBOutlet weak var daySelectSegment: BetterSegmentedControl!
+    @IBAction func daySelectChanged(_ sender: BetterSegmentedControl) {
+        print(sender.index)
+    }
     
     var testImage = [UIImage]()
     var timer = Timer()
@@ -40,10 +44,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
-      
         
         setupCollectionView()
         setupTopSlideCollectionView()
+        setupDaySelectSegment()
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -53,9 +57,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "조회순"
+        self.navigationController?.title = "조회순"
+        self.tabBarController?.title = "웹툰"
         self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
+    }
+    
+    func setupDaySelectSegment(){
+        self.daySelectSegment.segments = LabelSegment.segments(withTitles: ["월","화","수","목","금","토","일","완결","신작"],normalFont: UIFont(name: "HelveticaNeue-Light", size: 14.0)!,
+                                                               normalTextColor: .black,
+                                                               selectedFont: UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,         selectedTextColor: .white)
+        daySelectSegment.setIndex(10, animated: true)
+        //(red:0.20, green:0.68, blue:0.27, alpha:1.00)
     }
     
     func setupCollectionView(){
@@ -150,11 +163,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         DataManager.resultComicDay.removeAll()
         DataManager.resultMyComic.removeAll()
         DataManager.mainCollectionViewImage = [UIImage(named: "신의탑메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일"), UIImage(named: "소녀의세계메인섬네일")] as! [UIImage]
-        DataManager.topOfGodViewImage = [UIImage(named: "신의탑컨텐츠섬네일1"), UIImage(named: "신의탑컨텐츠섬네일2"),UIImage(named: "신의탑컨텐츠섬네일3"), UIImage(named: "신의탑컨텐츠섬네일4"),UIImage(named: "신의탑컨텐츠섬네일5"), UIImage(named: "신의탑컨텐츠섬네일6"),UIImage(named: "신의탑컨텐츠섬네일7"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9") ] as! [UIImage]
+        DataManager.topOfGodViewImage = [UIImage(named: "신의탑컨텐츠섬네일1"), UIImage(named: "신의탑컨텐츠섬네일2"),UIImage(named: "신의탑컨텐츠섬네일3"), UIImage(named: "신의탑컨텐츠섬네일4"),UIImage(named: "신의탑컨텐츠섬네일5"), UIImage(named: "신의탑컨텐츠섬네일6"),UIImage(named: "신의탑컨텐츠섬네일7"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9"), UIImage(named: "신의탑컨텐츠섬네일8"),UIImage(named: "신의탑컨텐츠섬네일9") ] as! [UIImage]
         DataManager.worldOfGirlsViewImage = [ UIImage(named: "소녀의세계컨텐츠섬네일1"), UIImage(named: "소녀의세계컨텐츠섬네일2"),UIImage(named: "소녀의세계컨텐츠섬네일3"), UIImage(named: "소녀의세계컨텐츠섬네일4"),UIImage(named: "소녀의세계컨텐츠섬네일5"), UIImage(named: "소녀의세계컨텐츠섬네일6"),UIImage(named: "소녀의세계컨텐츠섬네일7"), UIImage(named: "소녀의세계컨텐츠섬네일8"),UIImage(named: "소녀의세계컨텐츠섬네일9")] as! [UIImage]
     }
 }
-
 
 extension MainViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -199,14 +211,14 @@ extension MainViewController {
                 //print("didscrolltotop")
                 navigationController?.navigationBar.isHidden=true
                 headerConnectConstraint.constant = 0
-                adViewConstraint.constant = 0
+                adViewConstraint.constant = -60
                 UIView.animate(withDuration: 0.2) {
                     self.view.layoutIfNeeded()
                 }
             } else if (scrollOffset > 0){
                 //print("scrolled")
                 navigationController?.navigationBar.isHidden=false
-                adViewConstraint.constant = (self.tabBarController?.tabBar.frame.height)!-5
+                adViewConstraint.constant = (self.tabBarController?.tabBar.frame.height)!-90
                 headerConnectConstraint.constant = -100
                 UIView.animate(withDuration: 0.2) {
                     self.view.layoutIfNeeded()

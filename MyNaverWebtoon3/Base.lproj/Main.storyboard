@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="blO-Rp-uXm">
@@ -48,7 +48,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PUJ-it-MKl">
-                                <rect key="frame" x="0.0" y="218" width="414" height="595"/>
+                                <rect key="frame" x="0.0" y="232" width="414" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i07-st-0lu">
                                     <size key="itemSize" width="115" height="131"/>
@@ -126,75 +126,32 @@
                             <pageControl opaque="NO" tag="124" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="UjS-uo-Pjz">
                                 <rect key="frame" x="355" y="143" width="39" height="37"/>
                             </pageControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-kr-MON">
-                                <rect key="frame" x="0.0" y="188" width="414" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-pl-YZ8">
-                                        <rect key="frame" x="48" y="1" width="30" height="30"/>
-                                        <state key="normal" title="화"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-TB-dw0">
-                                        <rect key="frame" x="248" y="1" width="30" height="30"/>
-                                        <state key="normal" title="일"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oiu-sd-g9v">
-                                        <rect key="frame" x="88" y="1" width="30" height="30"/>
-                                        <state key="normal" title="수"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGO-Mc-KBb">
-                                        <rect key="frame" x="328" y="1" width="30" height="30"/>
-                                        <state key="normal" title="신작"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugw-Pl-s6y">
-                                        <rect key="frame" x="8" y="1" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ozX-WT-V5g"/>
-                                            <constraint firstAttribute="width" constant="30" id="zxg-gH-a3k"/>
-                                        </constraints>
-                                        <state key="normal" title="월"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-aO-aNo">
-                                        <rect key="frame" x="128" y="1" width="30" height="30"/>
-                                        <state key="normal" title="목"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cub-bp-6Lf">
-                                        <rect key="frame" x="288" y="1" width="30" height="30"/>
-                                        <state key="normal" title="완결"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXK-gK-eeH">
-                                        <rect key="frame" x="168" y="1" width="30" height="30"/>
-                                        <state key="normal" title="금"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWZ-Ox-OIb">
-                                        <rect key="frame" x="208" y="1" width="30" height="30"/>
-                                        <state key="normal" title="토"/>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-kr-MON" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                <rect key="frame" x="0.0" y="188" width="414" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="iXK-gK-eeH" firstAttribute="leading" secondItem="ck8-aO-aNo" secondAttribute="trailing" constant="10" id="1HQ-c9-qh5"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="ugw-Pl-s6y" secondAttribute="baseline" id="1NS-Q3-P2W"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="pGO-Mc-KBb" secondAttribute="baseline" id="6P2-I4-HpM"/>
-                                    <constraint firstItem="AbI-TB-dw0" firstAttribute="leading" secondItem="iWZ-Ox-OIb" secondAttribute="trailing" constant="10" id="8Yq-53-kPp"/>
-                                    <constraint firstItem="iWZ-Ox-OIb" firstAttribute="leading" secondItem="iXK-gK-eeH" secondAttribute="trailing" constant="10" id="RaH-hT-PlG"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="Oiu-sd-g9v" secondAttribute="baseline" id="SGJ-jw-c43"/>
-                                    <constraint firstItem="pGO-Mc-KBb" firstAttribute="leading" secondItem="cub-bp-6Lf" secondAttribute="trailing" constant="10" id="de1-lp-3DI"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="iXK-gK-eeH" secondAttribute="baseline" id="eki-xK-dhh"/>
-                                    <constraint firstItem="Oiu-sd-g9v" firstAttribute="leading" secondItem="Lfr-pl-YZ8" secondAttribute="trailing" constant="10" id="fVd-cs-cr0"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="Lfr-pl-YZ8" secondAttribute="baseline" id="fdD-zE-8ib"/>
-                                    <constraint firstItem="Lfr-pl-YZ8" firstAttribute="leading" secondItem="ugw-Pl-s6y" secondAttribute="trailing" constant="10" id="mQC-Gf-E1y"/>
-                                    <constraint firstItem="ck8-aO-aNo" firstAttribute="leading" secondItem="Oiu-sd-g9v" secondAttribute="trailing" constant="10" id="pvG-bq-S5s"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="leading" secondItem="AbI-TB-dw0" secondAttribute="trailing" constant="10" id="qmR-1j-4lb"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="leading" secondItem="PDw-kr-MON" secondAttribute="leading" constant="288" id="qun-Gp-Rfz"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="ck8-aO-aNo" secondAttribute="baseline" id="qyE-1Z-Qsu"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="top" secondItem="PDw-kr-MON" secondAttribute="top" constant="1" id="tFl-w2-dYu"/>
-                                    <constraint firstAttribute="height" constant="30" id="uJe-Je-foo"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="AbI-TB-dw0" secondAttribute="baseline" id="wxE-tb-qNs"/>
-                                    <constraint firstItem="cub-bp-6Lf" firstAttribute="baseline" secondItem="iWZ-Ox-OIb" secondAttribute="baseline" id="yqb-Yr-J70"/>
+                                    <constraint firstAttribute="height" constant="44" id="uJe-Je-foo"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
+                                        <color key="value" red="0.17270892860000001" green="0.68446320299999996" blue="0.24135759470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorViewInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorViewBorderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="daySelectChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="RnI-2B-s4Z"/>
+                                </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="광고1" translatesAutoresizingMaskIntoConstraints="NO" id="lfM-wq-FHy">
-                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="808" width="414" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mSz-NA-gjp"/>
                                 </constraints>
@@ -212,9 +169,9 @@
                             <constraint firstItem="blO-Rp-uXm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SDv-tF-DoR"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VNs-oT-514"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WkX-0w-s0f"/>
+                            <constraint firstAttribute="bottom" secondItem="lfM-wq-FHy" secondAttribute="bottom" constant="-60" id="aGJ-Y0-W5B"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="top" secondItem="blO-Rp-uXm" secondAttribute="bottom" id="hNf-Ea-nM9"/>
                             <constraint firstItem="PUJ-it-MKl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="neg-e8-qBn"/>
-                            <constraint firstAttribute="bottom" secondItem="lfM-wq-FHy" secondAttribute="bottom" id="nhO-Um-Awn"/>
                             <constraint firstItem="PDw-kr-MON" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nqH-sI-kFF"/>
                             <constraint firstItem="blO-Rp-uXm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vOU-bH-1rd"/>
                         </constraints>
@@ -223,19 +180,14 @@
                     <navigationItem key="navigationItem" id="GUm-0f-n26"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="adViewConstraint" destination="nhO-Um-Awn" id="1YU-Lq-geJ"/>
+                        <outlet property="adViewConstraint" destination="aGJ-Y0-W5B" id="pWJ-Hx-J64"/>
+                        <outlet property="bottomAdView" destination="lfM-wq-FHy" id="6O5-8L-UNh"/>
                         <outlet property="collectionView" destination="PUJ-it-MKl" id="DKD-Gq-s4q"/>
+                        <outlet property="daySelectSegment" destination="PDw-kr-MON" id="dpS-OG-Uta"/>
                         <outlet property="dayView" destination="PDw-kr-MON" id="xaH-Qn-jZg"/>
-                        <outlet property="friday" destination="iXK-gK-eeH" id="ypl-8h-B8x"/>
                         <outlet property="headerConnectConstraint" destination="hNf-Ea-nM9" id="NKi-Ie-010"/>
-                        <outlet property="monday" destination="ugw-Pl-s6y" id="Ljw-XX-6hk"/>
                         <outlet property="pageView" destination="UjS-uo-Pjz" id="DCY-OI-QlP"/>
-                        <outlet property="saturday" destination="iWZ-Ox-OIb" id="rAN-Ne-FFc"/>
-                        <outlet property="sunday" destination="AbI-TB-dw0" id="DOx-ZC-Npk"/>
-                        <outlet property="thursday" destination="ck8-aO-aNo" id="vEV-4T-Xfd"/>
                         <outlet property="topSlideCollectionView" destination="blO-Rp-uXm" id="DJL-IG-SJr"/>
-                        <outlet property="tuesday" destination="Lfr-pl-YZ8" id="Nbk-CH-0mE"/>
-                        <outlet property="wednesday" destination="Oiu-sd-g9v" id="ekb-hF-LTB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -333,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztC-N4-hiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="522" y="2014"/>
+            <point key="canvasLocation" x="1360.8695652173915" y="2471.6517857142858"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="DPe-m8-phd">
@@ -348,7 +300,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERD-TV-TIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1579" y="2026"/>
+            <point key="canvasLocation" x="1984.057971014493" y="2471.6517857142858"/>
+        </scene>
+        <!--베스트도전-->
+        <scene sceneID="vbY-Y4-kad">
+            <objects>
+                <viewController id="YTR-Gy-f7M" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FVD-NW-4Xi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vNp-e4-ML7"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="베스트도전" image="bestchallenge" id="oiH-M9-M9u"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cp3-CR-No9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-509" y="1836"/>
+        </scene>
+        <!--PLAY-->
+        <scene sceneID="3gx-MJ-TkP">
+            <objects>
+                <viewController id="doA-rJ-J12" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t1P-LO-W9l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UmA-vC-O2a"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="PLAY" image="play" id="DUt-Qz-DK9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UAU-sY-u3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="1841"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="gXz-BL-aiY">
+            <objects>
+                <viewController id="uPl-yJ-Cxk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vpc-bA-ge9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ao2-iA-e70"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="설정" image="configure" id="hjf-A5-0Xx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pY-Li-Gl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="827" y="1845"/>
         </scene>
         <!--Test1 View Controller-->
         <scene sceneID="Q0M-hg-QmO">
@@ -389,18 +389,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBA-68-d3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="2013.6431784107947"/>
+            <point key="canvasLocation" x="-204" y="2473"/>
         </scene>
         <!--List Webtoon Table View Contrller-->
         <scene sceneID="JKT-Vx-3EV">
             <objects>
                 <viewController id="d0y-Jk-hLF" customClass="ListWebtoonTableViewContrller" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gFa-3e-zwe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EbO-WI-QuF">
-                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="615"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="SpG-4w-M0d" customClass="TableViewCell" customModule="MyNaverWebtoon3" customModuleProvider="target">
@@ -460,7 +460,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-ak-IEa">
-                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crr-Qy-Tme">
                                         <rect key="frame" x="357" y="10" width="52" height="30"/>
@@ -507,23 +507,36 @@
                                     <constraint firstItem="8AY-O7-qtN" firstAttribute="centerY" secondItem="xcV-ak-IEa" secondAttribute="centerY" id="wsa-Dz-cjC"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="광고1" translatesAutoresizingMaskIntoConstraints="NO" id="yRH-YT-urZ">
+                                <rect key="frame" x="0.0" y="50" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="sGK-VI-Qya"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xcV-ak-IEa" firstAttribute="leading" secondItem="Zd8-1i-wfE" secondAttribute="leading" id="0Zj-GC-8QD"/>
                             <constraint firstItem="EbO-WI-QuF" firstAttribute="bottom" secondItem="Zd8-1i-wfE" secondAttribute="bottom" id="7ey-4u-GTv"/>
-                            <constraint firstItem="EbO-WI-QuF" firstAttribute="top" secondItem="xcV-ak-IEa" secondAttribute="bottom" id="I8z-fA-P5Q"/>
+                            <constraint firstItem="EbO-WI-QuF" firstAttribute="top" secondItem="yRH-YT-urZ" secondAttribute="bottom" id="Fho-Oy-ZdD"/>
+                            <constraint firstItem="yRH-YT-urZ" firstAttribute="trailing" secondItem="Zd8-1i-wfE" secondAttribute="trailing" id="MhH-RN-aZJ"/>
                             <constraint firstItem="EbO-WI-QuF" firstAttribute="trailing" secondItem="Zd8-1i-wfE" secondAttribute="trailing" id="ctD-YT-Ewe"/>
                             <constraint firstItem="xcV-ak-IEa" firstAttribute="top" secondItem="Zd8-1i-wfE" secondAttribute="top" id="dOv-Q0-hSU"/>
                             <constraint firstItem="EbO-WI-QuF" firstAttribute="leading" secondItem="Zd8-1i-wfE" secondAttribute="leading" id="fkB-5C-f8u"/>
                             <constraint firstItem="xcV-ak-IEa" firstAttribute="trailing" secondItem="Zd8-1i-wfE" secondAttribute="trailing" id="ktd-Dz-AqM"/>
+                            <constraint firstItem="yRH-YT-urZ" firstAttribute="leading" secondItem="Zd8-1i-wfE" secondAttribute="leading" id="oXY-IB-yxp"/>
+                            <constraint firstItem="yRH-YT-urZ" firstAttribute="top" secondItem="xcV-ak-IEa" secondAttribute="bottom" id="zg1-Ff-W0G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zd8-1i-wfE"/>
                     </view>
                     <navigationItem key="navigationItem" id="ogL-fG-MTv">
                         <rightBarButtonItems>
-                            <barButtonItem title="임시저장" id="Td0-Ab-mcA"/>
-                            <barButtonItem systemItem="action" id="iI2-BV-h0B"/>
+                            <barButtonItem image="download-7" id="Td0-Ab-mcA">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="iI2-BV-h0B">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -535,18 +548,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tb3-4m-dIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8695652173915" y="1163.8392857142856"/>
+            <point key="canvasLocation" x="2760.8695652173915" y="1163.1696428571429"/>
         </scene>
         <!--View Webtoon View Controller-->
         <scene sceneID="utI-o2-Q6X">
             <objects>
                 <viewController id="X8C-eg-Ebk" customClass="ViewWebtoonViewController" customModule="MyNaverWebtoon3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ye9-Yg-J4v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZH-1w-kpv">
-                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="738" width="414" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lu-9y-9jm">
                                         <rect key="frame" x="35" y="20" width="78" height="30"/>
@@ -568,7 +581,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVS-wl-pjZ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -599,11 +612,11 @@
             <objects>
                 <viewController id="3rQ-gg-qH3" customClass="CommentViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A3S-mW-vn5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXz-qa-NI9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sg-6O-tjs">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="40"/>
@@ -640,7 +653,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wc4-cK-SVJ">
-                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="738" width="414" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Inv-0i-PVh">
                                         <rect key="frame" x="8" y="8" width="350" height="30"/>
@@ -676,7 +689,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-F7-w4e">
-                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="40" width="414" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="70" id="fBI-fE-VWn" customClass="CommentCellTableViewCell" customModule="MyNaverWebtoon3" customModuleProvider="target">
@@ -813,14 +826,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrj-qw-vHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5187" y="1235"/>
+            <point key="canvasLocation" x="6097.1014492753629" y="1234.8214285714284"/>
         </scene>
         <!--Title-->
         <scene sceneID="YE1-bi-kU6">
             <objects>
                 <viewController storyboardIdentifier="MyPageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hAp-gc-JuQ" customClass="MyPageViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qy6-7Y-2p8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLD-Fl-VOA">
@@ -919,7 +932,7 @@
             <objects>
                 <viewController id="A7K-De-keU" customClass="SignUpViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbf-uH-N4h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-Ux-O6L">
@@ -1095,7 +1108,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yjf-hL-AeB" customClass="LoginVeiwController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZFM-0b-IRo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-Sh-aHr">
@@ -1233,7 +1246,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tY-UJ-uGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3506" y="1803"/>
+            <point key="canvasLocation" x="4415.9420289855079" y="1802.6785714285713"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YYO-pU-4fV">
@@ -1241,29 +1254,47 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5JS-9d-Zey" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="d1w-XC-Dkp"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mdp-yc-p9T">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Mdp-yc-p9T">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="ozr-jM-Pyv" kind="relationship" relationship="viewControllers" id="4c1-SX-CBn"/>
+                        <segue destination="YTR-Gy-f7M" kind="relationship" relationship="viewControllers" id="Z1o-Ih-V9f"/>
+                        <segue destination="doA-rJ-J12" kind="relationship" relationship="viewControllers" id="fEM-O3-UqY"/>
                         <segue destination="0Or-aK-Ouj" kind="relationship" relationship="viewControllers" id="Fnc-d0-PFL"/>
+                        <segue destination="uPl-yJ-Cxk" kind="relationship" relationship="viewControllers" id="ggC-W6-gF9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BM4-Eg-mev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="1163.568215892054"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--웹툰-->
         <scene sceneID="PDD-G7-Flx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ozr-jM-Pyv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="document" badgeValue="웹툰" id="g2P-oK-tyF"/>
+                    <tabBarItem key="tabBarItem" title="웹툰" image="webtoon" id="g2P-oK-tyF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TvG-Fi-0rj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TvG-Fi-0rj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YTp-Av-ZSu">
@@ -1277,11 +1308,11 @@
             </objects>
             <point key="canvasLocation" x="1075.3623188405797" y="1163.1696428571429"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--MY-->
         <scene sceneID="J1S-yb-rme">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Or-aK-Ouj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="user_male" badgeValue="MY" id="P8I-4V-35c"/>
+                    <tabBarItem key="tabBarItem" title="MY" image="my" id="P8I-4V-35c"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kv7-br-XMY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1298,13 +1329,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="document" width="30" height="30"/>
-        <image name="tabbarBestChallenge" width="151" height="136"/>
-        <image name="tabbarConfig" width="151" height="136"/>
-        <image name="tabbarMY" width="151" height="136"/>
-        <image name="tabbarPLAY" width="151" height="136"/>
-        <image name="tabbarWebtoon" width="50" height="50"/>
-        <image name="user_male" width="30" height="30"/>
+        <image name="bestchallenge" width="30" height="30"/>
+        <image name="configure" width="30" height="30"/>
+        <image name="download-7" width="29" height="30"/>
+        <image name="my" width="30" height="30"/>
+        <image name="play" width="30" height="30"/>
+        <image name="tabbarBestChallenge" width="28" height="28"/>
+        <image name="tabbarConfig" width="75.5" height="68"/>
+        <image name="tabbarMY" width="75.5" height="68"/>
+        <image name="tabbarPLAY" width="75.5" height="68"/>
+        <image name="tabbarWebtoon" width="25" height="25"/>
+        <image name="webtoon" width="30" height="30"/>
         <image name="광고1" width="1119" height="144"/>
     </resources>
 </document>

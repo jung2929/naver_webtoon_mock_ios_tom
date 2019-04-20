@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32537743226B694200E8C11E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32537742226B694200E8C11E /* NetworkManager.swift */; };
 		325958AA2259F1AB0055C967 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958A92259F1AB0055C967 /* TableViewCell.swift */; };
 		325958AE225A13460055C967 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958AD225A13460055C967 /* DataManager.swift */; };
 		325958B2225A19BB0055C967 /* ComicDayDTOTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 325958B1225A19BA0055C967 /* ComicDayDTOTest.json */; };
@@ -74,6 +75,7 @@
 		0E520B36E97D62717A07A7B5 /* Pods-MyNaverWebtoon3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNaverWebtoon3Tests.release.xcconfig"; path = "Target Support Files/Pods-MyNaverWebtoon3Tests/Pods-MyNaverWebtoon3Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1DACE2314AFE639CD9FCA95C /* Pods_MyNaverWebtoon3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNaverWebtoon3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B22FFD5AE11BE4AA7F4EDDA /* Pods_MyNaverWebtoon3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNaverWebtoon3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32537742226B694200E8C11E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		325958A92259F1AB0055C967 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		325958AD225A13460055C967 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		325958B1225A19BA0055C967 /* ComicDayDTOTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComicDayDTOTest.json; sourceTree = SOURCE_ROOT; };
@@ -226,6 +228,7 @@
 				327F2BC42259BB6800342C36 /* ViewController */,
 				325958AD225A13460055C967 /* DataManager.swift */,
 				32720A4F226607C3005FC2F2 /* BaseTableViewController.swift */,
+				32537742226B694200E8C11E /* NetworkManager.swift */,
 				32720A5122660BAD005FC2F2 /* ContentViewController.swift */,
 				32720A5322661A6C005FC2F2 /* ContentViewCell.swift */,
 				32720A5922661BE3005FC2F2 /* DataManager2.swift */,
@@ -510,6 +513,7 @@
 				"${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -523,6 +527,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMScrollingNavbar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -559,6 +564,7 @@
 				32720A5222660BAD005FC2F2 /* ContentViewController.swift in Sources */,
 				325958C2225E27ED0055C967 /* LoginDTO.swift in Sources */,
 				327F2BB522578CB800342C36 /* BestChallengeViewController.swift in Sources */,
+				32537743226B694200E8C11E /* NetworkManager.swift in Sources */,
 				325958C6225FBD640055C967 /* CommentViewController.swift in Sources */,
 				327F2BAD2253D50600342C36 /* ListWebtoonTableViewContrller.swift in Sources */,
 				32720A9D2267565D005FC2F2 /* ComicDay.swift in Sources */,

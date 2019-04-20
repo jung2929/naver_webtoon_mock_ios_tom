@@ -168,6 +168,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
 
 extension ListWebtoonTableViewContrller {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("dataManager count : ",DataManager.resultComicContents.count)
         return DataManager.resultComicContents.count
     }
     

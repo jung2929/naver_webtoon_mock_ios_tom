@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9829647F117AE7C35D97D691662B7DAB"
+               BlueprintIdentifier = "34FD0C84728316C8360F98DCEC6D9B50"
                BuildableName = "Pods_MyNaverWebtoon3.framework"
                BlueprintName = "Pods-MyNaverWebtoon3"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9829647F117AE7C35D97D691662B7DAB"
+            BlueprintIdentifier = "34FD0C84728316C8360F98DCEC6D9B50"
             BuildableName = "Pods_MyNaverWebtoon3.framework"
             BlueprintName = "Pods-MyNaverWebtoon3"
             ReferencedContainer = "container:Pods.xcodeproj">
