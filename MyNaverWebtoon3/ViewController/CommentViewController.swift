@@ -9,19 +9,14 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
+import BetterSegmentedControl
 
 class CommentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    //BEST Label 없애려면 TableView를 2개 써야할듯.
-    
-   
-    
     
     @objc func giveThemLike(_ sender: UIButton){
         print("giveThemLike")
         sender.layer.borderWidth = 1
         sender.layer.borderColor = UIColor.orange.cgColor
-        
-        
     }
     @objc func giveThemDisLike(_ sender: UIButton){
         print("giveThemDisLike")
@@ -29,75 +24,18 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         sender.layer.borderColor = UIColor.orange.cgColor
     }
     
-    @IBAction func bestCommentTapped(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            
-            print(sender.isSelected)
-            bestComment.backgroundColor = UIColor.green
-            bestComment.setTitleColor(UIColor.white, for: .normal)
-            allComment.backgroundColor = UIColor.lightGray
-            allComment.setTitleColor(UIColor.black, for: .normal)
-            //bestComment.setTitle("ON", for: .normal)
-            getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
-            sender.isSelected = false
-            self.tableView.reloadData()
-        }
-            
-        else {
-            bestComment.backgroundColor = UIColor.lightGray
-            bestComment.setTitleColor(UIColor.black, for: .normal)
-            allComment.backgroundColor = UIColor.green
-            allComment.setTitleColor(UIColor.white, for: .normal)
-            print(sender.isSelected)
-            //sender.isSelected = true
-            //bestComment.setTitle("OFF", for: .normal)
-        }
-    }
-    
-    @IBAction func allCommentTapped(_ sender: UIButton) {
-        
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            
-            print(sender.isSelected)
-            allComment.backgroundColor = UIColor.green
-            allComment.setTitleColor(UIColor.white, for: .normal)
-            bestComment.backgroundColor = UIColor.lightGray
-            bestComment.setTitleColor(UIColor.black, for: .normal)
-            //bestComment.setTitle("ON", for: .normal)
-            getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/comment/", contentNo: String(tmpCotentNo))
-            sender.isSelected = false
-            self.tableView.reloadData()
-        }
-            
-        else {
-            allComment.backgroundColor = UIColor.lightGray
-            allComment.setTitleColor(UIColor.black, for: .normal)
-            bestComment.backgroundColor = UIColor.green
-            bestComment.setTitleColor(UIColor.white, for: .normal)
-            print(sender.isSelected)
-            //bestComment.setTitle("OFF", for: .normal)
-        }
-        
-    }
-    
-    @IBAction func goodTapped(_ sender: Any) {
-    }
-    @IBAction func badTapped(_ sender: Any) {
-    }
     
     @IBAction func insertCommentRequest(_ sender: Any) {
         let comment:String = commentTextField.text!
         let url = "http://softcomics.co.kr/comic/content/comment"
         let parameters: [String: Any] = [
-            "contentno":1,
+            "contentno":tmpCotentNo,
             "comment":comment
         ]
         let header = ["x-access-token":DataManager.logintoken]
         print(parameters)
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<SimpleResponseDTO>) in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
                 print(response.result.value?.code)
@@ -126,15 +64,24 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var bestComment: UIButton!
-    @IBOutlet weak var allComment: UIButton!
+    @IBAction func topSectionSegmentsChanged(_ sender: BetterSegmentedControl) {
+        switch sender.index {
+        case 0:
+            print("0")
+            getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
+        case 1:
+            print("1")
+            getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/comment/", contentNo: String(tmpCotentNo))
+        default:
+            print("default")
+        }
+    }
     
+    @IBOutlet weak var topSectionSegments: BetterSegmentedControl!
     @IBOutlet weak var insertCommentConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var commentTextField: UITextField!
     
     var tmpCotentNo:Int = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,12 +89,15 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.tabBarController?.tabBar.isHidden = true
+        print("tabbar hidden?? : ", tabBarController?.tabBar.isHidden)
         // Do any additional setup after loading the view.
         
-        
-        print("tmpContentNo",tmpCotentNo)
-        tmpCotentNo = 1  /// 서버에 1밖에 없음.
-        print("tmpContentNo",tmpCotentNo)
+        self.setupCommentSelectSegment()
+        self.setupNavigationBar()
+        //print("tmpContentNo",tmpCotentNo)
+        //tmpCotentNo = 1  /// 서버에 1밖에 없음.
+        //print("tmpContentNo",tmpCotentNo)
         getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -157,10 +107,20 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         self.view.bringSubviewToFront(bottomView)
     }
     
+    func setupNavigationBar(){
+        self.navigationController?.navigationBar.backItem?.title=" "
+        self.title="댓글 ("+"1,696"+")"
+        let refreshItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshComment))
+        self.navigationItem.rightBarButtonItem = refreshItem
+    }
+    
+    @objc func refreshComment(){
+        print("refresh")
+    }
+    
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         commentTextField.resignFirstResponder()
     }
-    
     
     @objc func keyboardWillShow(notification: Notification) {
         let keyboardSize = (notification.userInfo?  [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -174,8 +134,6 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         UIView.animate(withDuration: 0.5){
             self.view.layoutIfNeeded()
         }
-        
-        
     }
     
     @objc func keyboardWillHide(notification: Notification){
@@ -183,6 +141,14 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         UIView.animate(withDuration: 0.5){
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func setupCommentSelectSegment(){
+        self.topSectionSegments.segments = LabelSegment.segments(withTitles: ["BEST 댓글","전체 댓글"],normalFont: UIFont(name: "HelveticaNeue-Light", size: 14.0)!,
+                                                               normalTextColor: .black,
+                                                               selectedFont: UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,         selectedTextColor: .white)
+        topSectionSegments.setIndex(10, animated: true)
+        //(red:0.20, green:0.68, blue:0.27, alpha:1.00)
     }
     
     func getCommentsDatafromJson(mode:String, url:String, contentNo:String){
@@ -236,12 +202,7 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
                     self.tableView.reloadData()
                 }
             }
-            //}
         }
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//            print("tableView reloaded")
-//        }
     }
 }
 
@@ -254,20 +215,26 @@ extension CommentViewController{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as? CommentCellTableViewCell else {print("error")
             return UITableViewCell() }
-        //cell.bestLabel.text = "best"
-        cell.bestLabel.layer.borderWidth=1
-        cell.bestLabel.layer.borderColor = UIColor.white.cgColor
+        if topSectionSegments.index == 0{
+            cell.bestLabel.text = " BEST "
+        } else {
+            cell.bestLabel.text = ""
+        }
+        cell.bestLabel.layer.masksToBounds = true
+        cell.bestLabel.layer.backgroundColor = UIColor.red.cgColor
         cell.bestLabel.layer.cornerRadius=10
         cell.commentLabel.text = DataManager.comments[indexPath.row].commentContent
         cell.dateLabel.text = DataManager.comments[indexPath.row].commentDate
         cell.idLabel.text = DataManager.comments[indexPath.row].userId
         let tmpCommentLike:String = String(DataManager.comments[indexPath.row].commentLike!)
-        cell.goodButton.layer.cornerRadius = 5
-        cell.goodButton.layer.borderWidth = 1
+        cell.goodButton.layer.borderColor = UIColor.lightGray.cgColor
+        cell.goodButton.layer.borderWidth = 0.5
+        cell.goodButton.layer.backgroundColor = UIColor.white.cgColor
         cell.goodButton.setTitle("👍 "+tmpCommentLike, for: .normal)
         let tmpCommentDislike:String = String(DataManager.comments[indexPath.row].commentDislike!)
-        cell.badButton.layer.cornerRadius = 5
-        cell.badButton.layer.borderWidth = 1
+        cell.badButton.layer.borderColor = UIColor.lightGray.cgColor
+        cell.badButton.layer.borderWidth = 0.5
+        cell.badButton.layer.backgroundColor = UIColor.white.cgColor
         cell.badButton.setTitle("👎 "+tmpCommentDislike, for: .normal)
         
         cell.goodButton.addTarget(self, action: #selector(giveThemLike(_:)), for: .touchUpInside)

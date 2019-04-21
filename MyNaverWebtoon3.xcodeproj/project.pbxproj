@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32537743226B694200E8C11E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32537742226B694200E8C11E /* NetworkManager.swift */; };
+		32537745226C850F00E8C11E /* registerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32537744226C850F00E8C11E /* registerButton.swift */; };
 		325958AA2259F1AB0055C967 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958A92259F1AB0055C967 /* TableViewCell.swift */; };
 		325958AE225A13460055C967 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958AD225A13460055C967 /* DataManager.swift */; };
 		325958B2225A19BB0055C967 /* ComicDayDTOTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 325958B1225A19BA0055C967 /* ComicDayDTOTest.json */; };
@@ -25,16 +26,8 @@
 		32720A45226023BD005FC2F2 /* CommentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A44226023BD005FC2F2 /* CommentDTO.swift */; };
 		32720A4722604ED2005FC2F2 /* TestCommentsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 32720A4622604ED2005FC2F2 /* TestCommentsTest.json */; };
 		32720A4A22605E19005FC2F2 /* AllCommentsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 32720A4922605E19005FC2F2 /* AllCommentsTest.json */; };
-		32720A4C2260A023005FC2F2 /* SimpleResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A4B2260A023005FC2F2 /* SimpleResponseDTO.swift */; };
-		32720A4E2261B1B2005FC2F2 /* BaseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A4D2261B1B2005FC2F2 /* BaseDTO.swift */; };
-		32720A50226607C3005FC2F2 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A4F226607C3005FC2F2 /* BaseTableViewController.swift */; };
-		32720A5222660BAD005FC2F2 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A5122660BAD005FC2F2 /* ContentViewController.swift */; };
-		32720A5422661A6C005FC2F2 /* ContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A5322661A6C005FC2F2 /* ContentViewCell.swift */; };
+		32720A4C2260A023005FC2F2 /* BaseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A4B2260A023005FC2F2 /* BaseDTO.swift */; };
 		32720A5822661AE1005FC2F2 /* ContentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32720A5722661AE1005FC2F2 /* ContentViewCell.xib */; };
-		32720A5A22661BE3005FC2F2 /* DataManager2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A5922661BE3005FC2F2 /* DataManager2.swift */; };
-		32720A9D2267565D005FC2F2 /* ComicDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A9C2267565D005FC2F2 /* ComicDay.swift */; };
-		32720A9F226762D0005FC2F2 /* ComicContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720A9E226762D0005FC2F2 /* ComicContents.swift */; };
-		32720AA1226769BF005FC2F2 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32720AA0226769BF005FC2F2 /* Comments.swift */; };
 		327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B752253B3B000342C36 /* AppDelegate.swift */; };
 		327F2B782253B3B000342C36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F2B772253B3B000342C36 /* MainViewController.swift */; };
 		327F2B7B2253B3B000342C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327F2B792253B3B000342C36 /* Main.storyboard */; };
@@ -76,6 +69,7 @@
 		1DACE2314AFE639CD9FCA95C /* Pods_MyNaverWebtoon3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNaverWebtoon3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B22FFD5AE11BE4AA7F4EDDA /* Pods_MyNaverWebtoon3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNaverWebtoon3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32537742226B694200E8C11E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		32537744226C850F00E8C11E /* registerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerButton.swift; sourceTree = "<group>"; };
 		325958A92259F1AB0055C967 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		325958AD225A13460055C967 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		325958B1225A19BA0055C967 /* ComicDayDTOTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComicDayDTOTest.json; sourceTree = SOURCE_ROOT; };
@@ -93,16 +87,8 @@
 		32720A44226023BD005FC2F2 /* CommentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDTO.swift; sourceTree = "<group>"; };
 		32720A4622604ED2005FC2F2 /* TestCommentsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestCommentsTest.json; sourceTree = "<group>"; };
 		32720A4922605E19005FC2F2 /* AllCommentsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllCommentsTest.json; sourceTree = "<group>"; };
-		32720A4B2260A023005FC2F2 /* SimpleResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleResponseDTO.swift; sourceTree = "<group>"; };
-		32720A4D2261B1B2005FC2F2 /* BaseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDTO.swift; sourceTree = "<group>"; };
-		32720A4F226607C3005FC2F2 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
-		32720A5122660BAD005FC2F2 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		32720A5322661A6C005FC2F2 /* ContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewCell.swift; sourceTree = "<group>"; };
+		32720A4B2260A023005FC2F2 /* BaseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDTO.swift; sourceTree = "<group>"; };
 		32720A5722661AE1005FC2F2 /* ContentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentViewCell.xib; path = "../../Downloads/SegementSlide-master-3/Example/Main/Content/ContentViewCell.xib"; sourceTree = "<group>"; };
-		32720A5922661BE3005FC2F2 /* DataManager2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager2.swift; sourceTree = "<group>"; };
-		32720A9C2267565D005FC2F2 /* ComicDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDay.swift; sourceTree = "<group>"; };
-		32720A9E226762D0005FC2F2 /* ComicContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicContents.swift; sourceTree = "<group>"; };
-		32720AA0226769BF005FC2F2 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		327F2B722253B3B000342C36 /* MyNaverWebtoon3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNaverWebtoon3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327F2B752253B3B000342C36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327F2B772253B3B000342C36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -168,31 +154,27 @@
 			path = CellFormat;
 			sourceTree = "<group>";
 		};
-		325958AC2259F2550055C967 /* DataManager */ = {
+		325958AC2259F2550055C967 /* testData */ = {
 			isa = PBXGroup;
 			children = (
 				325958B1225A19BA0055C967 /* ComicDayDTOTest.json */,
 				325958B5225A316F0055C967 /* ComicContentsDTOTest.json */,
 				32720A4622604ED2005FC2F2 /* TestCommentsTest.json */,
 				32720A4922605E19005FC2F2 /* AllCommentsTest.json */,
-				327F2BB22256601200342C36 /* ComicDayDTO.swift */,
-				325958B3225A30D90055C967 /* ComicContentsDTO.swift */,
-				325958BD225CB2830055C967 /* userDTO.swift */,
-				325958C1225E27ED0055C967 /* LoginDTO.swift */,
-				325958C3225E488A0055C967 /* MyComicListDTO.swift */,
-				32720A44226023BD005FC2F2 /* CommentDTO.swift */,
-				32720A4B2260A023005FC2F2 /* SimpleResponseDTO.swift */,
-				32720A4D2261B1B2005FC2F2 /* BaseDTO.swift */,
 			);
-			path = DataManager;
+			path = testData;
 			sourceTree = "<group>";
 		};
 		32720A9B226755E2005FC2F2 /* DataClass */ = {
 			isa = PBXGroup;
 			children = (
-				32720A9C2267565D005FC2F2 /* ComicDay.swift */,
-				32720A9E226762D0005FC2F2 /* ComicContents.swift */,
-				32720AA0226769BF005FC2F2 /* Comments.swift */,
+				325958B3225A30D90055C967 /* ComicContentsDTO.swift */,
+				325958BD225CB2830055C967 /* userDTO.swift */,
+				325958C1225E27ED0055C967 /* LoginDTO.swift */,
+				325958C3225E488A0055C967 /* MyComicListDTO.swift */,
+				327F2BB22256601200342C36 /* ComicDayDTO.swift */,
+				32720A44226023BD005FC2F2 /* CommentDTO.swift */,
+				32720A4B2260A023005FC2F2 /* BaseDTO.swift */,
 			);
 			path = DataClass;
 			sourceTree = "<group>";
@@ -224,16 +206,13 @@
 			children = (
 				32720A9B226755E2005FC2F2 /* DataClass */,
 				325958AB2259F1B70055C967 /* CellFormat */,
-				325958AC2259F2550055C967 /* DataManager */,
+				325958AC2259F2550055C967 /* testData */,
 				327F2BC42259BB6800342C36 /* ViewController */,
 				325958AD225A13460055C967 /* DataManager.swift */,
-				32720A4F226607C3005FC2F2 /* BaseTableViewController.swift */,
 				32537742226B694200E8C11E /* NetworkManager.swift */,
-				32720A5122660BAD005FC2F2 /* ContentViewController.swift */,
-				32720A5322661A6C005FC2F2 /* ContentViewCell.swift */,
-				32720A5922661BE3005FC2F2 /* DataManager2.swift */,
 				327F2B752253B3B000342C36 /* AppDelegate.swift */,
 				32720A5722661AE1005FC2F2 /* ContentViewCell.xib */,
+				32537744226C850F00E8C11E /* registerButton.swift */,
 				327F2B792253B3B000342C36 /* Main.storyboard */,
 				327F2B7C2253B3B100342C36 /* Assets.xcassets */,
 				327F2B7E2253B3B100342C36 /* LaunchScreen.storyboard */,
@@ -546,28 +525,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32720A4C2260A023005FC2F2 /* SimpleResponseDTO.swift in Sources */,
+				32720A4C2260A023005FC2F2 /* BaseDTO.swift in Sources */,
 				327F2BB722578F4100342C36 /* Test1ViewController.swift in Sources */,
 				327F2BB32256601200342C36 /* ComicDayDTO.swift in Sources */,
 				327F2B782253B3B000342C36 /* MainViewController.swift in Sources */,
-				32720A5A22661BE3005FC2F2 /* DataManager2.swift in Sources */,
-				32720A9F226762D0005FC2F2 /* ComicContents.swift in Sources */,
 				327F2BAF2253D79700342C36 /* ViewWebtoonViewController.swift in Sources */,
 				325958B4225A30D90055C967 /* ComicContentsDTO.swift in Sources */,
 				327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */,
 				325958C4225E488A0055C967 /* MyComicListDTO.swift in Sources */,
-				32720A50226607C3005FC2F2 /* BaseTableViewController.swift in Sources */,
-				32720AA1226769BF005FC2F2 /* Comments.swift in Sources */,
-				32720A4E2261B1B2005FC2F2 /* BaseDTO.swift in Sources */,
+				32537745226C850F00E8C11E /* registerButton.swift in Sources */,
 				325958AA2259F1AB0055C967 /* TableViewCell.swift in Sources */,
 				325958C0225CF4600055C967 /* MyPageTVC.swift in Sources */,
-				32720A5222660BAD005FC2F2 /* ContentViewController.swift in Sources */,
 				325958C2225E27ED0055C967 /* LoginDTO.swift in Sources */,
 				327F2BB522578CB800342C36 /* BestChallengeViewController.swift in Sources */,
 				32537743226B694200E8C11E /* NetworkManager.swift in Sources */,
 				325958C6225FBD640055C967 /* CommentViewController.swift in Sources */,
 				327F2BAD2253D50600342C36 /* ListWebtoonTableViewContrller.swift in Sources */,
-				32720A9D2267565D005FC2F2 /* ComicDay.swift in Sources */,
 				325958BC225BA7240055C967 /* LoginVeiwController.swift in Sources */,
 				32720A41225FBF75005FC2F2 /* CommentCellTableViewCell.swift in Sources */,
 				32720A45226023BD005FC2F2 /* CommentDTO.swift in Sources */,
@@ -576,7 +549,6 @@
 				327F2BAB2253D26200342C36 /* CollectionViewCell.swift in Sources */,
 				325958BA225B995E0055C967 /* SignUpViewController.swift in Sources */,
 				325958BE225CB2830055C967 /* userDTO.swift in Sources */,
-				32720A5422661A6C005FC2F2 /* ContentViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

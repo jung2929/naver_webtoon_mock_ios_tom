@@ -16,40 +16,51 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
     var isGivenHeart:Bool = false
     @IBOutlet weak var comicHeart: UIButton!
     @IBOutlet weak var heartButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var registerButton: registerButton!
+    
+    @IBAction func registerButtonTapped(_ sender: registerButton) {
+        print(registerButton.isOn)
+        registerMyComic()
+    }
     
     @IBAction func giveToonHeart(_ sender: Any) {
-        if isGivenHeart {
-            heartButton.setTitle("♡", for: .normal)
-            heartButton.setTitleColor(.black, for: .normal)
-            tmpComicNumberofHeart = tmpComicNumberofHeart! - 1
-            self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
-            isGivenHeart = false
-            //request 수정해야함.
-        }else {
+        if isGivenHeart == false {
+            giveHeartToComic(mode: "real")
             heartButton.setTitle("♥︎", for: .normal)
             heartButton.setTitleColor(.red, for: .normal)
             tmpComicNumberofHeart = tmpComicNumberofHeart! + 1
             self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
-            isGivenHeart = true
-            //request 수정해야함.
+            let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 누름!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }else {
+            giveHeartToComic(mode: "real")
+            heartButton.setTitle("♡", for: .normal)
+            heartButton.setTitleColor(.black, for: .normal)
+            tmpComicNumberofHeart = tmpComicNumberofHeart! - 1
+            self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
+            let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 취소!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
-    @IBAction func registerMyToon(_ sender: Any) {
-        if isRegister {
-            isRegister = false
-            registerButton.setTitle("☑︎ 관심", for: .normal)
-            registerButton.setTitleColor(.black, for: .normal)
-            registerMyComic()
-
-        }else{
-            isRegister = true
-            registerButton.setTitle("☑︎ 관심", for: .normal)
-            registerButton.setTitleColor(.green, for: .normal)
-            registerMyComic()
-        }
-    }
+//    @IBAction func registerMyToon(_ sender: Any) {
+//        if isRegister {
+//            isRegister = false
+//            registerButton.setTitle("☑︎ 관심", for: .normal)
+//            registerButton.setTitleColor(.black, for: .normal)
+//            registerMyComic()
+//
+//        }else{
+//            isRegister = true
+//            registerButton.setTitle("☑︎ 관심", for: .normal)
+//            registerButton.setTitleColor(.green, for: .normal)
+//            registerMyComic()
+//        }
+//    }
     
     @IBOutlet weak var tableView: UITableView!
     var tmpNaviBarTopItem:String?
@@ -67,7 +78,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            print("fsdjflsdjfisldjfiosdfjidosfjodsifjidos", registerButton.isOn)
         //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
         self.navigationController?.navigationBar.topItem!.title = tmpNaviBarTopItem
         self.navigationController?.navigationBar.isHidden = false
@@ -78,12 +89,8 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         print("tmpComicNumber ; ",tmpComicNumber)
         
         getDatafromJson(mode: "real")
+        //registerButton.isOn = true
         
-        self.tableView.reloadData()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        // Do any additional setup after loading the view.
     }
     
     func registerMyComic(){
@@ -92,10 +99,11 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         let parameters: [String: Any] = [
             "comicno":tmpComicNumber!
         ]
-        let header = ["x-access-token":DataManager.logintoken]
+        //let header = ["x-access-token":DataManager.logintoken]
+        let header = ["x-access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAxOS0wNC0xMiAwMToyMTozNCIsInVzZXJJZCI6InRvbTEiLCJ1c2VyUHciOiJUb20xMjM0LiIsInVzZXJUeXBlIjoiMSJ9.uMunfwEPzAkq85D1_4Wr-geVb9XnDSzdqQ3tiThuZ64"]
         print(parameters)
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<SimpleResponseDTO>) in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
                 print(response.result.value?.code)
@@ -150,6 +158,41 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
                     print(DataManager.resultComicContents.count)
                     self.tableView.reloadData()
                 }
+            }
+        }
+    }
+    
+    
+    func giveHeartToComic(mode:String){
+        //var isGiven:Bool = false
+        if mode == "real" {
+            let url = "http://softcomics.co.kr/comic/like"
+            let parameters: [String: Any] = [
+                "comicno":tmpComicNumber!
+            ]
+//            let header = ["x-access-token":DataManager.logintoken]
+            //아래는 샘플테스트.
+            let header = ["x-access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAxOS0wNC0xMiAwMToyMTozNCIsInVzZXJJZCI6InRvbTEiLCJ1c2VyUHciOiJUb20xMjM0LiIsInVzZXJUeXBlIjoiMSJ9.uMunfwEPzAkq85D1_4Wr-geVb9XnDSzdqQ3tiThuZ64"]
+
+            Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    print(response.result.value?.code)
+                    print(response.result.value?.message)
+                    response.result.value?.code
+                    //self.viewDidLoad()
+                    switch response.result.value?.message {
+                    case "만화 좋아요 누름!":
+                        print(response.result.value?.message)
+                        self.isGivenHeart = true
+                    case "만화에 좋아요 취소":
+                        print("실패")
+                        self.isGivenHeart = false
+                    default:
+                        print("실패")
+                    }
+                }
+                print("isGivenHeart ? : ", self.isGivenHeart)
             }
         }
     }

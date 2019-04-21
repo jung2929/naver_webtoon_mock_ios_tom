@@ -9,17 +9,29 @@
 import UIKit
 import ObjectMapper
 
-class CommentDTO: Mappable {
+class CommentDTO: BaseDTO {
     var data = [Comments]()
-    var code : Int?
-    var message : String?
-    required init?(map: Map) {
-        
-    }
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         data <- map["data"]
-        code <- map["code"]
-        message <- map["message"]
+    }
+    class Comments: Mappable {
+        var userId:String?
+        var commentNo:Int?
+        var commentContent:String?
+        var commentLike:Int?
+        var commentDislike:Int?
+        var commentDate:String?
+        required init?(map: Map){
+            
+        }
+        func mapping(map: Map) {
+            userId <- map["User_Id"]
+            commentNo <- map["Comment_No"]
+            commentContent <- map["Comment_Content"]
+            commentLike <- map["Comment_Like"]
+            commentDislike <- map["Comment_DisLike"]
+            commentDate <- map["Comment_Date"]
+        }
     }
 }
 

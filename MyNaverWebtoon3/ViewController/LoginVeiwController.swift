@@ -45,21 +45,16 @@ class LoginVeiwController: UIViewController {
                     }
                     break
                 case 200:
-                    print(status)
                     self.errorLabel.text = "아이디나 패스워드를 확인해주세요."
                     break
                 case 201:
                     self.errorLabel.text = "아이디나 패스워드를 확인해주세요."
-                    print(status)
                     break
                 default:
                     break
                 }
-                
             }
         }
-        
-        
     }
     
     override func viewDidLoad() {
@@ -79,5 +74,4 @@ class LoginVeiwController: UIViewController {
             //vc.viewWillAppear(true)
         }
     }
-
 }

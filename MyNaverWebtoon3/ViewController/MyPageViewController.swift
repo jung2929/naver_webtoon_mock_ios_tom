@@ -39,10 +39,6 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
         let url = "http://softcomics.co.kr/my/comic/list"
         Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<MyComicListDTO>) in
             if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-                print(response.result.value?.data)
-                print(response.result.value?.code)
-                print(response.result.value?.list)
                 //DataManager.resultComicDay = JSON.result
                 let status = response.result.value?.code
                 print(status)
@@ -101,8 +97,8 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MyPageTVC else {print("error")
             return UITableViewCell() }
-        cell.titleLabel.text = DataManager.resultMyComic[indexPath.row]["Comic_Name"]! as? String
-        cell.dateLabel.text = DataManager.resultMyComic[indexPath.row]["Comic_Text"]! as? String
+        cell.titleLabel.text = DataManager.resultMyComic[indexPath.row].comicName
+        cell.dateLabel.text = DataManager.resultMyComic[indexPath.row].comicText
         cell.sumnailImg.image = DataManager.worldOfGirlsViewImage[indexPath.row]
         cell.alamImg.image = UIImage(named: "following")
         //print("aaa")

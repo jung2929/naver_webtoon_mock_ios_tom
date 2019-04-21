@@ -149,7 +149,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if indexPath != nil{
             let currentCell = collectionView.cellForItem(at: indexPath!) as! CollectionViewCell
             if ((collectionView?.indexPathsForSelectedItems) != nil){
-                
+                for result in DataManager.resultMyComic{
+                    if result.comicNo == currentCell.comicNumber{
+                        destination.registerButton.setTitle("관심웹툰입니다.", for: .normal)
+                        destination.registerButton.isOn = true
+                    }
+                }
                 destination.tmpNaviBarTopItem = currentCell.title.text
                 destination.tmpComicNumber = currentCell.comicNumber
                 destination.tmpComicNumberofHeart = currentCell.comicNumberOfHeart

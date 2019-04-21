@@ -57,13 +57,6 @@ class MyPageTVC: UITableViewCell {
         contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[sumnailImg]-(15)-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
         contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[dateLabel]-(3)-|", options: [], metrics: nil, views: viewsDict))
         
-        
-//
-//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[sumnailImg(10)]", options: [], metrics: nil, views: viewsDict))
-//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
-//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[alamImg(10)]-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
-//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[alamImg(10)]-[sumnailImg(10)]-|", options: [], metrics: nil, views: viewsDict))
-//            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[dateLabel]-[dateLabel]-|", options: [], metrics: nil, views: viewsDict))
         }
         
         required init?(coder aDecoder: NSCoder) {

@@ -31,15 +31,6 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         title = "WebToon"
         self.navigationController?.navigationBar.isHidden = false
         self.tabBarController?.tabBar.isHidden = true
-        // navigationItem.prompt = "Prompt"
-        
-//        navigationController?.navigationBar.barTintColor = UIColor(red:0.17, green:0.59, blue:0.87, alpha:1)
-//        tabBarController?.tabBar.barTintColor = UIColor(red:0.17, green:0.59, blue:0.87, alpha:1)
-//        tabBarController?.tabBar.tintColor = .white
-//
-        //scrollView.backgroundColor = UIColor(red:0.13, green:0.5, blue:0.73, alpha:1)
-        
-        
         
         let webtoonSample = UIImage(named: "1")
         
@@ -50,58 +41,25 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         scrollView.contentSize = CGSize(width: self.scrollView.frame.size.width, height: webtoonSample!.size.height)
         scrollView.delegate = self
         
-        print(scrollView.frame)
-        
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(scrollViewTapped(gestureRecognizer:)))
         scrollView.addGestureRecognizer(tapRecognizer)
         tapRecognizer.delegate = self
-        //imgView.clipsToBounds = true
-        
         scrollView.addSubview(imgView)
-        //scrollView.bringSubviewToFront(imgView)
+        
         self.view.bringSubviewToFront(bottomView)
     }
+    
     @objc func scrollViewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        
         self.navigationController?.navigationBar.isHidden=false
         self.view.bringSubviewToFront(self.bottomView)
-
     }
-//
-//    func scrollingNavigationController(_ controller: ScrollingNavigationController, didChangeState state: NavigationBarState) {
-//        switch state {
-//        case .collapsed:
-//            print("navbar collapsed")
-//            self.view.sendSubviewToBack(bottomView)
-//        case .expanded:
-//            print("navbar expanded")
-//            self.view.bringSubviewToFront(bottomView)
-//        case .scrolling:
-//            print("navbar is moving")
-//            self.view.sendSubviewToBack(bottomView)
-//        }
-//    }
-//
-//    // Enable the navbar scrolling
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        //navigationController?.navigationBar.barTintColor = UIColor(red:0.17, green:0.59, blue:0.87, alpha:1)
-//
-//        if let navigationController = self.navigationController as? ScrollingNavigationController {
-//            if let tabBarController = tabBarController {
-//                navigationController.followScrollView(scrollView, delay: 0, scrollSpeedFactor: 2, followers: [NavigationBarFollower(view: tabBarController.tabBar, direction: .scrollDown)])
-//            } else {
-//                navigationController.followScrollView(scrollView, delay: 0.0, scrollSpeedFactor: 2)
-//            }
-//            navigationController.scrollingNavbarDelegate = self
-//            navigationController.expandOnActive = false
-//        }
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? CommentViewController else { return }
-                destination.tmpCotentNo = tmpCotentNo
+        destination.tmpCotentNo = tmpCotentNo
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
         print("in")
         if segue.identifier == "unwind1" {
             let vc = segue.destination as! ListWebtoonTableViewContrller
@@ -112,25 +70,20 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         }
     }
     
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.isEqual(scrollView) {
             switch scrollView.panGestureRecognizer.state {
             case .began:
-                // User began dragging
                 print("began")
             case .changed:
-                // User is currently dragging the scroll view
                 self.navigationController?.navigationBar.isHidden = true
                 self.view.sendSubviewToBack(bottomView)
                 print("changed")
             case .possible:
-                // The scroll view scrolling but the user is no longer touching the scrollview (table is decelerating)
                 print("possible")
             default:
                 break
             }
         }
-        
     }
 }
