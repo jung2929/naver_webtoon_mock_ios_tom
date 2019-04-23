@@ -24,6 +24,7 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("login token : ",DataManager.logintoken)
         getDataIfLogin(logintoken: DataManager.logintoken)
         navigationController?.navigationBar.topItem?.title = "MY"
         topView.layer.addBorder([.bottom], color: UIColor.lightGray, width: 1)
@@ -34,10 +35,13 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func getDataIfLogin(logintoken:String){
-        print(logintoken)
-        let header = ["x-access-token":logintoken]
+        //print(logintoken)
+        let header = ["x-access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAxOS0wNC0xMiAwMToyMTozNCIsInVzZXJJZCI6InRvbTEiLCJ1c2VyUHciOiJUb20xMjM0LiIsInVzZXJUeXBlIjoiMSJ9.uMunfwEPzAkq85D1_4Wr-geVb9XnDSzdqQ3tiThuZ64"]
         let url = "http://softcomics.co.kr/my/comic/list"
         Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<MyComicListDTO>) in
+            print(response.result.value?.code)
+            print(response.result.error)
+            print(response.response?.statusCode)
             if let JSON = response.result.value {
                 //DataManager.resultComicDay = JSON.result
                 let status = response.result.value?.code

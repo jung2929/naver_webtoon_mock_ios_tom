@@ -33,6 +33,8 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
             "comment":comment
         ]
         let header = ["x-access-token":DataManager.logintoken]
+//        let header = ["x-access-token":DataManager.logintoken]
+
         print(parameters)
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
@@ -49,6 +51,8 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                     self.commentTextField.resignFirstResponder()
+                    //수정 현재 segments index 로 request 해야 테이블 refresh 될듯.
+                    //self.tableView.reloadData()
                     break
                 default:
                     print(status)
@@ -151,6 +155,7 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         //(red:0.20, green:0.68, blue:0.27, alpha:1.00)
     }
     
+    
     func getCommentsDatafromJson(mode:String, url:String, contentNo:String){
         if mode == "testBestComments" {
             print(mode)
@@ -205,6 +210,8 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 }
+
+
 
 
 extension CommentViewController{

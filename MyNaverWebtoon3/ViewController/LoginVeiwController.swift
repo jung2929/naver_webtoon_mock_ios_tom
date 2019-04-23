@@ -24,10 +24,16 @@ class LoginVeiwController: UIViewController {
     
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        let url = "http://softcomics.co.kr/token/"+idTextField.text!+"/"+pwTextField.text!
+        let url = "http://softcomics.co.kr/user/fcm"
+//        let url = "http://softcomics.co.kr/token/"+idTextField.text!+"/"+pwTextField.text!
+        let parameters: [String: Any] = [
+            "id":idTextField.text!,
+            "pw":pwTextField.text!,
+            "fcm":"testfcmtoken"
+        ]
         // DispatchQueue.global(qos:.userInteractive).async {
         print(url)
-        Alamofire.request(url).responseObject{(response : DataResponse<LoginDTO>) in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseObject{(response : DataResponse<LoginDTO>) in
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
                 print(response.result.value?.code)

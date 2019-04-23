@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         print("goooooood",NetworkManager.shared().baseURL)
+        //임시 조치..
+        DataManager.logintoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAxOS0wNC0xMiAwMToyMTozNCIsInVzZXJJZCI6InRvbTEiLCJ1c2VyUHciOiJUb20xMjM0LiIsInVzZXJUeXBlIjoiMSJ9.uMunfwEPzAkq85D1_4Wr-geVb9XnDSzdqQ3tiThuZ64"
         //UITabBar.appearance().tintColor = .red
         //UITabBar.appearance().backgroundColor = .black
         

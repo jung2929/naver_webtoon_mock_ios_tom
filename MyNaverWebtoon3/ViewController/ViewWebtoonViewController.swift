@@ -8,6 +8,8 @@
 
 import UIKit
 import AMScrollingNavbar
+import Alamofire
+import AlamofireObjectMapper
 
 class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate{
 //    class ViewWebtoonViewController: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate{
@@ -17,17 +19,26 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
     @IBOutlet weak var bottomView: UIView!
     
     @IBOutlet weak var viewInstantMessage: UIButton!
-    var tmpCotentNo:Int = 0
+    @IBOutlet weak var contentLike: UIButton!
 
+    
     
     @IBAction func viewInstantMessageTapped(_ sender: Any) {
     }
+    @IBAction func contentLikeTapped(_ sender: Any) {
+        giveLikeContent()
+        self.setButtonCount()
+        
+    }
     
     
+    var tmpCotentNo:Int = 0
+    var tmpContentLike:Int = 0
+    var tmpComicNo:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "WebToon"
         self.navigationController?.navigationBar.isHidden = false
         self.tabBarController?.tabBar.isHidden = true
@@ -46,7 +57,61 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         tapRecognizer.delegate = self
         scrollView.addSubview(imgView)
         
+        contentLike.setTitle("♡ "+String(tmpContentLike), for: .normal)
+        
         self.view.bringSubviewToFront(bottomView)
+    }
+    
+    func giveLikeContent(){
+        print("giveLikein")
+        print("타겟 contentno : ", tmpCotentNo)
+        let url = "http://softcomics.co.kr/comic/content/like"
+        let parameters: [String: Any] = [
+            "contentno":tmpCotentNo
+        ]
+        let header = ["x-access-token":DataManager.logintoken]
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+                print(response.result.value?.code)
+                let status = response.result.value?.code
+                print(status)
+                switch status {
+                case 100:
+                    let alert = UIAlertController(title: "컨텐츠 좋아요", message: JSON.message, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                    break
+                default:
+                    print(status)
+                    print("로그인하세요.")
+                    break
+                }
+            }
+        }
+    }
+    
+    func setButtonCount(){
+        let url = "http://softcomics.co.kr/comic/contentAll/"+"\(tmpComicNo)"
+        print(url)
+        print("aaaaaaaaa")
+        print("변경전 like : ",tmpContentLike)
+        Alamofire.request(url).responseObject{(response : DataResponse<ComicContentsDTO>) in
+            if let JSON = response.result.value {
+                DataManager.resultComicContents = JSON.resultComicContents
+            }
+        }
+        //아래 부분 수정 해야할듯..
+            for result in DataManager.resultComicContents{
+                if result.contentNo == self.tmpCotentNo{
+                    self.contentLike.setTitle("♥︎ "+"\(result.contentHeart!)", for: .normal)
+                    print(result.contentNo!)
+                    print(result.contentHeart!)
+                }
+            }
+        
+        
     }
     
     @objc func scrollViewTapped(gestureRecognizer: UITapGestureRecognizer) {

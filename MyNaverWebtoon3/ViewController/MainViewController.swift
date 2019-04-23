@@ -25,6 +25,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBAction func daySelectChanged(_ sender: BetterSegmentedControl) {
         print(sender.index)
     }
+    @IBAction func unwindToMainViewController(segue:UIStoryboardSegue){
+        tabBarController?.tabBar.isHidden = false
+        //navigationController?.navigationBar.isHidden = false
+    }
     
     var testImage = [UIImage]()
     var timer = Timer()

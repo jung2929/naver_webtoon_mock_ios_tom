@@ -17,10 +17,19 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var comicHeart: UIButton!
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var registerButton: registerButton!
+    @IBOutlet weak var tableView: UITableView!
+    var tmpNaviBarTopItem:String?
+    var tmpComicNumber:Int?
+    var tmpComicNumberofHeart:Int?
     
     @IBAction func registerButtonTapped(_ sender: registerButton) {
         print(registerButton.isOn)
         registerMyComic()
+    }
+    
+    @IBAction func comicContentFirstButtonTapped(_ sender: Any) {
+        requestComicContentFirst()
+        print(DataManager.resultComicContentFirst)
     }
     
     @IBAction func giveToonHeart(_ sender: Any) {
@@ -34,7 +43,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
-        }else {
+        } else {
             giveHeartToComic(mode: "real")
             heartButton.setTitle("♡", for: .normal)
             heartButton.setTitleColor(.black, for: .normal)
@@ -46,26 +55,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-//    @IBAction func registerMyToon(_ sender: Any) {
-//        if isRegister {
-//            isRegister = false
-//            registerButton.setTitle("☑︎ 관심", for: .normal)
-//            registerButton.setTitleColor(.black, for: .normal)
-//            registerMyComic()
-//
-//        }else{
-//            isRegister = true
-//            registerButton.setTitle("☑︎ 관심", for: .normal)
-//            registerButton.setTitleColor(.green, for: .normal)
-//            registerMyComic()
-//        }
-//    }
-    
-    @IBOutlet weak var tableView: UITableView!
-    var tmpNaviBarTopItem:String?
-    var tmpComicNumber:Int?
-    var tmpComicNumberofHeart:Int?
+
 
     
     
@@ -100,7 +90,8 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             "comicno":tmpComicNumber!
         ]
         //let header = ["x-access-token":DataManager.logintoken]
-        let header = ["x-access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAxOS0wNC0xMiAwMToyMTozNCIsInVzZXJJZCI6InRvbTEiLCJ1c2VyUHciOiJUb20xMjM0LiIsInVzZXJUeXBlIjoiMSJ9.uMunfwEPzAkq85D1_4Wr-geVb9XnDSzdqQ3tiThuZ64"]
+        let header = ["x-access-token":DataManager.logintoken
+        ]
         print(parameters)
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
@@ -162,6 +153,25 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         }
     }
     
+    func requestComicContentFirst(){
+                let url = "http://softcomics.co.kr/comic/content/first/"+String(tmpComicNumber!)
+                print(url)
+                Alamofire.request(url).responseObject{(response : DataResponse<ComicContentFirstDTO>) in
+                    let JSON = response.result.value
+                    print(JSON!)
+                    print(response.response?.statusCode)
+                    print(response.result.value?.resultComicContentFirst)
+                    print(JSON?.resultComicContentFirst)
+                    print(response.result.value?.code)
+                    print(response.result.value?.message)
+                        //if let JSON = response.result.value {
+                        //DataManager.resultComicContentFirst.removeAll()
+                    DataManager.resultComicContentFirst = JSON!.resultComicContentFirst
+                    //}
+                
+        }
+    }
+    
     
     func giveHeartToComic(mode:String){
         //var isGiven:Bool = false
@@ -172,7 +182,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             ]
 //            let header = ["x-access-token":DataManager.logintoken]
             //아래는 샘플테스트.
-            let header = ["x-access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAxOS0wNC0xMiAwMToyMTozNCIsInVzZXJJZCI6InRvbTEiLCJ1c2VyUHciOiJUb20xMjM0LiIsInVzZXJUeXBlIjoiMSJ9.uMunfwEPzAkq85D1_4Wr-geVb9XnDSzdqQ3tiThuZ64"]
+            let header = ["x-access-token":DataManager.logintoken]
 
             Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
                 if let JSON = response.result.value {
@@ -198,12 +208,16 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? ViewWebtoonViewController else { return }
-        let indexPath = tableView.indexPath(for: sender as! TableViewCell)
-        if indexPath != nil{
-            let currentCell = tableView.cellForRow(at: indexPath!) as! TableViewCell
-            if ((tableView?.indexPathsForSelectedRows) != nil){
-                destination.tmpCotentNo = currentCell.conTentNo
+        if segue.identifier == "contentView" {
+            guard let destination = segue.destination as? ViewWebtoonViewController else { return }
+            let indexPath = tableView.indexPath(for: sender as! TableViewCell)
+            if indexPath != nil{
+                let currentCell = tableView.cellForRow(at: indexPath!) as! TableViewCell
+                if ((tableView?.indexPathsForSelectedRows) != nil){
+                    destination.tmpCotentNo = currentCell.conTentNo
+                    destination.tmpContentLike = currentCell.contentLike
+                    destination.tmpComicNo = currentCell.comicNo
+                }
             }
         }
     }
@@ -223,6 +237,8 @@ extension ListWebtoonTableViewContrller {
         cell.dateDetail.text = DataManager.resultComicContents[indexPath.row].contentDate
         cell.conTentNo = DataManager.resultComicContents[indexPath.row].contentNo!
         cell.imageSumnailDetail.image = DataManager.topOfGodViewImage[indexPath.row]
+        cell.contentLike = DataManager.resultComicContents[indexPath.row].contentHeart!
+        cell.comicNo = DataManager.resultComicContents[indexPath.row].comicNo!
         return cell
     }
 }
