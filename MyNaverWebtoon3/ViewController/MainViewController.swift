@@ -162,6 +162,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 destination.tmpNaviBarTopItem = currentCell.title.text
                 destination.tmpComicNumber = currentCell.comicNumber
                 destination.tmpComicNumberofHeart = currentCell.comicNumberOfHeart
+                print("currentCell.comicNumberOfHeart : ",currentCell.comicNumberOfHeart)
             }
         }
     }

@@ -31,14 +31,17 @@ class LoginVeiwController: UIViewController {
             "pw":pwTextField.text!,
             "fcm":"testfcmtoken"
         ]
+        print("parameters :", parameters)
         // DispatchQueue.global(qos:.userInteractive).async {
         print(url)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseObject{(response : DataResponse<LoginDTO>) in
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
+                print(response.response?.statusCode)
+                print("error",response.result.error)
                 print(response.result.value?.code)
                 print(response.result.value?.message)
-                print(response.result.value?.result["jwt"])
+                //print(response.result.value?.result["jwt"]!)
                 //DataManager.resultComicDay = JSON.result
                 let status = response.result.value?.code
                 print(status)

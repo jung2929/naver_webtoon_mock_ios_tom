@@ -27,8 +27,6 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
     }
     @IBAction func contentLikeTapped(_ sender: Any) {
         giveLikeContent()
-        self.setButtonCount()
-        
     }
     
     
@@ -72,8 +70,6 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         let header = ["x-access-token":DataManager.logintoken]
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
             if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-                print(response.result.value?.code)
                 let status = response.result.value?.code
                 print(status)
                 switch status {
@@ -81,6 +77,7 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
                     let alert = UIAlertController(title: "컨텐츠 좋아요", message: JSON.message, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(okAction)
+                    self.contentLike.setTitle("♥︎ "+"\(JSON.like!)", for: .normal)
                     self.present(alert, animated: true, completion: nil)
                     break
                 default:
@@ -91,28 +88,25 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
             }
         }
     }
-    
-    func setButtonCount(){
-        let url = "http://softcomics.co.kr/comic/contentAll/"+"\(tmpComicNo)"
-        print(url)
-        print("aaaaaaaaa")
-        print("변경전 like : ",tmpContentLike)
-        Alamofire.request(url).responseObject{(response : DataResponse<ComicContentsDTO>) in
-            if let JSON = response.result.value {
-                DataManager.resultComicContents = JSON.resultComicContents
-            }
-        }
-        //아래 부분 수정 해야할듯..
-            for result in DataManager.resultComicContents{
-                if result.contentNo == self.tmpCotentNo{
-                    self.contentLike.setTitle("♥︎ "+"\(result.contentHeart!)", for: .normal)
-                    print(result.contentNo!)
-                    print(result.contentHeart!)
-                }
-            }
-        
-        
-    }
+//
+//    func setButtonCount(){
+//        let url = "http://softcomics.co.kr/comic/contentAll/"+"\(tmpComicNo)"
+//        print(url)
+//        print("변경전 like : ",tmpContentLike)
+//        Alamofire.request(url).responseObject{(response : DataResponse<ComicContentsDTO>) in
+//            if let JSON = response.result.value {
+//                DataManager.resultComicContents = JSON.resultComicContents
+//            }
+//        }
+//        //아래 부분 수정 해야할듯..
+//            for result in DataManager.resultComicContents{
+//                if result.contentNo == self.tmpCotentNo{
+//                    self.contentLike.setTitle("♥︎ "+"\(result.contentHeart!)", for: .normal)
+//                    print(result.contentNo!)
+//                    print(result.contentHeart!)
+//                }
+//            }
+//    }
     
     @objc func scrollViewTapped(gestureRecognizer: UITapGestureRecognizer) {
         self.navigationController?.navigationBar.isHidden=false

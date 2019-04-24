@@ -37,8 +37,6 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             giveHeartToComic(mode: "real")
             heartButton.setTitle("♥︎", for: .normal)
             heartButton.setTitleColor(.red, for: .normal)
-            tmpComicNumberofHeart = tmpComicNumberofHeart! + 1
-            self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
             let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 누름!", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
@@ -47,8 +45,6 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             giveHeartToComic(mode: "real")
             heartButton.setTitle("♡", for: .normal)
             heartButton.setTitleColor(.black, for: .normal)
-            tmpComicNumberofHeart = tmpComicNumberofHeart! - 1
-            self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
             let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 취소!", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
@@ -69,6 +65,9 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
             print("fsdjflsdjfisldjfiosdfjidosfjodsifjidos", registerButton.isOn)
+        
+        //initialize isGivenHeart 구현해야함. 데이터 request 해야함.
+        //initialize isRegister 구현해야함. 데이터 request 해야함.
         //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
         self.navigationController?.navigationBar.topItem!.title = tmpNaviBarTopItem
         self.navigationController?.navigationBar.isHidden = false
@@ -138,15 +137,9 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         } else if mode == "real" {
             print(mode)
             let url = "http://softcomics.co.kr/comic/contentAll/"+"\(tmpComicNumber!)"
-            print(url)
-            print("aaaaaaaaa")
             Alamofire.request(url).responseObject{(response : DataResponse<ComicContentsDTO>) in
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                    print(response.result.value?.resultComicContents)
                     DataManager.resultComicContents = JSON.resultComicContents
-                    print("resultComicDay",DataManager.resultComicDay)
-                    print(DataManager.resultComicContents.count)
                     self.tableView.reloadData()
                 }
             }
@@ -172,6 +165,10 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         }
     }
     
+    func toggleBoolean(bool:Bool)->Bool{
+        let flag = !bool
+        return flag
+    }
     
     func giveHeartToComic(mode:String){
         //var isGiven:Bool = false
@@ -186,19 +183,17 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
 
             Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
                     print(response.result.value?.code)
                     print(response.result.value?.message)
                     response.result.value?.code
                     //self.viewDidLoad()
-                    switch response.result.value?.message {
-                    case "만화 좋아요 누름!":
+                    switch response.result.value?.code {
+                    case 100:
                         print(response.result.value?.message)
-                        self.isGivenHeart = true
-                    case "만화에 좋아요 취소":
-                        print("실패")
-                        self.isGivenHeart = false
+                        self.isGivenHeart = self.toggleBoolean(bool: self.isGivenHeart)
+                        self.comicHeart.setTitle("\(JSON.like!)", for: .normal)
                     default:
+                        print(response.result.value?.code)
                         print("실패")
                     }
                 }
