@@ -12,15 +12,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var isRegister:Bool = false
-    var isGivenHeart:Bool = false
-    @IBOutlet weak var comicHeart: UIButton!
-    @IBOutlet weak var heartButton: UIButton!
-    @IBOutlet weak var registerButton: registerButton!
-    @IBOutlet weak var tableView: UITableView!
-    var tmpNaviBarTopItem:String?
-    var tmpComicNumber:Int?
-    var tmpComicNumberofHeart:Int?
+
     
     @IBAction func registerButtonTapped(_ sender: registerButton) {
         registerMyComic()
@@ -48,6 +40,16 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         }
     }
     
+    var isRegister:Bool = false
+    var isGivenHeart:Bool = false
+    @IBOutlet weak var comicHeart: UIButton!
+    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var registerButton: registerButton!
+    @IBOutlet weak var tableView: UITableView!
+    var tmpNaviBarTopItem:String?
+    var tmpComicNumber:Int?
+    var tmpComicNumberofHeart:Int?
+    
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
         getDatafromJson(mode: "real")
@@ -58,8 +60,6 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //initialize isGivenHeart 구현해야함. 데이터 request 해야함.
-        //initialize isRegister 구현해야함. 데이터 request 해야함.
         self.navigationController?.navigationBar.topItem!.title = tmpNaviBarTopItem
         self.navigationController?.navigationBar.isHidden = false
         self.tabBarController?.tabBar.isHidden = false
@@ -204,6 +204,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
                     destination.tmpCotentNo = currentCell.conTentNo
                     destination.tmpContentLike = currentCell.contentLike
                     destination.tmpComicNo = currentCell.comicNo
+                    destination.tmpContentRating = currentCell.contentRating
                 }
             }
         }
@@ -220,12 +221,13 @@ extension ListWebtoonTableViewContrller {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell else {print("error")
             return UITableViewCell() }
         cell.titleDetail.text = DataManager.resultComicContents[indexPath.row].contentName
-        cell.gradeDetail.text = "★ "+String(describing: DataManager.resultComicContents[indexPath.row].contentRating!)
+        cell.gradeDetail.text = "★ "+String(format:"%.1f", DataManager.resultComicContents[indexPath.row].contentRating!)
         cell.dateDetail.text = DataManager.resultComicContents[indexPath.row].contentDate
         cell.conTentNo = DataManager.resultComicContents[indexPath.row].contentNo!
         cell.imageSumnailDetail.image = DataManager.topOfGodViewImage[indexPath.row]
         cell.contentLike = DataManager.resultComicContents[indexPath.row].contentHeart!
         cell.comicNo = DataManager.resultComicContents[indexPath.row].comicNo!
+        cell.contentRating = DataManager.resultComicContents[indexPath.row].contentRating!
         return cell
     }
 }

@@ -13,6 +13,8 @@ target 'MyNaverWebtoon3' do
   pod 'SnapKit'
   pod 'MBProgressHUD'
   pod 'BetterSegmentedControl', '~> 1.0'
+  pod 'Cosmos'
+  pod 'TinyConstraints'
   # Pods for MyNaverWebtoon3
 
   target 'MyNaverWebtoon3Tests' do

@@ -21,7 +21,7 @@ class ComicContentsDTO: BaseDTO {
         var contentDate:String?
         var contentHeart:Int?
         var contentType:Int?
-        var contentRating:Int?
+        var contentRating:Float?
         required init?(map: Map){
             
         }

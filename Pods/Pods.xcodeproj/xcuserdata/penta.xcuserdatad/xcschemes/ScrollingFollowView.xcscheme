@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "53E0B1E840FC2DFFAD6644CC7107D122"
+               BlueprintIdentifier = "A5E6EFA5AEB7D518C9ECDA893CE8884F"
                BuildableName = "ScrollingFollowView.framework"
                BlueprintName = "ScrollingFollowView"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -16,4 +16,5 @@ class TableViewCell: UITableViewCell {
     var conTentNo:Int = 0
     var contentLike:Int = 0
     var comicNo:Int = 0
+    var contentRating:Float = 0
 }
