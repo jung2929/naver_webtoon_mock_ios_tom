@@ -59,6 +59,8 @@ class MyComicListDTO: BaseDTO {
     }
     
     override func mapping(map: Map) {
+        code <- map["code"]
+        message <- map["message"]
         list <- map["list"]
         data <- map["date"]
     }

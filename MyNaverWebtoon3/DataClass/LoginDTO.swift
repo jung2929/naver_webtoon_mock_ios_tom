@@ -12,6 +12,8 @@ import ObjectMapper
 class LoginDTO: BaseDTO {
     var result:[String:String]=[:]
     override func mapping(map: Map) {
+        code <- map["code"]
+        message <- map["message"]
         result <- map["result"]
     }
 }

@@ -11,6 +11,7 @@ import ObjectMapper
 
 class ComicContentsDTO: BaseDTO {
     var resultComicContents = [ComicContents]()
+    var check:Int?
     class ComicContents: Mappable {
         var contentNo:Int?
         var comicNo:Int?
@@ -37,6 +38,7 @@ class ComicContentsDTO: BaseDTO {
         }
     }
     override func mapping(map: Map) {
+        check <- map["check"]
         code <- map["code"]
         message <- map["message"]
         resultComicContents <- map["result"]

@@ -459,7 +459,7 @@
         <!--List Webtoon Table View Contrller-->
         <scene sceneID="JKT-Vx-3EV">
             <objects>
-                <viewController id="d0y-Jk-hLF" customClass="ListWebtoonTableViewContrller" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="d0y-Jk-hLF" customClass="ListWebtoonTableViewContrller" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gFa-3e-zwe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -634,7 +634,7 @@
                                 <rect key="frame" x="0.0" y="738" width="414" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lu-9y-9jm">
-                                        <rect key="frame" x="84" y="10" width="78" height="30"/>
+                                        <rect key="frame" x="92" y="10" width="78" height="30"/>
                                         <state key="normal" title="⌨︎ 댓글보기">
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -661,27 +661,39 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6do-Qc-cZu">
-                                        <rect key="frame" x="10" y="10" width="64" height="30"/>
-                                        <state key="normal" title="♡ 20,591">
+                                        <rect key="frame" x="35" y="10" width="47" height="30"/>
+                                        <state key="normal" title="20,591">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="contentLikeTapped:" destination="X8C-eg-Ebk" eventType="touchUpInside" id="gFK-FR-hJy"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilm-nG-Em4">
+                                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                        <state key="normal" title="♡">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="heartButtonTapped:" destination="X8C-eg-Ebk" eventType="touchUpInside" id="NBC-rP-yNG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Eh5-Vq-9jd" firstAttribute="leading" secondItem="1x4-3u-t78" secondAttribute="trailing" id="1Sf-T1-84Y"/>
+                                    <constraint firstItem="Ilm-nG-Em4" firstAttribute="top" secondItem="AZH-1w-kpv" secondAttribute="top" constant="10" id="3a5-vc-Ow5"/>
+                                    <constraint firstItem="6do-Qc-cZu" firstAttribute="leading" secondItem="Ilm-nG-Em4" secondAttribute="trailing" constant="-5" id="5HT-As-8sR"/>
                                     <constraint firstItem="Eh5-Vq-9jd" firstAttribute="top" secondItem="AZH-1w-kpv" secondAttribute="top" id="Bst-Oh-DxN"/>
                                     <constraint firstItem="1x4-3u-t78" firstAttribute="top" secondItem="AZH-1w-kpv" secondAttribute="top" constant="10" id="LgB-Kb-DLM"/>
                                     <constraint firstItem="j0v-e6-5d9" firstAttribute="leading" secondItem="Eh5-Vq-9jd" secondAttribute="trailing" id="SrX-21-sI7"/>
                                     <constraint firstItem="3lu-9y-9jm" firstAttribute="top" secondItem="AZH-1w-kpv" secondAttribute="top" constant="10" id="aS1-If-qmT"/>
                                     <constraint firstItem="6do-Qc-cZu" firstAttribute="top" secondItem="AZH-1w-kpv" secondAttribute="top" constant="10" id="e2A-eu-gC2"/>
                                     <constraint firstItem="3lu-9y-9jm" firstAttribute="leading" secondItem="6do-Qc-cZu" secondAttribute="trailing" constant="10" id="flK-wd-JdC"/>
-                                    <constraint firstItem="6do-Qc-cZu" firstAttribute="leading" secondItem="AZH-1w-kpv" secondAttribute="leading" constant="10" id="iTs-49-Crc"/>
                                     <constraint firstAttribute="height" constant="70" id="itn-Eo-Fd3"/>
+                                    <constraint firstItem="Ilm-nG-Em4" firstAttribute="leading" secondItem="AZH-1w-kpv" secondAttribute="leading" constant="10" id="j0z-Lc-gqH"/>
                                     <constraint firstAttribute="trailing" secondItem="j0v-e6-5d9" secondAttribute="trailing" constant="10" id="j4O-5u-ogV"/>
+                                    <constraint firstItem="1x4-3u-t78" firstAttribute="leading" relation="lessThanOrEqual" secondItem="3lu-9y-9jm" secondAttribute="trailing" constant="144" id="kII-hd-wCs"/>
                                     <constraint firstItem="j0v-e6-5d9" firstAttribute="top" secondItem="AZH-1w-kpv" secondAttribute="top" constant="10" id="tvg-cK-Jef"/>
                                 </constraints>
                             </view>
@@ -702,13 +714,14 @@
                     <connections>
                         <outlet property="bottomView" destination="AZH-1w-kpv" id="jSd-eO-aLu"/>
                         <outlet property="contentLike" destination="6do-Qc-cZu" id="oFF-CA-6Vu"/>
+                        <outlet property="heartButton" destination="Ilm-nG-Em4" id="uNB-oe-Qod"/>
                         <outlet property="scrollView" destination="UVS-wl-pjZ" id="cfW-Ad-dQL"/>
                         <outlet property="viewInstantMessage" destination="3lu-9y-9jm" id="cq7-OZ-QeM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jI-Jo-Noj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4257.971014492754" y="1179.9107142857142"/>
+            <point key="canvasLocation" x="3506" y="1163"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Acs-Cx-Ibd">
@@ -911,7 +924,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrj-qw-vHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5775" y="1205"/>
+            <point key="canvasLocation" x="4217" y="1163"/>
         </scene>
         <!--Title-->
         <scene sceneID="YE1-bi-kU6">
@@ -1015,9 +1028,9 @@
         <!--Sign Up View Controller-->
         <scene sceneID="GoX-Bd-2II">
             <objects>
-                <viewController id="A7K-De-keU" customClass="SignUpViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="A7K-De-keU" customClass="SignUpViewController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kbf-uH-N4h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-Ux-O6L">
@@ -1191,9 +1204,9 @@
         <!--Login Veiw Controller-->
         <scene sceneID="Plb-Vx-dyP">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yjf-hL-AeB" customClass="LoginVeiwController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yjf-hL-AeB" customClass="LoginVeiwController" customModule="MyNaverWebtoon3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZFM-0b-IRo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-Sh-aHr">
@@ -1409,6 +1422,6 @@
         <image name="광고1" width="1119" height="144"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6sT-UZ-Ezj"/>
+        <segue reference="X0e-Ma-ocD"/>
     </inferredMetricsTieBreakers>
 </document>

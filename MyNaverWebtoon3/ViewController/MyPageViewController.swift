@@ -29,23 +29,15 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
         navigationController?.navigationBar.topItem?.title = "MY"
         topView.layer.addBorder([.bottom], color: UIColor.lightGray, width: 1)
         self.myPageTableView.reloadData()
-        
-        
-        
     }
     
     func getDataIfLogin(logintoken:String){
         //print(logintoken)
-        let header = ["x-access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAxOS0wNC0xMiAwMToyMTozNCIsInVzZXJJZCI6InRvbTEiLCJ1c2VyUHciOiJUb20xMjM0LiIsInVzZXJUeXBlIjoiMSJ9.uMunfwEPzAkq85D1_4Wr-geVb9XnDSzdqQ3tiThuZ64"]
+        let header = ["x-access-token":DataManager.logintoken]
         let url = "http://softcomics.co.kr/my/comic/list"
         Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<MyComicListDTO>) in
-            print(response.result.value?.code)
-            print(response.result.error)
-            print(response.response?.statusCode)
             if let JSON = response.result.value {
-                //DataManager.resultComicDay = JSON.result
                 let status = response.result.value?.code
-                print(status)
                 switch status {
                 case 100:
                     print("login")
@@ -55,11 +47,11 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
                     self.myPageTableView.reloadData()
                     break
                 case 200:
-                    print(status)
+                    print(status!)
                     //perfrom LoginVC
                     break
                 case 201:
-                    print(status)
+                    print(status!)
                     break
                 default:
                     break
@@ -70,14 +62,10 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableViewSetup(myPageTableView:UITableView, superView:UIView){
-        //let frm:CGRect = superView.frame
         let tableView = myPageTableView
-        //tableView.frame = CGRect(origin: frm.origin, size: frm.size)
-        //print(frm)
         tableView.register(MyPageTVC.self, forCellReuseIdentifier: "Cell")
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.backgroundColor = UIColor.black
         superView.addSubview(tableView)
         superView.bringSubviewToFront(tableView)
         

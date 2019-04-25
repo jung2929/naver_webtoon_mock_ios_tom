@@ -25,24 +25,13 @@ class LoginVeiwController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         let url = "http://softcomics.co.kr/user/fcm"
-//        let url = "http://softcomics.co.kr/token/"+idTextField.text!+"/"+pwTextField.text!
         let parameters: [String: Any] = [
             "id":idTextField.text!,
             "pw":pwTextField.text!,
             "fcm":"testfcmtoken"
         ]
-        print("parameters :", parameters)
-        // DispatchQueue.global(qos:.userInteractive).async {
-        print(url)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseObject{(response : DataResponse<LoginDTO>) in
             if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-                print(response.response?.statusCode)
-                print("error",response.result.error)
-                print(response.result.value?.code)
-                print(response.result.value?.message)
-                //print(response.result.value?.result["jwt"]!)
-                //DataManager.resultComicDay = JSON.result
                 let status = response.result.value?.code
                 print(status)
                 switch status {
@@ -60,6 +49,7 @@ class LoginVeiwController: UIViewController {
                     self.errorLabel.text = "아이디나 패스워드를 확인해주세요."
                     break
                 default:
+                    self.errorLabel.text = "아이디나 패스워드를 확인해주세요."
                     break
                 }
             }
@@ -69,8 +59,6 @@ class LoginVeiwController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.text = ""
-        //self.performSegue(withIdentifier: "unwindMyPageVC", sender: nil)
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,8 +67,6 @@ class LoginVeiwController: UIViewController {
             let vc = segue.destination as! MyPageViewController
             print("in")
             vc.navigationItem.title = idTextField.text
-            //vc.viewDidLoad()
-            //vc.viewWillAppear(true)
         }
     }
 }

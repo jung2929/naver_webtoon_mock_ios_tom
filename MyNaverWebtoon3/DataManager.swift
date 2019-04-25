@@ -16,6 +16,7 @@ class DataManager: NSObject {
     static var comments = [CommentDTO.Comments]()
     static var resultComicSearch = [ComicSearchDTO.ComicSearch]()
     static var resultComicContentFirst = [ComicContentFirstDTO.ComicContentFirst]()
+    static var resultContent = [ContentDTO.Contents]()
     static var loginFlag:Bool = false
     static var logintoken = ""
     static var mainCollectionViewImage = [UIImage]()

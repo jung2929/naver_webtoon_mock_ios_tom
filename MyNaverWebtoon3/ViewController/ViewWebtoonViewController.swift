@@ -12,27 +12,41 @@ import Alamofire
 import AlamofireObjectMapper
 
 class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate{
-//    class ViewWebtoonViewController: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate{
-
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var bottomView: UIView!
-    
-    @IBOutlet weak var viewInstantMessage: UIButton!
-    @IBOutlet weak var contentLike: UIButton!
-
-    
     
     @IBAction func viewInstantMessageTapped(_ sender: Any) {
     }
     @IBAction func contentLikeTapped(_ sender: Any) {
-        giveLikeContent()
+        
+    }
+    @IBAction func heartButtonTapped(_ sender: Any) {
+        if isGivenHeart == false {
+            giveHeartToContent(mode: "real")
+            self.setGivenHeartButton()
+            let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 누름!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            giveHeartToContent(mode: "real")
+            self.setNotGivenHeartButton()
+            let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 취소!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var viewInstantMessage: UIButton!
+    @IBOutlet weak var contentLike: UIButton!
+    @IBOutlet weak var heartButton: UIButton!
     
     var tmpCotentNo:Int = 0
     var tmpContentLike:Int = 0
     var tmpComicNo:Int = 0
+    var isGivenHeart:Bool = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,13 +69,49 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         tapRecognizer.delegate = self
         scrollView.addSubview(imgView)
         
-        contentLike.setTitle("♡ "+String(tmpContentLike), for: .normal)
-        
+        contentLike.setTitle(String(tmpContentLike), for: .normal)
+        self.getDatafromJson(mode: "real")
         self.view.bringSubviewToFront(bottomView)
     }
     
-    func giveLikeContent(){
-        print("giveLikein")
+    func getDatafromJson(mode:String){
+        if mode == "real" {
+            print(mode)
+            let header = ["x-access-token":DataManager.logintoken]
+            let url = "http://softcomics.co.kr/comic/content/"+"\(tmpCotentNo)"
+            Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<ContentDTO>) in
+                if let JSON = response.result.value {
+                    DataManager.resultContent = JSON.result
+                    switch JSON.check {
+                    case 0:
+                        self.setNotGivenHeartButton()
+                        break
+                    case 1:
+                        self.setGivenHeartButton()
+                        break
+                    default :
+                        self.setNotGivenHeartButton()
+                        print("로그인하세요.")
+                        break
+                    }
+                    //self.tableView.reloadData() --> 이거 이미지 불러오는걸로 변경해야함.
+                }
+            }
+        }
+    }
+    
+    func setGivenHeartButton(){
+        self.isGivenHeart = true
+        self.heartButton.setTitle("♥︎", for: .normal)
+        self.heartButton.setTitleColor(.red, for: .normal)
+    }
+    func setNotGivenHeartButton(){
+        self.isGivenHeart = false
+        self.heartButton.setTitle("♡", for: .normal)
+        self.heartButton.setTitleColor(.black, for: .normal)
+    }
+    
+    func giveHeartToContent(mode:String){
         print("타겟 contentno : ", tmpCotentNo)
         let url = "http://softcomics.co.kr/comic/content/like"
         let parameters: [String: Any] = [
@@ -74,11 +124,7 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
                 print(status)
                 switch status {
                 case 100:
-                    let alert = UIAlertController(title: "컨텐츠 좋아요", message: JSON.message, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alert.addAction(okAction)
-                    self.contentLike.setTitle("♥︎ "+"\(JSON.like!)", for: .normal)
-                    self.present(alert, animated: true, completion: nil)
+                    self.contentLike.setTitle("\(JSON.like!)", for: .normal)
                     break
                 default:
                     print(status)
@@ -88,25 +134,8 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
             }
         }
     }
-//
-//    func setButtonCount(){
-//        let url = "http://softcomics.co.kr/comic/contentAll/"+"\(tmpComicNo)"
-//        print(url)
-//        print("변경전 like : ",tmpContentLike)
-//        Alamofire.request(url).responseObject{(response : DataResponse<ComicContentsDTO>) in
-//            if let JSON = response.result.value {
-//                DataManager.resultComicContents = JSON.resultComicContents
-//            }
-//        }
-//        //아래 부분 수정 해야할듯..
-//            for result in DataManager.resultComicContents{
-//                if result.contentNo == self.tmpCotentNo{
-//                    self.contentLike.setTitle("♥︎ "+"\(result.contentHeart!)", for: .normal)
-//                    print(result.contentNo!)
-//                    print(result.contentHeart!)
-//                }
-//            }
-//    }
+    
+    
     
     @objc func scrollViewTapped(gestureRecognizer: UITapGestureRecognizer) {
         self.navigationController?.navigationBar.isHidden=false
@@ -124,8 +153,6 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
             let vc = segue.destination as! ListWebtoonTableViewContrller
             print("in")
             vc.navigationItem.title = "in"
-            //vc.viewDidLoad()
-            //vc.viewWillAppear(true)
         }
     }
     

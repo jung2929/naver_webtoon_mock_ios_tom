@@ -33,14 +33,12 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
             "comment":comment
         ]
         let header = ["x-access-token":DataManager.logintoken]
-//        let header = ["x-access-token":DataManager.logintoken]
 
         print(parameters)
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:header).responseObject{(response : DataResponse<BaseDTO>) in
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
-                print(response.result.value?.code)
                 let status = response.result.value?.code
                 print(status)
                 switch status {
@@ -51,8 +49,6 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                     self.commentTextField.resignFirstResponder()
-                    //수정 현재 segments index 로 request 해야 테이블 refresh 될듯.
-                    //self.tableView.reloadData()
                     break
                 default:
                     print(status)
@@ -92,16 +88,10 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         self.tabBarController?.tabBar.isHidden = true
-        print("tabbar hidden?? : ", tabBarController?.tabBar.isHidden)
-        // Do any additional setup after loading the view.
         
         self.setupCommentSelectSegment()
         self.setupNavigationBar()
-        //print("tmpContentNo",tmpCotentNo)
-        //tmpCotentNo = 1  /// 서버에 1밖에 없음.
-        //print("tmpContentNo",tmpCotentNo)
         getCommentsDatafromJson(mode: "real", url: "http://softcomics.co.kr/comic/content/bestcomment/", contentNo: String(tmpCotentNo))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -152,7 +142,6 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
                                                                normalTextColor: .black,
                                                                selectedFont: UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,         selectedTextColor: .white)
         topSectionSegments.setIndex(10, animated: true)
-        //(red:0.20, green:0.68, blue:0.27, alpha:1.00)
     }
     
     
@@ -160,13 +149,10 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         if mode == "testBestComments" {
             print(mode)
             let path = Bundle.main.path(forResource: "TestCommentsTest", ofType: "json")
-            print(path)
             if let path = Bundle.main.path(forResource: "TestCommentsTest", ofType: "json") {
                 let url=URL(fileURLWithPath: path)
                 Alamofire.request(url).responseObject {(response : DataResponse<CommentDTO>) in
                     if let JSON = response.result.value {
-                        //print("JSON: \(JSON)")
-                        //print(response.result.value?.resultComicDay)
                         DataManager.comments = JSON.data
                         print("resultComicDay",DataManager.comments)
                         print(DataManager.comments.count)
@@ -174,20 +160,13 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
                     }
                 }
             }
-            //print("out:",DataManager.resultComicDay.count)
         } else if mode == "testAllComments"{
-             print(mode)
             let path = Bundle.main.path(forResource: "AllCommentsTest", ofType: "json")
-            print(path)
             if let path = Bundle.main.path(forResource: "AllCommentsTest", ofType: "json") {
                 let url=URL(fileURLWithPath: path)
                 Alamofire.request(url).responseObject {(response : DataResponse<CommentDTO>) in
                     if let JSON = response.result.value {
-                        //print("JSON: \(JSON)")
-                        //print(response.result.value?.resultComicDay)
                         DataManager.comments = JSON.data
-                        print("resultComicDay",DataManager.comments)
-                        print(DataManager.comments.count)
                         self.tableView.reloadData()
                     }
                 }
@@ -195,15 +174,10 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         } else if mode == "real" {
             print(mode)
             let url = url+contentNo
-            // DispatchQueue.global(qos:.userInteractive).async {
             print(url)
             Alamofire.request(url).responseObject{(response : DataResponse<CommentDTO>) in
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                    print(response.result.value?.data)
                     DataManager.comments = JSON.data
-                    print("resultComicDay",DataManager.comments)
-                    print(DataManager.comments.count)
                     self.tableView.reloadData()
                 }
             }
