@@ -15,6 +15,7 @@ target 'MyNaverWebtoon3' do
   pod 'BetterSegmentedControl', '~> 1.0'
   pod 'Cosmos'
   pod 'TinyConstraints'
+  pod 'Kingfisher'
   # Pods for MyNaverWebtoon3
 
   target 'MyNaverWebtoon3Tests' do

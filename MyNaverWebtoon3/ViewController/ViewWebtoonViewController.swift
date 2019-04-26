@@ -68,20 +68,21 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
                 print(status)
                 switch status {
                 case 100:
-                    let alert = UIAlertController(title: "댓글", message: JSON.message, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "평점주기", message: JSON.message, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                     break
                 default:
                     print(status)
-                    print("로그인하세요.")
+                    let alert = UIAlertController(title: "평점주기", message: JSON.message, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
                     break
                 }
             }
         }
-        
-        //없애자..
         self.view.sendSubviewToBack(popUpView)
         if let viewWithTag = self.view.viewWithTag(100) {
             viewWithTag.removeFromSuperview()
@@ -231,10 +232,8 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-        print("in")
         if segue.identifier == "unwind1" {
             let vc = segue.destination as! ListWebtoonTableViewContrller
-            print("in")
             vc.navigationItem.title = "in"
         }
     }
