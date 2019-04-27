@@ -7,6 +7,7 @@ class BaseDTO: Mappable {
     var code : Int?
     var message : String?
     var like : Int?
+    var dislike: Int?
     required init?(map: Map) {
         
     }
@@ -14,5 +15,6 @@ class BaseDTO: Mappable {
         code <- map["code"]
         message <- map["message"]
         like <- map["like"]
+        dislike <- map["dislike"]
     }
 }

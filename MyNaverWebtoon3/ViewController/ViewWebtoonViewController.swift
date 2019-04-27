@@ -15,7 +15,7 @@ import TinyConstraints
 
 class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate{
     
-    @IBAction func viewInstantMessageTapped(_ sender: Any) {
+    @IBAction func commentCountTapped(_ sender: Any) {
     }
     @IBAction func contentLikeTapped(_ sender: Any) {
     }
@@ -91,7 +91,7 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var viewInstantMessage: UIButton!
+    @IBOutlet weak var commentCount: UIButton!
     @IBOutlet weak var contentLike: UIButton!
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var starRatingButton: UIButton!
@@ -107,6 +107,7 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
     var tmpContentLike:Int = 0
     var tmpComicNo:Int = 0
     var tmpContentRating:Float = 0
+    var tmpCommentCount:Int = 0
     var isGivenHeart:Bool = false
     var starRatingValue:Int = 10
     
@@ -147,12 +148,15 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
             Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<ContentDTO>) in
                 if let JSON = response.result.value {
                     DataManager.resultContent = JSON.result
+                    if JSON.comment != nil {self.tmpCommentCount = JSON.comment!}
                     switch JSON.check {
                     case 0:
                         self.setNotGivenHeartButton()
+                        self.setCommentCountButton(count: JSON.comment!)
                         break
                     case 1:
                         self.setGivenHeartButton()
+                        self.setCommentCountButton(count: JSON.comment!)
                         break
                     default :
                         self.setNotGivenHeartButton()
@@ -184,6 +188,9 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
         self.isGivenHeart = false
         self.heartButton.setTitle("♡", for: .normal)
         self.heartButton.setTitleColor(.white, for: .normal)
+    }
+    func setCommentCountButton(count:Int){
+        self.commentCount.setTitle("⌨︎ 댓글보기("+"\(count)"+")", for: .normal)
     }
     
     func giveHeartToContent(mode:String){
@@ -229,6 +236,7 @@ class ViewWebtoonViewController: UIViewController, UIScrollViewDelegate, UIGestu
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? CommentViewController else { return }
         destination.tmpCotentNo = tmpCotentNo
+        destination.tmpCommentCount = tmpCommentCount
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem

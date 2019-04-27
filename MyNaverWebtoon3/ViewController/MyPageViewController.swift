@@ -33,7 +33,8 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
     
     func getDataIfLogin(logintoken:String){
         //print(logintoken)
-        let header = ["x-access-token":DataManager.logintoken]
+        let header = ["x-access-token":DataManager.logintoken
+            , "Content-Type":"application/x-www-form-urlencoded"]
         let url = "http://softcomics.co.kr/my/comic/list"
         Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<MyComicListDTO>) in
             if let JSON = response.result.value {
@@ -41,8 +42,8 @@ class MyPageViewController: UIViewController, UITableViewDataSource, UITableView
                 switch status {
                 case 100:
                     print("login")
-                    DataManager.resultMyComic = (response.result.value?.list)!
-                    print("DataManager.resultMyComic",DataManager.resultMyComic)
+                    DataManager.resultMyComic = JSON.list
+                    DataManager.resultMyInfo = JSON.data                    
                     self.tableViewSetup(myPageTableView: self.myPageTableView, superView: self.bottomView)
                     self.myPageTableView.reloadData()
                     break

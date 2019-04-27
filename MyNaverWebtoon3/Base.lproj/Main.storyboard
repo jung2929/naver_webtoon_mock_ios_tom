@@ -639,7 +639,7 @@
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="viewInstantMessageTapped:" destination="X8C-eg-Ebk" eventType="touchUpInside" id="L3K-Bj-2Zj"/>
+                                            <action selector="commentCountTapped:" destination="X8C-eg-Ebk" eventType="touchUpInside" id="K1u-2d-7HT"/>
                                             <segue destination="3rQ-gg-qH3" kind="show" id="xxc-lO-iAT"/>
                                         </connections>
                                     </button>
@@ -877,6 +877,7 @@
                     <navigationItem key="navigationItem" id="4wO-1w-cRX"/>
                     <connections>
                         <outlet property="bottomView" destination="AZH-1w-kpv" id="jSd-eO-aLu"/>
+                        <outlet property="commentCount" destination="3lu-9y-9jm" id="Rjj-DN-27b"/>
                         <outlet property="contentLike" destination="6do-Qc-cZu" id="oFF-CA-6Vu"/>
                         <outlet property="heartButton" destination="Ilm-nG-Em4" id="uNB-oe-Qod"/>
                         <outlet property="popUpView" destination="56P-vq-kim" id="O1B-G9-vOn"/>
@@ -887,7 +888,6 @@
                         <outlet property="starRatingTopConstraint" destination="t55-rw-6hB" id="O2F-NQ-7Ac"/>
                         <outlet property="starRatingValueLabel" destination="Q6E-os-bCr" id="gST-u0-Ees"/>
                         <outlet property="starRatingView" destination="JzN-pb-309" id="UNa-Hd-Jrh"/>
-                        <outlet property="viewInstantMessage" destination="3lu-9y-9jm" id="cq7-OZ-QeM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jI-Jo-Noj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1011,7 +1011,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-1d-giB">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-1d-giB" customClass="likeDislikeButton" customModule="MyNaverWebtoon3" customModuleProvider="target">
                                                     <rect key="frame" x="308" y="39.5" width="42" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="527-U3-8FV"/>
@@ -1021,7 +1021,7 @@
                                                         <color key="titleColor" red="1" green="0.18687949440000001" blue="0.20406904719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-Cw-ObC">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-Cw-ObC" customClass="likeDislikeButton" customModule="MyNaverWebtoon3" customModuleProvider="target">
                                                     <rect key="frame" x="365" y="39.5" width="34" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Mnx-2B-5h3"/>

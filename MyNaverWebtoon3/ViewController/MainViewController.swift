@@ -85,7 +85,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         setupCollectionView()
         setupTopSlideCollectionView()
         setupDaySelectSegment()
-        //showTodayWebtoon()
+        showTodayWebtoon()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +93,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.tabBarController?.title = "웹툰"
         self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
-        showTodayWebtoon()
     }
     
     func setupDaySelectSegment(){
@@ -206,12 +205,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if indexPath != nil{
             let currentCell = collectionView.cellForItem(at: indexPath!) as! CollectionViewCell
             if ((collectionView?.indexPathsForSelectedItems) != nil){
-                for result in DataManager.resultMyComic{
-                    if result.comicNo == currentCell.comicNumber{
-                        destination.registerButton.setTitle("관심웹툰입니다.", for: .normal)
-                        destination.registerButton.isOn = true
-                    }
-                }
+//                for result in DataManager.resultMyComic{
+//                    if result.comicNo == currentCell.comicNumber{
+//                        destination.registerButton.setTitle("관심웹툰입니다.", for: .normal)
+//                        destination.registerButton.isOn = true
+//                    }
+//                }
                 destination.tmpNaviBarTopItem = currentCell.title.text
                 destination.tmpComicNumber = currentCell.comicNumber
                 destination.tmpComicNumberofHeart = currentCell.comicNumberOfHeart

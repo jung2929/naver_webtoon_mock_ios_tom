@@ -12,7 +12,7 @@ import ObjectMapper
 class MyComicListDTO: BaseDTO {
 
     var list = [myComic]()
-    var data = [userData]()
+    var data:userData?
     class myComic: Mappable {
         var userNo:Int?
         var comicNo:Int?
@@ -26,7 +26,7 @@ class MyComicListDTO: BaseDTO {
         var comicRating:Int?
         var comicDate:String?
         required init?(map: Map){
-            
+        
         }
         func mapping(map: Map) {
             userNo <- map["User_No"]
@@ -62,7 +62,7 @@ class MyComicListDTO: BaseDTO {
         code <- map["code"]
         message <- map["message"]
         list <- map["list"]
-        data <- map["date"]
+        data <- map["data"]
     }
 }
 /*

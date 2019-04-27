@@ -118,8 +118,10 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
             }
             //print("out:",DataManager.resultComicDay.count)
         } else if mode == "real" {
-            print(mode)
-            let header = ["x-access-token":DataManager.logintoken]
+            var header = ["x-access-token":DataManager.logintoken]
+            if DataManager.logintoken == "" {
+                header = ["":""]
+            }
             let url = "http://softcomics.co.kr/comic/contentAll/"+"\(tmpComicNumber!)"
             Alamofire.request(url, method: .get, encoding: URLEncoding.default , headers: header ).responseObject{(response : DataResponse<ComicContentsDTO>) in
                 if let JSON = response.result.value {

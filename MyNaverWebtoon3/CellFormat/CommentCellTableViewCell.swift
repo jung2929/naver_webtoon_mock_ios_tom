@@ -14,8 +14,8 @@ class CommentCellTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var bestLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var goodButton: UIButton!
-    @IBOutlet weak var badButton: UIButton!
+    @IBOutlet weak var goodButton: likeDislikeButton!
+    @IBOutlet weak var badButton: likeDislikeButton!
     
     var contentNo:Int = 0
 }

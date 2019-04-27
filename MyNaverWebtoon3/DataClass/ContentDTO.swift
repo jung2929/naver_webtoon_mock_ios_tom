@@ -12,6 +12,7 @@ import ObjectMapper
 class ContentDTO: BaseDTO {
     var result = [Contents]()
     var check:Int?
+    var comment:Int?
     class Contents: Mappable {
         var contentContent:Int?
         required init?(map: Map){
@@ -26,5 +27,6 @@ class ContentDTO: BaseDTO {
         code <- map["code"]
         message <- map["message"]
         check <- map["check"]
+        comment <- map["comment"]
     }
 }

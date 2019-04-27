@@ -14,6 +14,7 @@
 		3253774F226E515B00E8C11E /* SearchWebToonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253774E226E515B00E8C11E /* SearchWebToonTableViewCell.swift */; };
 		32537751226F3C6600E8C11E /* ComicContentFirstDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32537750226F3C6600E8C11E /* ComicContentFirstDTO.swift */; };
 		325377532271AC5100E8C11E /* ContentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325377522271AC5100E8C11E /* ContentDTO.swift */; };
+		3253777822743F7F00E8C11E /* likeDislikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253777722743F7F00E8C11E /* likeDislikeButton.swift */; };
 		325958AA2259F1AB0055C967 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958A92259F1AB0055C967 /* TableViewCell.swift */; };
 		325958AE225A13460055C967 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325958AD225A13460055C967 /* DataManager.swift */; };
 		325958B2225A19BB0055C967 /* ComicDayDTOTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 325958B1225A19BA0055C967 /* ComicDayDTOTest.json */; };
@@ -78,6 +79,7 @@
 		3253774E226E515B00E8C11E /* SearchWebToonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWebToonTableViewCell.swift; sourceTree = "<group>"; };
 		32537750226F3C6600E8C11E /* ComicContentFirstDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicContentFirstDTO.swift; sourceTree = "<group>"; };
 		325377522271AC5100E8C11E /* ContentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDTO.swift; sourceTree = "<group>"; };
+		3253777722743F7F00E8C11E /* likeDislikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = likeDislikeButton.swift; sourceTree = "<group>"; };
 		325958A92259F1AB0055C967 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		325958AD225A13460055C967 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		325958B1225A19BA0055C967 /* ComicDayDTOTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComicDayDTOTest.json; sourceTree = SOURCE_ROOT; };
@@ -223,6 +225,7 @@
 				327F2B752253B3B000342C36 /* AppDelegate.swift */,
 				32720A5722661AE1005FC2F2 /* ContentViewCell.xib */,
 				32537744226C850F00E8C11E /* registerButton.swift */,
+				3253777722743F7F00E8C11E /* likeDislikeButton.swift */,
 				327F2B792253B3B000342C36 /* Main.storyboard */,
 				327F2B7C2253B3B100342C36 /* Assets.xcassets */,
 				327F2B7E2253B3B100342C36 /* LaunchScreen.storyboard */,
@@ -548,6 +551,7 @@
 				327F2B762253B3B000342C36 /* AppDelegate.swift in Sources */,
 				32537751226F3C6600E8C11E /* ComicContentFirstDTO.swift in Sources */,
 				325958C4225E488A0055C967 /* MyComicListDTO.swift in Sources */,
+				3253777822743F7F00E8C11E /* likeDislikeButton.swift in Sources */,
 				32537745226C850F00E8C11E /* registerButton.swift in Sources */,
 				325958AA2259F1AB0055C967 /* TableViewCell.swift in Sources */,
 				325958C0225CF4600055C967 /* MyPageTVC.swift in Sources */,
