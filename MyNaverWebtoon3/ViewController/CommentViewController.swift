@@ -349,6 +349,16 @@ extension CommentViewController{
             if DataManager.comments[indexPath.row].userId == DataManager.resultMyInfo?.userId{
                 deleteMyComment(commentno: DataManager.comments[indexPath.row].commentNo!)
                 print("deleted target")
+                let like = "like" + "\(DataManager.comments[indexPath.row].commentNo!))"
+                let dislike = "dislike" + "\(DataManager.comments[indexPath.row].commentNo!))"
+                if let index = DataManager.myComments.index(of: like) {
+                    print("deleted")
+                    DataManager.myComments.remove(at: index)
+                }
+                if let index = DataManager.myComments.index(of: dislike) {
+                    print("deleted")
+                    DataManager.myComments.remove(at: index)
+                }
             } else {
                 let alert = UIAlertController(title: "댓글", message: "내 댓글이 아닙니다.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

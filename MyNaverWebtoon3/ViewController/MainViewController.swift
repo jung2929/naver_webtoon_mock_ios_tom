@@ -92,6 +92,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationController?.title = "조회순"
         self.tabBarController?.title = "웹툰"
         self.navigationController?.navigationBar.isHidden = true
+        showTodayWebtoon()
         super.viewWillAppear(animated)
     }
     

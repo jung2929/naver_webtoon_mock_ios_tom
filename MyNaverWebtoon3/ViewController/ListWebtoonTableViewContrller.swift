@@ -25,14 +25,14 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
     @IBAction func giveToonHeart(_ sender: Any) {
         if isGivenHeart == false {
             giveHeartToComic(mode: "real")
-            self.setGivenHeartButton()
+//            self.setGivenHeartButton()
             let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 누름!", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         } else {
             giveHeartToComic(mode: "real")
-            self.setNotGivenHeartButton()
+//            self.setNotGivenHeartButton()
             let alert = UIAlertController(title: "웹툰 좋아요!", message: "좋아요 취소!", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
@@ -65,6 +65,7 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
         self.tabBarController?.tabBar.isHidden = false
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        print("\(tmpComicNumberofHeart!)")
         self.comicHeart.setTitle("\(tmpComicNumberofHeart!)", for: .normal)
         
         getDatafromJson(mode: "real")
@@ -187,6 +188,11 @@ class ListWebtoonTableViewContrller: UIViewController, UITableViewDelegate, UITa
                     switch response.result.value?.code {
                     case 100:
                         self.comicHeart.setTitle("\(JSON.like!)", for: .normal)
+                        if self.isGivenHeart == false {
+                            self.setGivenHeartButton()
+                        } else {
+                            self.setNotGivenHeartButton()
+                        }
                     default:
                         print(response.result.value?.code)
                         print("실패")
